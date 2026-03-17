@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Deenar Islamic Academy — Book Billing 2026-27</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f0ede6;--s0:#fff;--s1:#f8f6f1;
+  --ink:#1c1a17;--ink2:#4a4640;--ink3:#8a857c;
+  --g:#1e4030;--g2:#2a5c43;--g3:#3d8060;--gbg:#e4f0ea;--glight:#c8e6d4;
+  --amber:#7a4f10;--amberbg:#fef3dc;--amberbdr:#f0c060;
+  --red:#8b1a1a;--redbg:#fde8e8;
+  --border:#ddd9d0;--border2:#c8c3b8;
+  --head:#1e3028;--headfg:#dff0e8;
+  --tick:#2a5c43;--tickbg:#c8e6d4;
+  --mono:'JetBrains Mono',monospace;
+  --body:'Nunito',sans-serif;
+  --serif:'Literata',serif;
+}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);min-height:100vh}
+.shell{display:flex;height:100vh;overflow:hidden}
+.sidebar{width:52px;background:var(--head);display:flex;flex-direction:column;align-items:center;padding:8px 0;gap:2px;flex-shrink:0;z-index:100;transition:width .2s;overflow:hidden}
+.sidebar.open{width:190px}
+.sb-logo{width:36px;height:36px;background:var(--g3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:6px;flex-shrink:0}
+.sb-item{width:44px;height:40px;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#7aaa90;font-size:17px;transition:all .15s;flex-shrink:0;white-space:nowrap}
+.sidebar.open .sb-item{width:178px;justify-content:flex-start;padding:0 12px;gap:10px}
+.sb-item:hover{background:rgba(255,255,255,.1);color:#fff}
+.sb-item.active{background:var(--g2);color:#fff}
+.sb-lbl{display:none;font-size:11px;font-weight:700;letter-spacing:.3px}
+.sidebar.open .sb-lbl{display:block}
+.sb-div{width:28px;height:1px;background:rgba(255,255,255,.12);margin:3px 0}
+.sidebar.open .sb-div{width:168px}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.topbar{background:var(--s0);border-bottom:1px solid var(--border);padding:9px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.tp-left{display:flex;align-items:center;gap:8px}
+.pg-title{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--g)}
+.yr-pill{font-size:10px;background:var(--gbg);color:var(--g2);padding:2px 8px;border-radius:20px;font-weight:700;font-family:var(--mono)}
+.stabs{background:var(--s0);border-bottom:2px solid var(--border);display:flex;padding:0 16px;flex-shrink:0;overflow-x:auto}
+.stab{padding:10px 16px;font-size:11px;font-weight:800;cursor:pointer;color:var(--ink3);border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.3px;transition:all .15s;margin-bottom:-2px;text-transform:uppercase}
+.stab:hover{color:var(--g2)}
+.stab.active{color:var(--g);border-bottom-color:var(--g3)}
+.stab-n{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;background:var(--gbg);color:var(--g2);border-radius:50%;font-size:10px;font-weight:800;margin-right:5px}
+.stab.active .stab-n{background:var(--g2);color:#fff}
+.ctabs{background:var(--s1);border-bottom:1px solid var(--border);padding:7px 16px;display:flex;gap:5px;overflow-x:auto;flex-shrink:0}
+.ctab{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;background:var(--s0);border:1.5px solid var(--border);color:var(--ink3);white-space:nowrap;transition:all .12s}
+.ctab:hover{border-color:var(--g3);color:var(--g2)}
+.ctab.active{background:var(--g);border-color:var(--g);color:#fff}
+.content{flex:1;overflow-y:auto;padding:14px 16px}
+.iface{display:none}.iface.active{display:block}
+.btn{padding:6px 13px;border-radius:6px;border:none;cursor:pointer;font-family:var(--body);font-size:12px;font-weight:700;transition:all .13s}
+.btn-g{background:var(--g2);color:#fff}.btn-g:hover{background:var(--g)}
+.btn-ol{background:transparent;border:1.5px solid var(--g2);color:var(--g)}.btn-ol:hover{background:var(--g2);color:#fff}
+.btn-am{background:var(--amberbg);color:var(--amber);border:1.5px solid var(--amberbdr)}.btn-am:hover{background:var(--amberbdr)}
+.btn-rd{background:var(--redbg);color:var(--red);border:1px solid #f5b8b8}.btn-rd:hover{background:#f5b8b8}
+.btn-gh{background:var(--s1);border:1px solid var(--border);color:var(--ink2)}.btn-gh:hover{background:var(--s0)}
+.btn-dk{background:var(--head);color:#fff}.btn-dk:hover{background:#2e4a3a}
+.btn-sm{padding:4px 9px;font-size:11px}.btn-xs{padding:3px 7px;font-size:10px}
+.fg{display:flex;flex-direction:column;gap:3px}
+.fg label{font-size:10px;font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.3px}
+.fg input,.fg select{padding:7px 10px;border:1.5px solid var(--border);border-radius:6px;font-family:var(--body);font-size:13px;color:var(--ink);background:#fff}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--g3)}
+.shdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.shdr-title{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--g)}
+.stats-strip{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.spill{background:var(--s0);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;color:var(--ink2)}
+.spill b{color:var(--g2);font-weight:800}
+/* Interface 1 */
+.add-form{background:var(--s0);border:1.5px solid var(--amberbdr);border-radius:8px;padding:11px 14px;margin-bottom:11px;display:none}
+.add-form.open{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.stu-search{padding:7px 11px;border:1.5px solid var(--border);border-radius:7px;font-family:var(--body);font-size:13px;background:var(--s0);min-width:180px;flex:1}
+.stu-search:focus{outline:none;border-color:var(--g3)}
+.stu-wrap{background:var(--s0);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+table.stbl{width:100%;border-collapse:collapse;font-size:13px}
+table.stbl th{background:var(--head);color:var(--headfg);padding:8px 11px;font-size:10px;font-weight:700;text-align:left;letter-spacing:.5px}
+table.stbl td{padding:7px 11px;border-bottom:1px solid var(--border);vertical-align:middle}
+table.stbl tr:last-child td{border-bottom:none}
+table.stbl tr:hover td{background:var(--gbg)}
+.adm-tag{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--g2)}
+.cls-tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;background:var(--gbg);color:var(--g2)}
+.stu-acts{display:flex;gap:3px}
+/* Interface 2 */
+.book-card{background:var(--s0);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.bc-hd{background:var(--head);padding:8px 12px;display:flex;align-items:center;justify-content:space-between}
+.bc-cls{font-size:11px;font-weight:800;color:var(--headfg);text-transform:uppercase;letter-spacing:.5px}
+.bc-cnt{font-size:10px;color:#7aaa90;font-family:var(--mono)}
+.brow{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;border-bottom:1px solid var(--border);gap:8px}
+.brow:last-child{border-bottom:none}
+.brow:hover{background:var(--s1)}
+.brow-name{font-size:12px;font-weight:600;flex:1}
+.brow-name.nb{color:var(--amber)}
+.price-tag{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--g2);background:var(--gbg);padding:2px 6px;border-radius:8px}
+.nb-tag{font-size:9px;background:var(--amberbg);color:var(--amber);padding:2px 6px;border-radius:8px;font-weight:700}
+.brow-edit-view{display:flex;align-items:center;gap:6px;flex:1}
+.brow-edit-form{display:none;align-items:center;gap:5px;flex:1}
+.brow-edit-form.open{display:flex}
+.be-inp{flex:1;padding:4px 7px;border:1.5px solid var(--g3);border-radius:4px;font-size:12px;font-family:var(--body)}
+.be-price{width:62px;padding:4px 7px;border:1.5px solid var(--g3);border-radius:4px;font-size:12px;font-family:var(--mono)}
+.be-type{padding:4px 6px;border:1.5px solid var(--g3);border-radius:4px;font-size:11px;font-family:var(--body)}
+/* Interface 3 tick grid */
+.bulk-panel{background:var(--s0);border:2px solid var(--amberbdr);border-radius:10px;margin-bottom:11px;overflow:hidden}
+.bp-head{background:var(--amberbg);padding:9px 13px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;border-bottom:1px solid var(--amberbdr)}
+.bp-title{font-size:12px;font-weight:800;color:var(--amber)}
+.bp-sel{padding:6px 10px;border:1.5px solid var(--amberbdr);border-radius:6px;font-family:var(--body);font-size:12px;font-weight:600;background:#fff;min-width:200px;max-width:340px}
+.bp-body{padding:10px 13px}
+.bp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:5px;max-height:280px;overflow-y:auto;border:1px solid var(--border);border-radius:7px;padding:6px;background:var(--s1)}
+.bp-stu{display:flex;align-items:center;gap:6px;padding:5px 8px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;background:#fff;user-select:none;transition:all .1s}
+.bp-stu:hover{border-color:var(--g3);background:var(--gbg)}
+.bp-stu.sel{border-color:var(--tick);background:var(--tickbg)}
+.bp-chk{width:15px;height:15px;border:1.5px solid var(--border2);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.bp-stu.sel .bp-chk{background:var(--tick);border-color:var(--tick)}
+.bp-ci{display:none;color:#fff;font-size:9px;font-weight:800}
+.bp-stu.sel .bp-ci{display:block}
+.bp-adm{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--g2);min-width:30px}
+.bp-nm{font-size:10px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bp-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:7px}
+.tgwrap{background:var(--s0);border:1px solid var(--border2);border-radius:10px;overflow:hidden}
+.tgscroll{overflow-x:auto}
+table.tg{width:100%;border-collapse:collapse;min-width:max-content}
+tr.tg-rot td{background:var(--head);vertical-align:bottom;padding:3px 1px;border-right:1px solid rgba(255,255,255,.1)}
+tr.tg-rot td.fix{background:#1a2e22;text-align:left;padding-left:7px;font-size:10px;font-weight:700;color:var(--headfg);vertical-align:bottom;padding-bottom:7px}
+.rot-wrap{height:88px;display:flex;align-items:flex-end;justify-content:center}
+.rot-txt{writing-mode:vertical-rl;transform:rotate(180deg);font-size:8px;font-weight:700;color:var(--headfg);white-space:nowrap;padding-bottom:3px;font-family:var(--body)}
+.rot-txt.nbc{color:#fcd34d}
+tr.tg-price td{background:#243d2e;color:#6aaa80;font-size:8px;font-weight:700;text-align:center;padding:3px 1px;border-right:1px solid rgba(255,255,255,.07);font-family:var(--mono)}
+tr.tg-price td.fix{text-align:left;padding-left:7px;color:#4a7a5a}
+.tg tbody tr{border-bottom:1px solid var(--border)}
+.tg tbody tr:nth-child(even){background:var(--s1)}
+.tg tbody tr:hover{background:#e8f4ee}
+td.tc-sl{font-size:10px;text-align:center;color:var(--ink3);font-family:var(--mono);padding:4px 1px;border-right:1px solid var(--border)}
+td.tc-adm{font-size:10px;text-align:center;font-family:var(--mono);font-weight:700;color:var(--g2);padding:4px 3px;border-right:1px solid var(--border)}
+td.tc-name{font-size:11px;font-weight:600;padding:4px 7px;border-right:2px solid var(--border2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
+td.tc-tick{text-align:center;padding:2px 1px;border-right:1px solid var(--border);cursor:pointer;vertical-align:middle}
+td.tc-tick:hover{background:#d4eedd!important}
+.tbox{width:20px;height:20px;border:1.5px solid var(--border2);border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;margin:auto;transition:all .1s}
+td.tc-tick.on .tbox{background:var(--tick);border-color:var(--tick)}
+.ckv{display:none;color:#fff;font-size:12px;font-weight:800}
+td.tc-tick.on .ckv{display:block}
+td.tc-nb{text-align:center;padding:2px 3px;border-right:1px solid var(--border);background:#fffbf0;vertical-align:middle}
+td.tc-nb.hv{background:var(--amberbg)}
+.nb-inp{width:40px;padding:3px;border:1.5px solid var(--amberbdr);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--amber);text-align:center;background:#fff}
+.nb-inp:focus{outline:none;border-color:var(--amber)}
+.nb-inp::-webkit-inner-spin-button,.nb-inp::-webkit-outer-spin-button{-webkit-appearance:none}
+td.tc-tot{text-align:right;padding:4px 7px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--g);border-left:2px solid var(--border2);background:#f0f7f3}
+.tg tfoot tr{background:var(--head)!important}
+.tg tfoot td{padding:5px 1px;font-size:10px;font-weight:700;color:#6aaa80;text-align:center;border-right:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
+.tg tfoot td.fl{text-align:left;padding-left:7px;color:#fff}
+.tg tfoot td.fgt{color:#7ecba1;font-size:11px;text-align:right;padding-right:7px}
+
+/* ════ INTERFACE 4 — BILLING ════ */
+.bill-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;background:var(--s0);padding:12px 16px;border-radius:10px;border:1px solid var(--border)}
+.bill-mode-tabs{display:flex;gap:6px}
+.bmt{padding:7px 16px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--s1);color:var(--ink3);transition:all .13s}
+.bmt:hover{border-color:var(--g3);color:var(--g2)}
+.bmt.active{background:var(--g);border-color:var(--g);color:#fff}
+.bill-search{padding:7px 11px;border:1.5px solid var(--border);border-radius:7px;font-family:var(--body);font-size:13px;background:var(--s0);width:200px}
+.bill-search:focus{outline:none;border-color:var(--g3)}
+/* Individual bill */
+.ind-lookup{background:var(--s0);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.ind-bill-display{background:var(--s0);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+/* Class bills */
+.cls-bill-section{margin-bottom:20px}
+.cls-bill-hdr{background:var(--head);color:var(--headfg);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-radius:10px 10px 0 0}
+.cls-bill-hdr-left h3{font-size:15px;font-weight:700;font-family:var(--serif)}
+.cls-bill-hdr-left p{font-size:10px;color:#7aaa90;margin-top:2px;font-family:var(--mono)}
+.cls-bill-hdr-stats{display:flex;gap:16px}
+.chstat{text-align:center}
+.chstat-n{font-size:18px;font-weight:700;font-family:var(--mono);color:#7ecba1}
+.chstat-l{font-size:9px;color:#6aaa80;text-transform:uppercase;letter-spacing:.4px}
+.bill-table-wrap{overflow-x:auto;border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px}
+table.billtbl{width:100%;border-collapse:collapse;font-size:13px}
+table.billtbl th{background:var(--s1);padding:8px 12px;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.4px;border-bottom:1px solid var(--border);white-space:nowrap}
+table.billtbl th.r{text-align:right}
+table.billtbl td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+table.billtbl tr:last-child td{border-bottom:none}
+table.billtbl tr:hover td{background:#f5faf7}
+.bk-cell-name{font-size:12px;font-weight:600;color:var(--ink);line-height:1.4}
+.bk-cell-nb{font-size:10px;color:var(--amber);font-family:var(--mono);display:block;margin-top:2px}
+.bk-cell-name.nb-title{color:var(--amber)}
+.price-cell{font-family:var(--mono);font-size:12px;color:var(--ink2);text-align:right;white-space:nowrap}
+.qty-cell{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--g2);text-align:center}
+.total-cell{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--g);text-align:right;white-space:nowrap}
+.grand-row td{background:#1a3228;padding:10px 12px;font-weight:700;font-family:var(--mono);color:#7ecba1;border:none}
+.grand-row td.grand-amt{font-size:16px;color:#fff;text-align:right}
+/* Individual student bills grid */
+.stu-bills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.stu-bill-card{background:var(--s0);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .15s}
+.stu-bill-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);border-color:var(--g3)}
+.sbc-hdr{background:var(--head);padding:10px 14px;display:flex;align-items:flex-start;justify-content:space-between}
+.sbc-info .sbc-name{font-size:13px;font-weight:700;color:#fff}
+.sbc-info .sbc-adm{font-size:10px;color:#7aaa90;font-family:var(--mono);margin-top:2px}
+.sbc-total-badge{background:rgba(255,255,255,.15);border-radius:8px;padding:4px 10px;text-align:center;flex-shrink:0}
+.sbc-total-badge .sbc-amt{font-size:16px;font-weight:700;color:#7ecba1;font-family:var(--mono);display:block}
+.sbc-total-badge .sbc-lbl{font-size:8px;color:#6aaa80;text-transform:uppercase;letter-spacing:.4px}
+.sbc-body{padding:10px 14px}
+.sbc-book-row{display:flex;align-items:flex-start;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);gap:8px}
+.sbc-book-row:last-child{border-bottom:none}
+.sbc-bname{font-size:11px;font-weight:600;color:var(--ink);flex:1;line-height:1.4}
+.sbc-bname.nb{color:var(--amber)}
+.sbc-nb-detail{font-size:9px;color:var(--ink3);font-family:var(--mono);display:block;margin-top:1px}
+.sbc-bamt{font-size:12px;font-weight:700;font-family:var(--mono);color:var(--g);flex-shrink:0}
+.sbc-nb-amt{font-size:15px;font-weight:700;font-family:var(--mono);color:var(--amber);flex-shrink:0}
+.sbc-empty{text-align:center;color:var(--ink3);font-size:11px;padding:14px;font-style:italic}
+.sbc-foot{background:var(--gbg);padding:8px 14px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--glight)}
+.sbc-foot-lbl{font-size:10px;font-weight:700;color:var(--g2);text-transform:uppercase;letter-spacing:.4px}
+.sbc-foot-amt{font-size:18px;font-weight:700;font-family:var(--mono);color:var(--g)}
+.sbc-print{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);border-radius:5px;padding:3px 8px;font-size:10px;font-weight:600;cursor:pointer;font-family:var(--body);transition:all .12s;flex-shrink:0}
+.sbc-print:hover{background:rgba(255,255,255,.25);color:#fff}
+.all-print-bar{background:var(--amberbg);border:1.5px solid var(--amberbdr);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.all-print-bar-txt{font-size:12px;font-weight:700;color:var(--amber)}
+/* Modal */
+.ovl{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center}
+.ovl.open{display:flex}
+.modal{background:#fff;border-radius:12px;padding:20px;width:95%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+/* Receipt */
+.rcp{font-family:var(--mono);border:2px solid var(--ink);border-radius:4px;padding:16px;background:#fff}
+.rcp-hd{text-align:center;border-bottom:2px dashed var(--ink);padding-bottom:10px;margin-bottom:11px}
+.rcp-title{font-size:14px;font-weight:700;letter-spacing:2px}
+.rcp-sub{font-size:9px;color:var(--ink3);margin-top:2px}
+.rcp-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:10px;margin-bottom:11px}
+.rcp-bk{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;gap:8px}
+.rcp-bk-name{font-size:12px;font-weight:600;flex:1;line-height:1.3;font-family:var(--body)}
+.rcp-bk-amt{font-size:15px;font-weight:700;color:var(--g);font-family:var(--mono)}
+.rcp-nb{padding:6px 0;border-bottom:1px solid #eee}
+.rcp-nb-name{font-size:11px;font-weight:600;color:var(--ink2);font-family:var(--body);margin-bottom:2px}
+.rcp-nb-small{font-size:10px;color:var(--ink3);font-family:var(--mono)}
+.rcp-nb-big{font-size:20px;font-weight:700;color:var(--amber);font-family:var(--mono);display:block;margin-top:1px}
+.rcp-grand{display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--ink);padding-top:10px;margin-top:8px}
+.rcp-grand-lbl{font-size:12px;font-weight:700}
+.rcp-grand-amt{font-size:24px;font-weight:700;color:var(--g);font-family:var(--mono)}
+.rcp-foot{text-align:center;font-size:9px;color:var(--ink3);margin-top:10px;border-top:1px dashed #ccc;padding-top:7px}
+.toast{position:fixed;bottom:16px;right:16px;background:var(--g);color:#fff;padding:9px 15px;border-radius:8px;font-size:12px;font-weight:700;z-index:9999;transform:translateY(60px);opacity:0;transition:all .28s;pointer-events:none;max-width:280px}
+.toast.show{transform:translateY(0);opacity:1}
+.empty-r td{text-align:center;color:var(--ink3);padding:20px}
+/* ── BILLING OPTIONS ── */
+.ctab-all{background:var(--head)!important;border-color:var(--head)!important;color:#fff!important;font-weight:800!important}
+.ctab-all.active{background:var(--g2)!important;border-color:var(--g2)!important}
+.bill-options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+.bill-opt-card{background:var(--s0);border:2px solid var(--border);border-radius:12px;padding:22px 18px;text-align:center;transition:all .2s;cursor:default}
+.bill-opt-card:hover{border-color:var(--g3);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.boc-icon{font-size:36px;margin-bottom:10px}
+.boc-title{font-size:14px;font-weight:800;color:var(--g);margin-bottom:6px}
+.boc-desc{font-size:11px;color:var(--ink3);margin-bottom:14px;line-height:1.5}
+/* Bill panels */
+.bill-panel{background:var(--s0);border:1.5px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
+.bpanel-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:13px;font-weight:700;color:var(--g)}
+/* Individual 4 inputs */
+.ind4-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ind4-slot{background:var(--s1);border:1.5px solid var(--border);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;position:relative}
+.ind4-num{position:absolute;top:8px;right:10px;font-size:22px;font-weight:800;color:var(--border);font-family:var(--mono)}
+.ind4-name{font-size:12px;font-weight:700;color:var(--g);min-height:18px}
+.ind4-cls{font-size:10px;color:var(--ink3);font-family:var(--mono)}
+.ind4-slot.found{border-color:var(--g3);background:var(--gbg)}
+.ind4-slot.notfound{border-color:#f5b8b8;background:var(--redbg)}
+/* Class print grid */
+.cls-print-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.cls-print-card{background:var(--s1);border:1.5px solid var(--border);border-radius:8px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .15s}
+.cls-print-card:hover{border-color:var(--g2);background:var(--gbg);transform:translateY(-1px)}
+.cpc-name{font-size:13px;font-weight:800;color:var(--g);margin-bottom:4px}
+.cpc-count{font-size:10px;color:var(--ink3);margin-bottom:10px;font-family:var(--mono)}
+.cpc-btn{font-size:11px;font-weight:700;color:var(--g2);background:var(--gbg);padding:4px 10px;border-radius:20px;display:inline-block}
+/* All bill summary */
+.all-bill-summary{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:10px}
+.abs-card{background:var(--s1);border:1px solid var(--border);border-radius:7px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+.abs-cls{font-size:12px;font-weight:700;color:var(--g)}
+.abs-info{font-size:10px;color:var(--ink3);text-align:right;font-family:var(--mono)}
+/* tick-all stacked */
+.tick-class-section{margin-bottom:18px}
+.tick-class-label{background:var(--head);color:var(--headfg);padding:7px 14px;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:8px 8px 0 0}
+/* All Students panel — summary cards */
+.abs-summary-card{display:flex;align-items:center;justify-content:space-between;background:var(--s0);border:1px solid var(--border);border-radius:8px;padding:11px 14px;margin-bottom:8px;transition:border-color .15s}
+.abs-summary-card:hover{border-color:var(--g3)}
+.abs-sc-cls{font-size:14px;font-weight:800;color:var(--g);margin-bottom:4px}
+.abs-sc-meta{display:flex;gap:14px;font-size:11px;color:var(--ink3);font-family:var(--mono)}
+.abs-sc-meta span{display:flex;align-items:center;gap:3px}
+.abs-grand-row{display:flex;justify-content:space-between;align-items:center;background:var(--head);color:#7ecba1;padding:12px 16px;border-radius:8px;margin-top:4px;font-weight:700;font-family:var(--mono)}
+@media(max-width:700px){
+  .bill-options{grid-template-columns:1fr}
+  .ind4-inputs{grid-template-columns:1fr 1fr}
+  .cls-print-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ══ LOADING OVERLAY ══ -->
+<div id="fb-loader" style="display:flex;position:fixed;inset:0;z-index:9999;background:rgba(30,48,40,.93);flex-direction:column;align-items:center;justify-content:center;gap:16px">
+  <div style="width:42px;height:42px;border:4px solid rgba(255,255,255,.12);border-top-color:#7ecba1;border-radius:50%;animation:fbspin .8s linear infinite"></div>
+  <div id="fb-loader-msg" style="color:#dff0e8;font-size:14px;font-weight:700;font-family:'Nunito',sans-serif;letter-spacing:.3px">Connecting to cloud…</div>
+  <style>@keyframes fbspin{to{transform:rotate(360deg)}}</style>
+</div>
+
+<div class="shell">
+<div class="sidebar" id="sb">
+  <div class="sb-logo">📚</div>
+  <div class="sb-item active" onclick="goIface(1)" id="si1"><span>👥</span><span class="sb-lbl">Students</span></div>
+  <div class="sb-item" onclick="goIface(2)" id="si2"><span>📖</span><span class="sb-lbl">Books & Prices</span></div>
+  <div class="sb-div"></div>
+  <div class="sb-item" onclick="goIface(3)" id="si3"><span>☑️</span><span class="sb-lbl">Tick List</span></div>
+  <div class="sb-item" onclick="goIface(4)" id="si4"><span>💰</span><span class="sb-lbl">Billing</span></div>
+</div>
+<div class="main">
+<div class="topbar no-print">
+  <div class="tp-left">
+    <button class="btn btn-gh btn-sm" onclick="document.getElementById('sb').classList.toggle('open')" style="font-size:15px;padding:5px 8px">☰</button>
+    <div class="pg-title" id="pg-title">Student List</div>
+    <div style="display:flex;flex-direction:column;line-height:1.2;margin-left:4px">
+      <span style="font-size:11px;font-weight:800;color:var(--g)">Malik Deenar Islamic Academy</span>
+      <span style="font-size:9px;color:var(--ink3)">Thalanagara, Kasaragod · College Book Purchase List 2026–27</span>
+    </div>
+  </div>
+  <div style="display:flex;gap:6px;align-items:center">
+    <span id="sync-badge" style="font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:#e4f0ea;color:#2a5c43;font-family:'JetBrains Mono',monospace;opacity:.4;transition:all .4s;border:1px solid #c8e6d4">☁ Synced</span>
+    <button class="btn btn-gh btn-sm no-print" onclick="exportCSV()">⬇ Export</button>
+    <button class="btn btn-dk btn-sm no-print" onclick="window.print()">🖨 Print</button>
+  </div>
+</div>
+<div class="stabs no-print">
+  <div class="stab active" onclick="goIface(1)" id="stab1"><span class="stab-n">1</span>Students</div>
+  <div class="stab" onclick="goIface(2)" id="stab2"><span class="stab-n">2</span>Books & Prices</div>
+  <div class="stab" onclick="goIface(3)" id="stab3"><span class="stab-n">3</span>Tick List</div>
+  <div class="stab" onclick="goIface(4)" id="stab4"><span class="stab-n">4</span>💰 Billing</div>
+</div>
+<div class="ctabs no-print">
+  <div class="ctab ctab-all active" onclick="pickClass('all')" data-c="all">All</div>
+  <div class="ctab" onclick="pickClass('1')" data-c="1">Class 1</div>
+  <div class="ctab" onclick="pickClass('2')" data-c="2">Class 2</div>
+  <div class="ctab" onclick="pickClass('3')" data-c="3">Class 3</div>
+  <div class="ctab" onclick="pickClass('4')" data-c="4">Class 4</div>
+  <div class="ctab" onclick="pickClass('5')" data-c="5">Class 5</div>
+  <div class="ctab" onclick="pickClass('6')" data-c="6">Class 6</div>
+  <div class="ctab" onclick="pickClass('7')" data-c="7">Class 7</div>
+  <div class="ctab" onclick="pickClass('8')" data-c="8">Class 8</div>
+  <div class="ctab" onclick="pickClass('9')" data-c="9">Class 9</div>
+  <div class="ctab" onclick="pickClass('10')" data-c="10">Class 10</div>
+</div>
+<div class="content">
+
+<!-- ═══ IF1: STUDENTS ═══ -->
+<div class="iface active" id="if1">
+  <div class="shdr">
+    <div class="shdr-title" id="i1-title">Students</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+      <input type="text" class="stu-search" id="stu-q" placeholder="Search name or ADM…" oninput="renderStudents()">
+      <button class="btn btn-g btn-sm" onclick="openAddForm()">+ Add Student</button>
+    </div>
+  </div>
+  <div class="add-form" id="add-form">
+    <div class="fg"><label>ADM No.</label><input type="text" id="ef-adm" placeholder="e.g. 1081" style="width:100px"></div>
+    <div class="fg"><label>Name</label><input type="text" id="ef-name" placeholder="Full Name" style="width:195px" onkeydown="if(event.key==='Enter')saveForm()"></div>
+    <div class="fg"><label>Class</label>
+      <select id="ef-cls" style="width:130px">
+        <option value="1">Class 1</option><option value="2">Class 2</option>
+        <option value="3">Class 3</option><option value="4">Class 4</option>
+        <option value="5">Class 5</option><option value="6">Class 6</option>
+        <option value="7">Class 7</option><option value="8">Class 8</option>
+        <option value="9">Class 9</option><option value="10">Class 10</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:5px;align-items:flex-end">
+      <button class="btn btn-g btn-sm" onclick="saveForm()" id="ef-btn">Add</button>
+      <button class="btn btn-gh btn-sm" onclick="closeAddForm()">Cancel</button>
+    </div>
+  </div>
+  <div class="stats-strip" id="i1-stats"></div>
+  <div class="stu-wrap"><table class="stbl">
+    <thead><tr>
+      <th style="width:34px">SL</th>
+      <th style="width:70px">ADM NO</th>
+      <th>NAME</th>
+      <th style="width:120px">CLASS</th>
+      <th style="width:88px" class="no-print">ACTIONS</th>
+    </tr></thead>
+    <tbody id="stu-body"></tbody>
+  </table></div>
+</div>
+
+<!-- ═══ IF2: BOOKS & PRICES ═══ -->
+<div class="iface" id="if2">
+  <div class="shdr">
+    <div class="shdr-title" id="i2-title">Books & Prices</div>
+    <button class="btn btn-g btn-sm no-print" onclick="openAddBook()">+ Add Book</button>
+  </div>
+  <div id="book-container"></div>
+</div>
+
+<!-- ═══ IF3: TICK LIST ═══ -->
+<div class="iface" id="if3">
+  <div class="shdr">
+    <div class="shdr-title" id="i3-title">Tick List</div>
+    <div class="stats-strip" id="i3-stats" style="margin:0"></div>
+  </div>
+  <div class="bulk-panel no-print">
+    <div class="bp-head">
+      <div class="bp-title">⚡ Bulk Tick</div>
+      <select class="bp-sel" id="bp-sel" onchange="renderBulkGrid()"><option value="">— Select book —</option></select>
+    </div>
+    <div class="bp-body">
+      <div class="bp-grid" id="bp-grid"><div style="grid-column:1/-1;text-align:center;color:var(--ink3);font-size:12px;padding:12px">Select a book above</div></div>
+      <div class="bp-foot">
+        <div style="font-size:11px;color:var(--ink3)">Selected: <b id="bp-cnt" style="color:var(--g)">0</b></div>
+        <div style="display:flex;gap:5px">
+          <button class="btn btn-gh btn-sm" onclick="bpAll()">☑ All</button>
+          <button class="btn btn-gh btn-sm" onclick="bpClear()">☐ Clear</button>
+          <button class="btn btn-am btn-sm" onclick="bpApply(1)">✓ Tick</button>
+          <button class="btn btn-rd btn-sm" onclick="bpApply(0)">✕ Untick</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tick-all-container">
+    <!-- rendered by JS - single class or all stacked -->
+  </div>
+</div>
+
+<!-- ═══ IF4: BILLING (3 options) ═══ -->
+<div class="iface" id="if4">
+  <div class="shdr">
+    <div class="shdr-title">💰 Billing</div>
+    <div class="stats-strip" id="i4-stats" style="margin:0"></div>
+  </div>
+
+  <!-- 3 BIG OPTION CARDS -->
+  <div class="bill-options no-print">
+
+    <!-- Option 1: Individual -->
+    <div class="bill-opt-card" id="bopt-ind">
+      <div class="boc-icon">👤</div>
+      <div class="boc-title">Individual Billing</div>
+      <div class="boc-desc">Enter 4 ADM numbers → print their bills on one A4 sheet (2×2)</div>
+      <button class="btn btn-g" onclick="selectBillOpt('ind')">Select →</button>
+    </div>
+
+    <!-- Option 2: Class-wise -->
+    <div class="bill-opt-card" id="bopt-cls">
+      <div class="boc-icon">📋</div>
+      <div class="boc-title">Class-wise Billing</div>
+      <div class="boc-desc">Select a class → print every student's bill (4 per A4 page)</div>
+      <button class="btn btn-g" onclick="selectBillOpt('cls')">Select →</button>
+    </div>
+
+    <!-- Option 3: All Students -->
+    <div class="bill-opt-card" id="bopt-all">
+      <div class="boc-icon">📚</div>
+      <div class="boc-title">All Students Billing</div>
+      <div class="boc-desc">Print bills for every student across all classes (4 per page)</div>
+      <button class="btn btn-dk" onclick="selectBillOpt('all')">Print All →</button>
+    </div>
+
+  </div>
+
+  <!-- ── OPTION 1 PANEL: Individual 4-ADM input ── -->
+  <div class="bill-panel" id="bpanel-ind" style="display:none">
+    <div class="bpanel-hdr">
+      <span>👤 Individual Billing — Enter up to 4 ADM Numbers</span>
+      <button class="btn btn-gh btn-sm" onclick="closeBillPanel()">✕ Close</button>
+    </div>
+    <div class="ind4-inputs">
+      <div class="ind4-slot" id="ind4s-0">
+        <div class="ind4-num">1</div>
+        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-0" placeholder="e.g. 788" oninput="ind4Preview(0)"></div>
+        <div class="ind4-name" id="ind4-name-0">—</div>
+        <div class="ind4-cls" id="ind4-cls-0"></div>
+      </div>
+      <div class="ind4-slot" id="ind4s-1">
+        <div class="ind4-num">2</div>
+        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-1" placeholder="e.g. 1081" oninput="ind4Preview(1)"></div>
+        <div class="ind4-name" id="ind4-name-1">—</div>
+        <div class="ind4-cls" id="ind4-cls-1"></div>
+      </div>
+      <div class="ind4-slot" id="ind4s-2">
+        <div class="ind4-num">3</div>
+        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-2" placeholder="optional" oninput="ind4Preview(2)"></div>
+        <div class="ind4-name" id="ind4-name-2">—</div>
+        <div class="ind4-cls" id="ind4-cls-2"></div>
+      </div>
+      <div class="ind4-slot" id="ind4s-3">
+        <div class="ind4-num">4</div>
+        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-3" placeholder="optional" oninput="ind4Preview(3)"></div>
+        <div class="ind4-name" id="ind4-name-3">—</div>
+        <div class="ind4-cls" id="ind4-cls-3"></div>
+      </div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:8px;align-items:center">
+      <button class="btn btn-g" onclick="printInd4()">🖨 Print These 4 Bills on A4</button>
+      <span id="ind4-msg" style="font-size:12px;color:var(--red)"></span>
+    </div>
+  </div>
+
+  <!-- ── OPTION 2 PANEL: Class-wise ── -->
+  <div class="bill-panel" id="bpanel-cls" style="display:none">
+    <div class="bpanel-hdr">
+      <span>📋 Class-wise Billing — Select Class to Print</span>
+      <button class="btn btn-gh btn-sm" onclick="closeBillPanel()">✕ Close</button>
+    </div>
+    <div class="cls-print-grid">
+      <div class="cls-print-card" onclick="printClassBills('1')">
+        <div class="cpc-name">Class 1</div>
+        <div class="cpc-count" id="cpc-1">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('2')">
+        <div class="cpc-name">Class 2</div>
+        <div class="cpc-count" id="cpc-2">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('3')">
+        <div class="cpc-name">Class 3</div>
+        <div class="cpc-count" id="cpc-3">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('4')">
+        <div class="cpc-name">Class 4</div>
+        <div class="cpc-count" id="cpc-4">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('5')">
+        <div class="cpc-name">Class 5</div>
+        <div class="cpc-count" id="cpc-5">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('6')">
+        <div class="cpc-name">Class 6</div>
+        <div class="cpc-count" id="cpc-6">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('7')">
+        <div class="cpc-name">Class 7</div>
+        <div class="cpc-count" id="cpc-7">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('8')">
+        <div class="cpc-name">Class 8</div>
+        <div class="cpc-count" id="cpc-8">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('9')">
+        <div class="cpc-name">Class 9</div>
+        <div class="cpc-count" id="cpc-9">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+      <div class="cls-print-card" onclick="printClassBills('10')">
+        <div class="cpc-name">Class 10</div>
+        <div class="cpc-count" id="cpc-10">0 students</div>
+        <div class="cpc-btn">🖨 Print</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OPTION 3 PANEL: All Students ── -->
+  <div class="bill-panel" id="bpanel-all" style="display:none">
+    <div class="bpanel-hdr">
+      <span>📚 All Students Billing</span>
+      <button class="btn btn-gh btn-sm" onclick="closeBillPanel()">✕ Close</button>
+    </div>
+    <div class="all-bill-summary" id="all-bill-summary"></div>
+    <div style="margin-top:16px">
+      <button class="btn btn-dk" style="font-size:14px;padding:12px 28px" onclick="printEveryBill()">
+        🖨 Print All Students — All Classes
+      </button>
+    </div>
+  </div>
+
+</div><!-- /if4 -->
+
+</div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /shell -->
+<div class="toast" id="toast"></div>
+
+<!-- RECEIPT MODAL -->
+<div class="ovl" id="rcp-ovl">
+  <div class="modal" style="max-width:500px">
+    <div class="rcp" id="rcp-body"></div>
+    <div style="display:flex;gap:8px;margin-top:12px" class="no-print">
+      <button class="btn btn-g" onclick="printRcp()">🖨 Print</button>
+      <button class="btn btn-ol" onclick="closeModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD BOOK MODAL -->
+<div class="ovl" id="addbook-ovl">
+  <div class="modal" style="max-width:400px">
+    <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--g);margin-bottom:12px">📖 Add New Book</div>
+    <div class="fg" style="margin-bottom:9px"><label>Book Name</label><input type="text" id="ab-name" placeholder="Book name"></div>
+    <div style="display:flex;gap:8px;margin-bottom:13px;flex-wrap:wrap">
+      <div class="fg" style="flex:1"><label>Class</label>
+        <select id="ab-cls">
+          <option value="1">Class 1</option><option value="2">Class 2</option>
+          <option value="3">Class 3</option><option value="4">Class 4</option>
+          <option value="5">Class 5</option><option value="6">Class 6</option>
+          <option value="7">Class 7</option><option value="8">Class 8</option>
+          <option value="9">Class 9</option><option value="10">Class 10</option>
+        </select>
+      </div>
+      <div class="fg" style="width:80px"><label>Price ₹</label><input type="number" id="ab-price" value="50"></div>
+      <div class="fg" style="width:105px"><label>Type</label>
+        <select id="ab-type"><option value="0">Regular</option><option value="1">Notebook</option></select>
+      </div>
+    </div>
+    <div style="display:flex;gap:7px">
+      <button class="btn btn-g" onclick="saveBook()">Add</button>
+      <button class="btn btn-gh" onclick="closeModals()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+const CN={'1':'Class 1','2':'Class 2','3':'Class 3','4':'Class 4','5':'Class 5','6':'Class 6','7':'Class 7','8':'Class 8','9':'Class 9','10':'Class 10'};
+const CLASSES=['1','2','3','4','5','6','7','8','9','10'];
+
+const STUDENTS = {
+'1':[['611','MOHAMMED RAZI'],['666','MOHAMMED AFSAL'],['670','JALALUDHEEN K'],['681','MUHAMMAD RAZI'],['688','MUHAMMED MUZAMMIL'],['697','ABDUL JANIS'],['698','MUHAMMED SHANEED'],['699','ABDUL WADHOOD'],['702','AHMMED HASHIM M'],['703','MOHAMMED HASHIR'],['706','ABBAS AZNAB M.A'],['708','MAHAMMED SHAMEEL'],['709','AMEEN ABDULLA'],['710','ZULFIKARALI'],['711','MUHAMMED ANAS M.N'],['712','ABDULLA M HAKEEM'],['714','HASSAN SHADDAD UM'],['717','MOHAMMED SAHL CS'],['719','MOHAMMAD KHALANDAR ZIYAD'],['720','ABU THAHIR'],['723','MUHAMMAD SINAN NP'],['724','ABDUL RAHMAN MUNZIR'],['725','MOHAMMED MUZAMMIL P.M'],['726','MOHAMMED SALIH'],['738','MUHAMMED SUFAZ P'],['911','SAYYAD MOHAMMED VASIL'],['1012','MUHAMMED MIDHLAJ'],['1013','SHADIN G'],['1014','MEHAZIN AMAN T'],['1015','MUHAMMED UNAIS C K']],
+'2':[['1081','Muhammed B N'],['1093','ABOOBACKER FALAH M.I'],['1101','MOHAMMED ANSAF KA'],['1102','MUBASHIR M'],['1103','MOHAMMED'],['1104','AHMED SOUBAN U M'],['1105','MUHAMMED MEHRAN'],['1106','ABDULLA MASHUD'],['1107','MUHAMMED MARSAD B L'],['1108','NASHVAN ABDUL KADER B'],['1109','MUHAMMED ZEYAN'],['1110','SAYYID MUHAMMED MUHSIN N'],['1111','ABOOBAKKER SIDDIQ RAAFI'],['1112','MUHAMMED ASWIM NH'],['1113','MOHAMMED NAZEEF'],['1114','MUHAMMED AMEEN PA'],['1115','MOHAMMED SHAHIR K A'],['1116','MOHAMMED FAZIL B H'],['1117','MUHAMMED RISHAK M V'],['1118','MUHAMMED AZEEM M'],['1119','MUHAMMED FAIZAN BK'],['1120','HAYAAN ABDULLA A.M'],['1121','MUHAMMED RIZWAN K H'],['1122','ABDUL RAHMAN ADNAN T A'],['1123','MUHAMMED SHIFAN'],['1124','ABDUL KADAR BILAL P.A'],['1125','MUHAMMAD RAIHAN'],['1126','MUHAMMED RIHAN'],['1127','M THOUFIQ HUSSAIN'],['1128','SHAMIL AHMED BK'],['1129','ZEESHAN ABDUL RAHMAN N K'],['1130','MOHAMMED SHAHEEM M H']],
+'3':[['1021','Abdul Khader Uvais K A'],['1033','Muhammed Waheed R K'],['1046','MUHAMMED BIN JAFAR'],['1049','MUHAMMED SHIRAZ ISHAQUE'],['1053','MUHAMMED UVAIS.P. S'],['1065','NABEEH AHMAD C K'],['1066','MOHAMMED MIRZA M A'],['1067','AHMAD FARHATH'],['1068','Ahmed M.A.'],['1069','MIFZAL ABDULLA K M'],['1070','MOHAMMED SHAMIL'],['1071','MOHAMMAD SALMAN FARIS'],['1072','MUHAMMED MUHAD K Z'],['1073','SHAYAAN MOHAMMED.S'],['1074','MOHAMMED HABEEB. A'],['1075','ATHIF ABUTHAHIR P.P'],['1076','Muhammed Shahzadah T A'],['1077','MUHAMMAD AJMAL. TA'],['1078','MUHAMMED KHIDASH HYZAM'],['1079','ABDUL RAHMAN SHAHZAD K.S'],['1080','Muhammed Ashiq'],['1082','Mohammed Mayazin T.M'],['1083','MOHAMMED NABHAN C M'],['1084','MUHAMMED MUBASHIR P S'],['1085','HISHAD ABDULLA K'],['1086','MUHAMMED AFREED. A'],['1087','Abdul Nasir RA'],['1088','SALAHUDHEEN AYOOBI BADAKKAN'],['1089','MUHAMMED SHAHID AB'],['1090','MOHAMMED SHAYAN MOHIDDIN'],['1091','ABDULLA MUNAVVAR'],['1092','AMAN ABBAS'],['1094','MOHAMMED AZEEM CK'],['1095','MUHAMMED NAJAD'],['1096','MUHAMMAD SADIK K.M'],['1098','SAOOD BIN ABDUL NASSAR']],
+'4':[['941','MUHAMMED AFLAH.MK'],['968','ABDUL AFEEZ C.F'],['970','ABDULLAH A P'],['980','MOHAMMED QUBAIB A H'],['991','MUHAMMED AYAAN'],['1000','MUHAMMED TAMEEM'],['1006','THUFAIL'],['1009','AJZAL ASHRAF OV'],['1018','MUHAMMED RIZIN AMAN'],['1019','MUHAMMAD AZEEM'],['1020','MUHAMMED HAFIZ S T'],['1022','MUHAMMED ADHIL C H'],['1023','Mohammed Sinan N.A'],['1024','AHMED RAZI MR'],['1026','Muhammed Hisham K M'],['1027','HUSSAIN MUHAVIZ B A'],['1028','HILAL ABDULLA C H'],['1029','MOIDEEN KAIS'],['1030','MUHAMMED SHAHID K A'],['1031','K MUHAMMAD JALAL'],['1035','MUHAMMED HASHIR A K'],['1036','MOHAMMED NAFIH'],['1037','BEERAN MUEENUDHEEN MH'],['1038','MUHAMMAD K A'],['1039','IBRAHIM KALEEL'],['1040','MOHAMMED JASEEM'],['1041','MUHAMMED RAZI A T'],['1042','MUHAMMED ZAID'],['1043','MUHAMMED HAFEEZ'],['1044','MOHAMMED HAFEEZ'],['1050','JAUHAR ASHFAQUE MUHSIN'],['1051','YASEEN MUHAMMED'],['1052','MOHAMMED RAFAN A'],['1054','MOHAMMED SHUAIB K M'],['1056','MUHAMMED MOIDEEN KUNHI']],
+'5':[['899','HASAN THAMMEEM'],['936','HAFIL ADIL AMANULLAH K K'],['945','MUHAMMED SHUHAIR'],['946','Muhammed Anshad A'],['969','ABDULLA'],['972','AHAMED ADIL. A'],['974','AHMED WALEED K A'],['976','AYAAN ABOOBAKAR'],['977','FADIL AMEEN ABDULLA'],['978','MOHAMED JAWHAR J A'],['979','Mohammad Yaseen'],['981','MOHAMMED SAWA T A'],['982','MOHAMMED WASIM SHAHAD SM'],['985','Muhammad M'],['987','MUHAMMED ADNAN K.A'],['988','Muhammed Anas'],['989','MUHAMMED ASHIR M'],['992','MUHAMMED FAHAD'],['993','MUHAMMED FAREED A S'],['994','MUHAMMED LUQMAN TD'],['995','MUHAMMED MICDAD RAMEES A H'],['996','MUHAMMED MIDLAJ'],['997','Muhammed Naieem'],['998','MUHAMMED RAEES C A'],['1001','NAZWAN MOHAMMED'],['1002','P.V.AHMAD ANAS'],['1004','SAYYED MUHAMMED ABOOBACKER'],['1005','SHAHUL HAMEED B.I'],['1007','YOUSUF FAHEEM P']],
+'6':[['848','RAFNAS P'],['872','ABDUL GAFOOR'],['883','MOHAMMED ANAS A.A'],['890','MUHAMMED RAZI TM'],['892','AHMAD MUBASHAR'],['893','MOHAMMED NAFIH BA'],['912','MUHAMMED ZAMIL'],['913','ABDUL RAHIMAN FAIZ T A'],['914','AHAMMED SAFAR ZAKARIYA'],['915','MUHAMMED MUHAZ P A'],['916','MUHAMMED SAHEEM ASHRAF'],['917','SHARAZ AHAMMED'],['918','MUHAMMED IHTHISHAM P I'],['920','AMEEN RAHMAN MTP'],['921','HASSAN SAHAL N A'],['922','MOHAMMED SABIK BM'],['923','MUHAMMAD SABITH V K P'],['924','Muhammad Muaaz'],['925','ABDUL SA-AD'],['926','MOHAMMED RIYAN'],['927','MOHIDDEEN SHAHSHAD'],['928','MUHAMMAD FAYIZ B'],['929','MUHAMMED YASEEN'],['930','MOHAMMED RAED. UA'],['931','MUHAMMED SHANIFM P'],['932','AHAMMED JABIR K H'],['933','THANSEEHU RAHMAN'],['934','MOHAMMED AFNAN'],['935','MOHAMMED SABITH KU'],['937','MUHAMMED BASSIM. E'],['938','MUHAMMED SAEED THUFAIL'],['939','MEERAN MOHIUDHEEN RAFIH'],['943','ABDUL RAHIMAN AZAAN'],['944','MOHAMMED RAFIH M R'],['947','MUHAMMAD MIJVAD K'],['948','MOHAMMAD IJAN'],['949','HABEEB RAHMAN CA'],['950','Muhammad']],
+'7':[['797','AHAMMED MAHSHOOKM.B'],['845','MOHAMMED SHAHID'],['850','AHAMMED MINHAJ E M'],['853','MAHIN SINAN'],['856','P K ZAMEEL AHMED'],['862','MUHAMMED HAMDAN A.P'],['863','MOHAMMED SHADIL AP'],['864','MUHAMMED NAFIH CI'],['865','YASEEN NOORULLA PH'],['866','WASEEM NIHAD A M'],['867','MOHAMMED SHAMEEM B K'],['868','MOHAMMED BAQIR TS'],['869','MUHAMMED FARHAN PH'],['870','ABDULLA FAHAD T.U'],['875','MUHAMMED MUNAZIR MM'],['879','ABDUL KHADER ISHAQUE'],['880','ABDULLA ALBAS'],['882','MUHAMMED A'],['884','MUHAMMED MIHRAZ'],['885','FADIL MOHAMMED K M'],['886','AJMAL AHMED MT'],['888','MOHAMMED DAWOOD K'],['891','RAYHAN PH'],['898','MOHAMMED YOUNUS'],['900','RASALUL AMEEN T']],
+'8':[['750','IBRAHIM AFIL'],['767','MUHAMMED ABDUL NASIF P.A'],['784','MUHAMMED KASHIF'],['802','MUHAMMED ABDUL KADER'],['803','HADIL RIJAS'],['810','AHMAD MANAL KUDINGILA'],['811','ABDUL RAHMAN ANFHAL M I'],['823','ADIL ABDULLA A'],['824','ABDULLA SALMAN FARIS M'],['825','ABDULLA FARHAN M'],['827','MUHAMMAD ISMAIL HAMDULLA V K'],['829','MOHAMMED SADUDDEEN K'],['830','SEYYAD MUHAMMED FAHMAN'],['831','AJMAL RUWAIS'],['832','MOHAMMED ABDUL KHADER K'],['833','MUAHMMED ANAS P A'],['834','Muhammed fahiz A K'],['835','MUHAMMAD SHAMMAS'],['836','ARIFUDEEN ABBAS A'],['837','MAJID MUHAMMED M'],['840','ABDUL SALAM ARIF'],['842','MOHAMMED K H'],['846','MOHAMMED FAQRUDDEEN RAZI'],['849','MOHAMMED MUBASHIR'],['851','ADNAN ABDULLAH B A'],['857','MOHAMMED HISHAM']],
+'9':[['722','AJMAL AM'],['730','IBRAHIM AHRAZ'],['742','MUHAMMAD SHAZIN'],['751','SALMANUL FARIS'],['778','AHAMAD SHABAB P A'],['779','MOHAMMED SHAKIR HUSSAIN K.Y'],['781','MUHAMMED SHUHAIB S'],['783','MOHAMMED MOINUDDEEN CHISTY'],['785','SULAIMAN FAHAD AP'],['786','IJAS EBRAHIM'],['788','AHMAD MINHAJ'],['791','MUHAMMED SINAN M'],['792','MUHAMMED ASHKKAR ALI'],['794','SHAMEEL AHAMMED P'],['796','IMRAN HUSSAINTI'],['798','AHAMED ZAKI FOUZAN T.Z'],['799','MUHAMMED SHABEEB'],['800','ABDUL BAAIS N.A'],['801','MUHAMMED PK'],['805','MOHAMMED ASHMIL K A'],['806','MUHAMMED SABITH ALI TM'],['807','MUHAMMED AHMASH K'],['809','MOHAMMED RAZEEN S.P'],['812','HASSAN ZARKASH'],['813','ABDULLA RAMSHAD'],['815','HASAN YASIR'],['817','ABDUL FATHAH AHAMMED C'],['1016','MUHAMMED KAIF B S'],['1063','AHMED RAZA NA'],['1099','MUHAMMED SHAFI P'],['1100','SHAIN AHAMMED.K']],
+'10':[['704','AHAMMED AJEER'],['728','MOHAMMED ABDUL KHADER NABAVI E A'],['729','MUHAMMAD K.A'],['739','MOHAMMED SAHEED A.K'],['740','AHMED FAHEEM MA'],['747','MUHAMMAD IBN AHMAD'],['749','MUHAMMED MUJTHABA MK'],['754','MUHAMMED SHAHAN P.S'],['755','MOHAMMED THAJUDDEEN A R P'],['757','RUMAIZALI R IBRAHIM'],['760','MUHAMMED THASLEEM'],['762','AHAMED SHAMMAS C.M'],['771','ABDUL HADIL P.M'],['772','MUHAMMAD MUSTHAFA K.M'],['773','ABDULLAH MAZIN'],['776','MUHAMMED T A'],['777','MOHAMMED HUSSAIN'],['819','MUHAMMED ZAYAN N.S'],['1057','MUHAMMED SABITH KM'],['1058','Sufyan mk'],['1059','Abdunnafih'],['1060','MUHAMMED SWALIH TA'],['1061','MUHAMMED FARZAQ K'],['1062','MUHAMMAD NAZAL NAWAS K'],['1064','MUHEENUDHEEN MP'],['1097','MUHAMMED FARMAN']]
+};
+
+const BOOKS = {
+'1':[],
+'2':[{n:'أحسن الأخلاق من أحاديث النبي الخلاق',p:50,nb:0},{n:'فقه الأطفال د/ بهاء الدين محمد المليباري',p:50,nb:0},{n:'النحو الواضح - الجزء الثاني',p:50,nb:0},{n:'العربية للجميع 2',p:50,nb:0},{n:'لغتي العربية II (extra reader)',p:50,nb:0},{n:'ARABI COPY',p:50,nb:0},{n:'الجواهر الكلامية في إيضاح العقيدة الإسلامية',p:50,nb:0},{n:'تاريخ الانبياء 2',p:50,nb:0},{n:'FI ILMU SARF',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'التجويد للأستاذ رفيق الهدوي - الجزء الثاني',p:50,nb:0},{n:'ابتدائ اردو - تیسری جماعت',p:50,nb:0},{n:'گلزار اردو - قواعد',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'HINDI SARANGI NCERT II',p:50,nb:0},{n:'HINDI COPY',p:50,nb:0},{n:'POORVI NCERT TEXTBOOK',p:50,nb:0},{n:'Parrot (English Grammar)',p:50,nb:0},{n:'An Alien Hand (Extra Reading NCERT VII)',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'Science CURIOSITY VII',p:50,nb:0},{n:'Mathematics VII',p:50,nb:0},{n:'Our Environment (Geography VII)',p:50,nb:0},{n:'Social and Political Life-2 (Class VII)',p:50,nb:0},{n:'Our Pasts II (History Class VII)',p:50,nb:0},{n:'ADISTHANA PADAVALI',p:50,nb:0},{n:'KERALA PADAVALI',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
+'3':[{n:'مختصر رياض الصالحين للإمام النووي',p:50,nb:0},{n:'التجويد الجزء الثاني - عبد الرفيق الهدوي',p:50,nb:0},{n:'فتح المعين بشرح قرة العين',p:50,nb:0},{n:'النحو الواضح - الجزء الثالث',p:50,nb:0},{n:'العربية للجميع 3',p:50,nb:0},{n:'ARABI COPY',p:50,nb:0},{n:'قصص النبيين للأطفال الجزء الثالث',p:50,nb:0},{n:'تيسير الولدان في تمرين الأوزان',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'أيها الولد - الإمام الغزالي',p:50,nb:0},{n:'ابتدائ اردو - چوتهی جماعت',p:50,nb:0},{n:'گلزار اردو - قواعد',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'HINDI VEENA NCERT 3',p:50,nb:0},{n:'HINDI COPY',p:50,nb:0},{n:'POORVI (NCERT VIII)',p:50,nb:0},{n:'Sparrow (English Grammar)',p:50,nb:0},{n:'It So Happened (NCERT VIII)',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'Science VIII BASIC SCIENCE',p:50,nb:0},{n:'GANITHAPRAKASH Mathematics VIII',p:50,nb:0},{n:'Social and Political Life (NCERT VIII)',p:50,nb:0},{n:'ADISTHANA PADAVALI VIII',p:50,nb:0},{n:'KERALA PADAVALI VIII',p:50,nb:0},{n:'COPY',p:50,nb:0},{n:'GRAMMER',p:50,nb:0},{n:'Resourse and Development (Geo VIII)',p:50,nb:0},{n:'Our Pasts III (History Class VIII)',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
+'4':[{n:'RIYALUSALIHEEN',p:50,nb:0},{n:'FATHHUL MUEEN',p:50,nb:0},{n:'NAHV 2-1',p:50,nb:0},{n:'ARABI LIL JAMEE',p:50,nb:0},{n:'LUGATHI AL ARABIYA',p:50,nb:0},{n:'KERALA READER, ARB 10TH CLASS',p:50,nb:0},{n:'COPY',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'QASAS 4',p:50,nb:0},{n:'ADKIYA',p:50,nb:0},{n:'TANVEERUL QULUB',p:50,nb:0},{n:'KHAYAL URDU IX',p:50,nb:0},{n:'GULZAR',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'SKYLARK GRMR',p:50,nb:0},{n:'MOMENTS',p:50,nb:0},{n:'ENG COPY',p:50,nb:0},{n:'ENGLISH SCERT IX',p:50,nb:0},{n:'HINDI SCERT IX',p:50,nb:0},{n:'PHYSICS SCERT IX',p:50,nb:0},{n:'CHEMISTRY SCERT IX',p:50,nb:0},{n:'BIOLOGY SCERT IX',p:50,nb:0},{n:'MATHS SCERT IX',p:50,nb:0},{n:'ARABIC IX',p:50,nb:0},{n:'ADISTHANA PADAVALI',p:50,nb:0},{n:'MALAYALAM SCERT IX',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'MALAYALAM GRMR',p:50,nb:0},{n:'SOCIAL SCIENCE SCERT',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
+'5':[{n:'JALALAINI 2',p:50,nb:0},{n:'RIYALUSALIHEEN',p:50,nb:0},{n:'FATHHUL MUEEN',p:50,nb:0},{n:'NAHV 2-2',p:50,nb:0},{n:'NAHV 2-3',p:50,nb:0},{n:'ALFIYA',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'ARABIC 10TH CLASS SCERT',p:50,nb:0},{n:'ADAB LIL JAMEE',p:50,nb:0},{n:'QASAS NABIYY',p:50,nb:0},{n:'AL ARAB QABLAL ISLAM',p:50,nb:0},{n:'THAALEEM MUTH',p:50,nb:0},{n:'KHAYAL',p:50,nb:0},{n:'GULZAR',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'SCERT TEXT',p:50,nb:0},{n:'NIGHTINGALE',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'FOOT PRINT WITHOUT FEET',p:50,nb:0},{n:'PHYSICS SCERT X',p:50,nb:0},{n:'CHEMISTRY SCERT X',p:50,nb:0},{n:'BIOLOGY SCERT X',p:50,nb:0},{n:'MALAYALAM GRAMMAR',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'MALAYALAM SCERT X',p:50,nb:0},{n:'MATHEMATICS SCERT X',p:50,nb:0},{n:'SOCIAL 10TH SCERT',p:50,nb:0},{n:'HINDI SCERT X',p:50,nb:0},{n:'MALAYALAM GRMR',p:50,nb:0},{n:'NOTE BOOK RULED',p:50,nb:1},{n:'NOTE UN RULED',p:50,nb:1}],
+'6':[{n:'تفسير الجلالين الجزء الأول والثاني',p:50,nb:0},{n:'مشكاة المصابيح',p:50,nb:0},{n:'فتح المعين بشرح قرة العين',p:50,nb:0},{n:'التبيان في علوم القرآن',p:50,nb:0},{n:'شرح إبن عقيل على الألفية إبن مالك',p:50,nb:0},{n:'البلاغة الواضحة',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'الأدب العربي للسنة الأولى من ثانوية العليا',p:50,nb:0},{n:'Text book for Arabic XI SCERT',p:50,nb:0},{n:'Text book for English XI SCERT',p:50,nb:0},{n:'Phoenix - English Grammar',p:50,nb:0},{n:'Sociology XI',p:50,nb:0},{n:'Politics XI',p:50,nb:0},{n:'History XI',p:50,nb:0},{n:'Economics XI',p:50,nb:0},{n:'ACCOUNTANCY XI',p:50,nb:0},{n:'BUSINESS STUDIES XI',p:50,nb:0},{n:'COMP APPLI XI',p:50,nb:0},{n:'MATHS XI',p:50,nb:0},{n:'KHAYAL NCERT VIII',p:50,nb:0},{n:'Ruled Notebook',p:50,nb:1},{n:'Plane Notebook',p:50,nb:1}],
+'7':[{n:'JALALAINI',p:50,nb:0},{n:'MISHKATH',p:50,nb:0},{n:'FATHUL MUEEN',p:50,nb:0},{n:'SHARAHUL VARAQAT',p:50,nb:0},{n:'MINHAJUL ABIDEEN',p:50,nb:0},{n:'ALFIYA',p:50,nb:0},{n:'BALAGA',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'الأدب العربي لصف الثاني من الثانوية العليا',p:50,nb:0},{n:'SCERT ARABIC XII',p:50,nb:0},{n:'NAVAE URD X',p:50,nb:0},{n:'SCERT ENGLISH XII',p:50,nb:0},{n:'SCERT SOCIOLOGY XII',p:50,nb:0},{n:'SCERT POLIT SCI XII',p:50,nb:0},{n:'SCERT HISTORY XII',p:50,nb:0},{n:'SCERT ECONOMICS XII',p:50,nb:0},{n:'ACCOUNTANCY XII',p:50,nb:0},{n:'BUSINESS STUDIES XII',p:50,nb:0},{n:'COMP APPLI XII',p:50,nb:0},{n:'MATHS XII',p:50,nb:0},{n:'NOTE RULED',p:50,nb:1},{n:'NOTE UNRULED',p:50,nb:1}],
+'8':[{n:'صفوة التفاسير (من الأعلى إلى الناس)',p:50,nb:0},{n:'NASAI',p:50,nb:0},{n:'IBNU MAJA',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الأول',p:50,nb:0},{n:'KHULASA',p:50,nb:0},{n:'JAMUL JAVAMI VOL 1',p:50,nb:0},{n:'MUKHTASAR',p:50,nb:0},{n:'DEEVAAN',p:50,nb:0},{n:'MATHNUL KAFI',p:50,nb:0},{n:'NAKAHTE ADAB 1 & 2',p:50,nb:0},{n:'ENG LITERATURE',p:50,nb:0},{n:'TASREEH MNTQ',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
+'9':[{n:'THAFSEER NASAFI',p:50,nb:0},{n:'تفسير الكشاف (سورة آل عمران)',p:50,nb:0},{n:'جامع الترمذي وشمائل الترمذي',p:50,nb:0},{n:'سنن أبي داؤد',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الأول',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الثاني',p:50,nb:0},{n:'شرح العقائد النسفية',p:50,nb:0},{n:'JAM AL JAVAMIH',p:50,nb:0},{n:'شرح التهذيب - الإمام التفتازاني',p:50,nb:0},{n:'مختصر المعاني لسعد الدين التفتازاني',p:50,nb:0},{n:'NAKAHTE ADAB 3 & 4',p:50,nb:0},{n:'Academic Reading and Writing',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
+'10':[{n:'أنوار التنزيل وأسرار التأويل للبيضاوي',p:50,nb:0},{n:'نزهة النظر في شرح نخبة الفكر لإبن حجر',p:50,nb:0},{n:'MUATHWA',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء 2',p:50,nb:0},{n:'شرح المحلي على جمع الجوامع الجزء الثاني',p:50,nb:0},{n:'KUBRAL YAQEENIYATH',p:50,nb:0},{n:'RASHEEDIYA',p:50,nb:0},{n:'الأدب العربي الهند',p:50,nb:0},{n:'MUKTHASAR MAANI',p:50,nb:0},{n:'NAKAHTE ADAB 5 & 6',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}]
+};
+
+// STATE
+let S={};
+function initS(){
+  CLASSES.forEach(cid=>{
+    S[cid]={students:[],ticks:{},nb:{}};
+    (STUDENTS[cid]||[]).forEach(([adm,name])=>{
+      S[cid].students.push({id:cid+'_'+adm, admNo:adm, name});
+    });
+  });
+}
+initS();
+
+// ════════════════════════════════════════════════
+// FIREBASE FIRESTORE — Auto-save & Real-time Sync
+// ════════════════════════════════════════════════
+const FB_CONFIG = {
+  apiKey:            "AIzaSyBo_lE5Awh48zWXMWV4K4xnCPsh0f2Q69E",
+  authDomain:        "college-billing.firebaseapp.com",
+  projectId:         "college-billing",
+  storageBucket:     "college-billing.firebasestorage.app",
+  messagingSenderId: "224505038507",
+  appId:             "1:224505038507:web:e41570a093bd08829a99ee"
+};
+
+let db = null;
+let fbReady = false;
+let saveTimer = null;
+let listenerActive = false;
+
+// ── Load Firebase SDKs dynamically (compat v10) ──
+function loadFirebase(){
+  return new Promise(resolve=>{
+    const s1 = document.createElement('script');
+    s1.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js';
+    s1.onload = ()=>{
+      const s2 = document.createElement('script');
+      s2.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js';
+      s2.onload = ()=>{
+        try{
+          if(!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+          db = firebase.firestore();
+          fbReady = true;
+        }catch(e){ console.warn('Firebase init error:',e); fbReady=false; }
+        resolve();
+      };
+      s2.onerror = ()=>{ console.warn('Firestore SDK load failed'); resolve(); };
+      document.head.appendChild(s2);
+    };
+    s1.onerror = ()=>{ console.warn('Firebase app SDK load failed'); resolve(); };
+    document.head.appendChild(s1);
+  });
+}
+
+// ── Load data: Firestore first, localStorage fallback ──
+async function loadData(){
+  setLoader('Loading your data…');
+  if(fbReady && db){
+    try{
+      const doc = await db.collection('billing').doc('state').get();
+      if(doc.exists){
+        const data = doc.data();
+        CLASSES.forEach(cid=>{
+          if(data[cid]&&data[cid].students&&data[cid].students.length>0){
+            S[cid] = data[cid];
+            if(!S[cid].nb)    S[cid].nb={};
+            if(!S[cid].ticks) S[cid].ticks={};
+          }
+        });
+        // Mirror to localStorage as offline backup
+        try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
+        setSyncBadge(true, '☁ Loaded');
+      } else {
+        // First ever run — push all default data to Firestore
+        setLoader('Setting up cloud database…');
+        await db.collection('billing').doc('state').set(S);
+        setSyncBadge(true, '☁ Initialised');
+      }
+    }catch(e){
+      console.warn('Firestore load failed, using localStorage:', e);
+      loadLocal();
+      setSyncBadge(false, '⚠ Offline');
+    }
+  } else {
+    loadLocal();
+  }
+}
+
+function loadLocal(){
+  try{
+    const sv = localStorage.getItem('sb26v8');
+    if(sv){
+      const ld = JSON.parse(sv);
+      CLASSES.forEach(cid=>{
+        if(ld[cid]&&ld[cid].students&&ld[cid].students.length>0){
+          S[cid]=ld[cid];
+          if(!S[cid].nb)    S[cid].nb={};
+          if(!S[cid].ticks) S[cid].ticks={};
+        }
+      });
+    }
+  }catch(e){}
+}
+
+// ── Save: localStorage immediately + Firestore debounced 1s ──
+function save(){
+  // Instant local backup
+  try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
+  // Debounced cloud save
+  if(saveTimer) clearTimeout(saveTimer);
+  saveTimer = setTimeout(async()=>{
+    if(!fbReady||!db){ setSyncBadge(false,'⚠ Offline'); return; }
+    try{
+      await db.collection('billing').doc('state').set(S);
+      setSyncBadge(true,'☁ Saved');
+    }catch(e){
+      console.warn('Firestore save failed:', e);
+      setSyncBadge(false,'⚠ Save failed');
+    }
+  }, 1000);
+}
+
+// ── Real-time listener: any device change updates all others instantly ──
+function startRealtime(){
+  if(!fbReady||!db||listenerActive) return;
+  listenerActive = true;
+  db.collection('billing').doc('state').onSnapshot(snap=>{
+    if(!snap.exists) return;
+    const data = snap.data();
+    let changed = false;
+    CLASSES.forEach(cid=>{
+      if(data[cid]&&data[cid].students&&data[cid].students.length>0){
+        S[cid] = data[cid];
+        if(!S[cid].nb)    S[cid].nb={};
+        if(!S[cid].ticks) S[cid].ticks={};
+        changed = true;
+      }
+    });
+    if(changed){
+      try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
+      render();
+      setSyncBadge(true,'☁ Synced');
+    }
+  }, err=>{ console.warn('Snapshot error:', err); setSyncBadge(false,'⚠ Offline'); });
+}
+
+// ── UI helpers ──
+function setLoader(msg){
+  const el = document.getElementById('fb-loader');
+  const ml = document.getElementById('fb-loader-msg');
+  if(el) el.style.display='flex';
+  if(ml) ml.textContent = msg||'Loading…';
+}
+function hideLoader(){
+  const el = document.getElementById('fb-loader');
+  if(el) el.style.display='none';
+}
+function setSyncBadge(ok, text){
+  const el = document.getElementById('sync-badge');
+  if(!el) return;
+  el.textContent = text||(ok?'☁ Saved':'⚠ Offline');
+  el.style.background = ok?'#e4f0ea':'#fde8e8';
+  el.style.color       = ok?'#2a5c43':'#8b1a1a';
+  el.style.borderColor = ok?'#c8e6d4':'#f5b8b8';
+  el.style.opacity='1';
+  clearTimeout(el._t);
+  el._t = setTimeout(()=>{ el.style.opacity = ok?'.45':'1'; }, 3000);
+}
+
+// ── Boot: load Firebase → load data → render → start realtime ──
+(async function boot(){
+  await loadFirebase();
+  await loadData();
+  hideLoader();
+  render();
+  startRealtime();
+})();
+
+let curC='all',curI=1,editTarget=null,bpSel=new Set(),billMode='class';
+
+// NAV
+function goIface(n){
+  curI=n;
+  document.querySelectorAll('.iface').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(e=>e.classList.remove('active'));
+  document.getElementById('if'+n).classList.add('active');
+  document.getElementById('stab'+n)?.classList.add('active');
+  document.getElementById('si'+n)?.classList.add('active');
+  document.getElementById('pg-title').textContent=['','Students','Books & Prices','Tick List','Billing'][n];
+  render();
+}
+function pickClass(cid){
+  curC=cid;
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
+  document.querySelector('[data-c="'+cid+'"]')?.classList.add('active');
+  bpSel=new Set();
+  // 'all' on non-billing interfaces: go to billing
+  if(cid==='all' && curI!==4){ goIface(4); return; }
+  render();
+}
+function render(){
+  if(curI===1) renderStudents();
+  else if(curI===2) renderBooks();
+  else if(curI===3) renderTicks();
+  else if(curI===4) renderBilling4();
+}
+
+// ══════════════════════════════════════════════════════
+// IF1: STUDENTS — show ALL or class-specific
+// ══════════════════════════════════════════════════════
+function renderStudents(){
+  const q=(document.getElementById('stu-q')?.value||'').toLowerCase();
+  const isAll=(curC==='all');
+  document.getElementById('i1-title').textContent=isAll?'All Students':CN[curC]+' — Students';
+  // Collect students
+  let rows='', totalStu=0, totalRev=0;
+  const scope=isAll?CLASSES:[curC];
+  let sl=1;
+  scope.forEach(cid=>{
+    const students=S[cid].students.filter(s=>!q||(s.name.toLowerCase().includes(q)||s.admNo.includes(q)));
+    if(isAll && students.length>0){
+      rows+='<tr style="background:var(--head)"><td colspan="5" style="padding:6px 11px;font-size:10px;font-weight:700;color:var(--headfg);letter-spacing:.4px;text-transform:uppercase">'+CN[cid]+' — '+S[cid].students.length+' students</td></tr>';
+    }
+    students.forEach(st=>{
+      let rev=0;
+      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+      (BOOKS[cid]||[]).forEach((b,i)=>{rev+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+      totalRev+=rev; totalStu++;
+      rows+='<tr>'
+        +'<td style="color:var(--ink3);font-family:var(--mono);font-size:10px">'+sl+'</td>'
+        +'<td><span class="adm-tag">'+st.admNo+'</span></td>'
+        +'<td style="font-weight:600">'+st.name+'</td>'
+        +'<td><span class="cls-tag">'+CN[cid]+'</span></td>'
+        +'<td class="no-print"><div class="stu-acts">'
+          +'<button class="btn btn-am btn-xs" onclick="startEdit(\''+cid+'\',\''+st.id+'\')">✏️</button>'
+          +'<button class="btn btn-rd btn-xs" onclick="delStu(\''+cid+'\',\''+st.id+'\')">✕</button>'
+          +'<button class="btn btn-gh btn-xs" onclick="showStudentBill(\''+cid+'\',\''+st.id+'\')">🧾</button>'
+        +'</div></td>'
+      +'</tr>';
+      sl++;
+    });
+  });
+  document.getElementById('i1-stats').innerHTML=
+    '<div class="spill"><b>'+totalStu+'</b> Students</div>'
+    +'<div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Revenue</div>';
+  document.getElementById('stu-body').innerHTML=rows||'<tr class="empty-r"><td colspan="5">No students found</td></tr>';
+}
+
+function openAddForm(){
+  editTarget=null;
+  document.getElementById('ef-adm').value='';
+  document.getElementById('ef-name').value='';
+  document.getElementById('ef-cls').value=(curC==='all'?'1':curC);
+  document.getElementById('ef-btn').textContent='Add';
+  document.getElementById('add-form').classList.add('open');
+}
+function startEdit(cid,sid){
+  const st=S[cid].students.find(s=>s.id===sid); if(!st) return;
+  editTarget={cid,sid};
+  document.getElementById('ef-adm').value=st.admNo;
+  document.getElementById('ef-name').value=st.name;
+  document.getElementById('ef-cls').value=cid;
+  document.getElementById('ef-btn').textContent='Save';
+  document.getElementById('add-form').classList.add('open');
+  document.getElementById('add-form').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function saveForm(){
+  const adm=document.getElementById('ef-adm').value.trim();
+  const name=document.getElementById('ef-name').value.trim();
+  const cls=document.getElementById('ef-cls').value;
+  if(!adm||!name){toast('Enter ADM No. and Name');return;}
+  if(editTarget){
+    const {cid,sid}=editTarget, st=S[cid].students.find(s=>s.id===sid); if(!st) return;
+    if(cid!==cls){
+      S[cid].students=S[cid].students.filter(s=>s.id!==sid);
+      const ns={id:cls+'_'+adm,admNo:adm,name};
+      S[cls].students.push(ns);
+      if(S[cid].ticks[sid]){S[cls].ticks[ns.id]=S[cid].ticks[sid];delete S[cid].ticks[sid];}
+      if(S[cid].nb[sid]){S[cls].nb[ns.id]=S[cid].nb[sid];delete S[cid].nb[sid];}
+    } else { st.admNo=adm; st.name=name; }
+    toast('Updated ✓');
+  } else {
+    if(S[cls].students.find(s=>s.admNo===adm)){toast('ADM No. exists in this class!');return;}
+    S[cls].students.push({id:cls+'_'+Date.now(),admNo:adm,name});
+    toast(name+' added ✓');
+  }
+  save(); closeAddForm(); render();
+}
+function closeAddForm(){document.getElementById('add-form').classList.remove('open');editTarget=null;}
+function delStu(cid,sid){
+  if(!confirm('Remove?')) return;
+  S[cid].students=S[cid].students.filter(s=>s.id!==sid);
+  delete S[cid].ticks[sid]; delete S[cid].nb[sid];
+  save(); toast('Removed'); render();
+}
+
+// ══════════════════════════════════════════════════════
+// IF2: BOOKS — show ALL or class-specific
+// ══════════════════════════════════════════════════════
+function renderBooks(){
+  const isAll=(curC==='all');
+  document.getElementById('i2-title').textContent=isAll?'All Books & Prices':CN[curC]+' — Books & Prices';
+  const scope=isAll?CLASSES:[curC];
+  document.getElementById('book-container').innerHTML=scope.map(cid=>{
+    const books=BOOKS[cid]||[];
+    return '<div class="book-card">'
+      +'<div class="bc-hd"><div class="bc-cls">'+CN[cid]+'</div><div class="bc-cnt">'+books.length+' books</div></div>'
+      +'<div>'+books.map((b,i)=>
+        '<div class="brow">'
+          +'<div class="brow-edit-view" id="bv-'+cid+'-'+i+'">'
+            +'<div class="brow-name'+(b.nb?' nb':'')+'">'+( b.nb?'📓':'📗')+' '+b.n+'</div>'
+          +'</div>'
+          +'<div class="brow-edit-form" id="be-'+cid+'-'+i+'">'
+            +'<input class="be-inp" id="be-n-'+cid+'-'+i+'" value="'+b.n.replace(/"/g,'&quot;')+'">'
+            +'<input type="number" class="be-price" id="be-p-'+cid+'-'+i+'" value="'+b.p+'">'
+            +'<select class="be-type" id="be-t-'+cid+'-'+i+'"><option value="0"'+(b.nb?'':' selected')+'>Regular</option><option value="1"'+(b.nb?' selected':'')+'>Notebook</option></select>'
+            +'<button class="btn btn-g btn-xs" onclick="saveBookEdit(\''+cid+'\','+i+')">✓</button>'
+            +'<button class="btn btn-gh btn-xs" onclick="cancelBookEdit(\''+cid+'\','+i+')">✕</button>'
+          +'</div>'
+          +'<div style="display:flex;align-items:center;gap:4px">'
+            +'<span class="price-tag">₹'+b.p+'</span>'+(b.nb?'<span class="nb-tag">NB</span>':'')
+            +'<button class="btn btn-am btn-xs no-print" onclick="startBookEdit(\''+cid+'\','+i+')">✏️</button>'
+            +'<button class="btn btn-rd btn-xs no-print" onclick="delBook(\''+cid+'\','+i+')">✕</button>'
+          +'</div>'
+        +'</div>'
+      ).join('')+'</div>'
+    +'</div>';
+  }).join('');
+}
+function startBookEdit(cid,i){document.getElementById('bv-'+cid+'-'+i).style.display='none';document.getElementById('be-'+cid+'-'+i).classList.add('open');}
+function cancelBookEdit(cid,i){document.getElementById('bv-'+cid+'-'+i).style.display='';document.getElementById('be-'+cid+'-'+i).classList.remove('open');}
+function saveBookEdit(cid,i){
+  BOOKS[cid][i].n=document.getElementById('be-n-'+cid+'-'+i).value.trim();
+  BOOKS[cid][i].p=parseInt(document.getElementById('be-p-'+cid+'-'+i).value)||50;
+  BOOKS[cid][i].nb=parseInt(document.getElementById('be-t-'+cid+'-'+i).value);
+  save(); toast('Updated ✓'); renderBooks();
+}
+function delBook(cid,i){if(!confirm('Remove?'))return;BOOKS[cid].splice(i,1);save();toast('Removed');renderBooks();}
+function openAddBook(){document.getElementById('ab-cls').value=(curC==='all'?'1':curC);document.getElementById('addbook-ovl').classList.add('open');}
+function saveBook(){
+  const n=document.getElementById('ab-name').value.trim();
+  const cid=document.getElementById('ab-cls').value;
+  const p=parseInt(document.getElementById('ab-price').value)||50;
+  const nb=parseInt(document.getElementById('ab-type').value);
+  if(!n){toast('Enter book name');return;}
+  BOOKS[cid].push({n,p,nb}); save(); closeModals(); toast('"'+n+'" added ✓'); renderBooks();
+}
+
+// ══════════════════════════════════════════════════════
+// IF3: TICK LIST — show ALL stacked or single class
+// ══════════════════════════════════════════════════════
+function renderTicks(){
+  const isAll=(curC==='all');
+  document.getElementById('i3-title').textContent=isAll?'All Tick Lists':'Tick List — '+CN[curC];
+  const scope=isAll?CLASSES:[curC];
+  // Update bulk panel for current class (only single class mode)
+  if(!isAll){
+    const books=BOOKS[curC]||[];
+    const bpsel=document.getElementById('bp-sel');
+    const prev=bpsel.value;
+    bpsel.innerHTML='<option value="">— Select book —</option>'+books.map((b,i)=>b.nb
+      ?'<option value="'+i+'" disabled style="color:#bbb">📓 '+b.n+'</option>'
+      :'<option value="'+i+'">📗 '+b.n+' (₹'+b.p+')</option>').join('');
+    if(prev) bpsel.value=prev;
+    document.getElementById('bp-sel').closest('.bulk-panel').style.display='';
+    // Stats for single class
+    let rev=0,bks=0;
+    S[curC].students.forEach(st=>{
+      const t=S[curC].ticks[st.id]||{},nb=S[curC].nb[st.id]||{};
+      books.forEach((b,i)=>{if(b.nb){const q=nb[i]||0;rev+=b.p*q;bks+=q;}else if(t[i]){rev+=b.p;bks++;}});
+    });
+    document.getElementById('i3-stats').innerHTML=
+      '<div class="spill"><b>'+S[curC].students.length+'</b> Students</div>'
+      +'<div class="spill"><b>'+bks+'</b> Items</div>'
+      +'<div class="spill"><b>₹'+rev.toLocaleString()+'</b></div>';
+  } else {
+    document.getElementById('bp-sel').closest('.bulk-panel').style.display='none';
+    let totalStu=0,totalRev=0;
+    CLASSES.forEach(cid=>{totalStu+=S[cid].students.length;S[cid].students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};(BOOKS[cid]||[]).forEach((b,i)=>{if(b.nb){const q=nb[i]||0;totalRev+=b.p*q;}else if(t[i]){totalRev+=b.p;}});});});
+    document.getElementById('i3-stats').innerHTML=
+      '<div class="spill"><b>'+totalStu+'</b> Total Students</div>'
+      +'<div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Total Revenue</div>';
+  }
+  // Build tick tables
+  const container=document.getElementById('tick-all-container');
+  container.innerHTML=scope.map(cid=>buildTickTableHTML(cid,isAll)).join('');
+}
+
+function buildTickTableHTML(cid,showLabel){
+  const books=BOOKS[cid]||[],{students,ticks,nb}=S[cid];
+  if(!books.length) return showLabel?'<div style="padding:12px 0;color:var(--ink3);font-size:12px">'+CN[cid]+' — No books set up</div>':'';
+  const colT=books.map((_,i)=>{
+    if(books[i].nb){let t=0;students.forEach(st=>{t+=(nb[st.id]?.[i]||0);});return t;}
+    else{let t=0;students.forEach(st=>{if(ticks[st.id]?.[i])t++;});return t;}
+  });
+  let grand=0;
+  students.forEach(st=>{const t=ticks[st.id]||{},n=nb[st.id]||{};books.forEach((b,i)=>{grand+=b.nb?(b.p*(n[i]||0)):(t[i]?b.p:0);});});
+  const label=showLabel?'<div class="tick-class-label">'+CN[cid]+' — '+students.length+' students</div>':'';
+  return '<div class="tick-class-section'+(showLabel?' tgwrap':' tgwrap')+'">'
+    +label
+    +'<div class="tgscroll"><table class="tg">'
+      +'<thead>'
+        +'<tr class="tg-rot">'
+          +'<td class="fix" style="width:30px">SL</td>'
+          +'<td class="fix" style="width:54px">ADM</td>'
+          +'<td class="fix" style="width:170px">NAME</td>'
+          +books.map(b=>'<td style="width:36px"><div class="rot-wrap"><span class="rot-txt'+(b.nb?' nbc':'')+'">'+b.n+'</span></div></td>').join('')
+          +'<td style="width:68px"><div class="rot-wrap"><span class="rot-txt" style="color:#7ecba1">TOTAL ₹</span></div></td>'
+        +'</tr>'
+        +'<tr class="tg-price"><td class="fix" colspan="3">₹/UNIT</td>'
+          +books.map(b=>'<td>₹'+b.p+'</td>').join('')
+          +'<td></td>'
+        +'</tr>'
+      +'</thead>'
+      +'<tbody>'
+        +(students.length===0?'<tr><td colspan="'+(books.length+4)+'" style="text-align:center;padding:16px;color:var(--ink3)">No students yet</td></tr>'
+          :students.map((st,si)=>buildTickRow(cid,books,st,si+1)).join(''))
+      +'</tbody>'
+      +'<tfoot><tr>'
+        +'<td colspan="3" class="fl">TOTAL ↓</td>'
+        +books.map((_,i)=>'<td id="ct-'+cid+'-'+i+'">'+(colT[i]||'')+'</td>').join('')
+        +'<td class="fgt" id="gt-'+cid+'">₹'+grand.toLocaleString()+'</td>'
+      +'</tr></tfoot>'
+    +'</table></div>'
+  +'</div>';
+}
+
+function buildTickRow(cid,books,st,sl){
+  const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+  let tot=0;
+  books.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+  return '<tr id="row-'+cid+'-'+st.id+'">'
+    +'<td class="tc-sl">'+sl+'</td>'
+    +'<td class="tc-adm">'+st.admNo+'</td>'
+    +'<td class="tc-name" title="'+st.name+'">'+st.name+'</td>'
+    +books.map((b,i)=>{
+      if(b.nb){
+        const q=nb[i]||0;
+        return '<td class="tc-nb'+(q>0?' hv':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'">'
+          +'<input type="number" class="nb-inp" value="'+(q||'')+'" min="0" placeholder="0"'
+          +' onchange="setNb(\''+cid+'\',\''+st.id+'\','+i+',this.value)"'
+          +' onclick="event.stopPropagation()"></td>';
+      } else {
+        const on=t[i]?1:0;
+        return '<td class="tc-tick'+(on?' on':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'" onclick="doTick(\''+cid+'\',\''+st.id+'\','+i+')">'
+          +'<div class="tbox"><span class="ckv">✓</span></div></td>';
+      }
+    }).join('')
+    +'<td class="tc-tot" id="rt-'+cid+'-'+st.id+'">₹'+(tot>0?tot.toLocaleString():'')+'</td>'
+  +'</tr>';
+}
+
+function doTick(cid,sid,bi){
+  if(!S[cid].ticks[sid]) S[cid].ticks[sid]={};
+  const t=S[cid].ticks[sid]; if(t[bi]) delete t[bi]; else t[bi]=1;
+  save();
+  const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);
+  if(cell) cell.className='tc-tick'+(t[bi]?' on':'');
+  updR(cid,sid); updC(cid,bi); updG(cid);
+}
+function setNb(cid,sid,bi,v){
+  const q=Math.max(0,parseInt(v)||0);
+  if(!S[cid].nb[sid]) S[cid].nb[sid]={};
+  if(q>0) S[cid].nb[sid][bi]=q; else delete S[cid].nb[sid][bi];
+  const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);
+  if(cell) cell.className='tc-nb'+(q>0?' hv':'');
+  save(); updR(cid,sid); updC(cid,bi); updG(cid);
+}
+function updR(cid,sid){
+  const bks=BOOKS[cid],t=S[cid].ticks[sid]||{},nb=S[cid].nb[sid]||{};
+  let tot=0; bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+  const el=document.getElementById('rt-'+cid+'-'+sid); if(el) el.textContent=tot>0?'₹'+tot.toLocaleString():'';
+}
+function updC(cid,bi){
+  const bks=BOOKS[cid],sts=S[cid].students; let tot=0;
+  if(bks[bi]&&bks[bi].nb) sts.forEach(st=>{tot+=(S[cid].nb[st.id]?.[bi]||0);});
+  else sts.forEach(st=>{if(S[cid].ticks[st.id]?.[bi])tot++;});
+  const el=document.getElementById('ct-'+cid+'-'+bi); if(el) el.textContent=tot||'';
+}
+function updG(cid){
+  const bks=BOOKS[cid],sts=S[cid].students; let tot=0;
+  sts.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});});
+  const el=document.getElementById('gt-'+cid); if(el) el.textContent='₹'+tot.toLocaleString();
+}
+function renderBulkGrid(){
+  const bi=document.getElementById('bp-sel').value;
+  const grid=document.getElementById('bp-grid');
+  const sts=S[curC].students;
+  if(bi===''){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;color:var(--ink3);font-size:12px;padding:12px">Select a book above</div>';return;}
+  bpSel=new Set(); sts.forEach(st=>{if(S[curC].ticks[st.id]?.[bi]) bpSel.add(st.id);});
+  grid.innerHTML=sts.map(st=>'<div class="bp-stu'+(bpSel.has(st.id)?' sel':'')+'" id="bps-'+st.id+'" onclick="toggleBpStu(\''+st.id+'\')">'
+    +'<div class="bp-chk"><span class="bp-ci">✓</span></div>'
+    +'<div class="bp-adm">'+st.admNo+'</div>'
+    +'<div class="bp-nm" title="'+st.name+'">'+st.name+'</div></div>').join('')
+    ||'<div style="grid-column:1/-1;text-align:center;padding:12px;font-size:12px;color:var(--ink3)">No students</div>';
+  document.getElementById('bp-cnt').textContent=bpSel.size;
+}
+function toggleBpStu(sid){
+  const el=document.getElementById('bps-'+sid);
+  if(bpSel.has(sid)){bpSel.delete(sid);el?.classList.remove('sel');}
+  else{bpSel.add(sid);el?.classList.add('sel');}
+  document.getElementById('bp-cnt').textContent=bpSel.size;
+}
+function bpAll(){S[curC].students.forEach(st=>{bpSel.add(st.id);document.getElementById('bps-'+st.id)?.classList.add('sel');});document.getElementById('bp-cnt').textContent=bpSel.size;}
+function bpClear(){bpSel.forEach(sid=>document.getElementById('bps-'+sid)?.classList.remove('sel'));bpSel.clear();document.getElementById('bp-cnt').textContent=0;}
+function bpApply(val){
+  const bi=document.getElementById('bp-sel').value;
+  if(bi===''){toast('Select a book first');return;}
+  if(bpSel.size===0){toast('Select students first');return;}
+  bpSel.forEach(sid=>{
+    if(!S[curC].ticks[sid]) S[curC].ticks[sid]={};
+    if(val) S[curC].ticks[sid][bi]=1; else delete S[curC].ticks[sid][bi];
+    const cell=document.getElementById('cell-'+curC+'-'+sid+'-'+bi);
+    if(cell) cell.className='tc-tick'+(val?' on':'');
+    updR(curC,sid);
+  });
+  save(); updC(curC,parseInt(bi)); updG(curC); renderBulkGrid();
+  toast((val?'✓ Ticked':'✕ Unticked')+' "'+BOOKS[curC][bi].n+'" for '+bpSel.size+' students');
+}
+
+// ══════════════════════════════════════════════════════
+// IF4: BILLING — 3 options
+// ══════════════════════════════════════════════════════
+function renderBilling4(){
+  // Update class-wise counts
+  CLASSES.forEach(cid=>{
+    const el=document.getElementById('cpc-'+cid);
+    if(el) el.textContent=S[cid].students.length+' students';
+  });
+  // Stats
+  let grandTotal=0, grandStu=0;
+  CLASSES.forEach(cid=>{
+    grandStu+=S[cid].students.length;
+    S[cid].students.forEach(st=>{
+      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+      (BOOKS[cid]||[]).forEach((b,i)=>{grandTotal+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+    });
+  });
+  document.getElementById('i4-stats').innerHTML=
+    '<div class="spill"><b>'+grandStu+'</b> Total Students</div>'
+    +'<div class="spill"><b>₹'+grandTotal.toLocaleString()+'</b> Total Revenue</div>';
+}
+
+function selectBillOpt(opt){
+  // Hide all panels first
+  ['ind','cls','all'].forEach(o=>{
+    document.getElementById('bpanel-'+o).style.display='none';
+  });
+  // Show chosen panel
+  const panel=document.getElementById('bpanel-'+opt);
+  panel.style.display='block';
+  // If All Students — build the student grid class by class
+  if(opt==='all') buildAllStudentsBillPanel();
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeBillPanel(){
+  ['ind','cls','all'].forEach(o=>document.getElementById('bpanel-'+o).style.display='none');
+}
+
+// Build All Students panel — summary cards only, no student rows, no print buttons per class
+function buildAllStudentsBillPanel(){
+  let html='';
+  let totalStu=0, totalRev=0;
+  CLASSES.forEach(cid=>{
+    const students=S[cid].students;
+    if(!students.length) return;
+    let clsRev=0;
+    students.forEach(st=>{
+      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+      (BOOKS[cid]||[]).forEach((b,i)=>{clsRev+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+    });
+    totalStu+=students.length; totalRev+=clsRev;
+    html+='<div class="abs-summary-card">'
+      +'<div class="abs-sc-left">'
+        +'<div class="abs-sc-cls">'+CN[cid]+'</div>'
+        +'<div class="abs-sc-meta">'
+          +'<span>👥 '+students.length+' students</span>'
+          +'<span>₹'+clsRev.toLocaleString()+'</span>'
+        +'</div>'
+      +'</div>'
+    +'</div>';
+  });
+  // Grand summary row — total pages = all students packed 4 per page, no gaps
+  const totalPages=Math.ceil(totalStu/4);
+  html+='<div class="abs-grand-row">'
+    +'<div style="display:flex;flex-direction:column;gap:3px">'
+      +'<span style="font-size:14px;font-weight:800">ALL CLASSES</span>'
+      +'<span style="font-size:11px;color:#7aaa90">'+totalStu+' students · '+totalPages+' pages A4</span>'
+    +'</div>'
+    +'<span style="font-size:16px">₹'+totalRev.toLocaleString()+'</span>'
+  +'</div>';
+  document.getElementById('all-bill-summary').innerHTML=html;
+}
+
+// ── Individual 4-student billing ──
+function ind4Preview(slot){
+  const adm=document.getElementById('ind4-adm-'+slot).value.trim();
+  const nameEl=document.getElementById('ind4-name-'+slot);
+  const clsEl=document.getElementById('ind4-cls-'+slot);
+  const slotEl=document.getElementById('ind4s-'+slot);
+  if(!adm){nameEl.textContent='—';clsEl.textContent='';slotEl.className='ind4-slot';return;}
+  let found=null,foundCid=null;
+  for(const cid of CLASSES){
+    const st=S[cid].students.find(s=>s.admNo===adm);
+    if(st){found=st;foundCid=cid;break;}
+  }
+  if(found){
+    nameEl.textContent=found.name;
+    clsEl.textContent=CN[foundCid];
+    slotEl.className='ind4-slot found';
+  } else {
+    nameEl.textContent='Not found';
+    clsEl.textContent='';
+    slotEl.className='ind4-slot notfound';
+  }
+}
+function printInd4(){
+  const msg=document.getElementById('ind4-msg');
+  const slots=[];
+  for(let i=0;i<4;i++){
+    const adm=document.getElementById('ind4-adm-'+i).value.trim();
+    if(!adm){slots.push(null);continue;}
+    let found=null,foundCid=null;
+    for(const cid of CLASSES){
+      const st=S[cid].students.find(s=>s.admNo===adm);
+      if(st){found=st;foundCid=cid;break;}
+    }
+    if(found) slots.push({cid:foundCid,st:found});
+    else{msg.textContent='ADM '+adm+' not found';return;}
+  }
+  if(slots.every(s=>s===null)){msg.textContent='Enter at least 1 ADM number';return;}
+  msg.textContent='';
+  // Build exactly 4 cards (pad with empty)
+  const cards=slots.map(s=>s?buildPrintCard(s.cid,s.st):'');
+  while(cards.length<4) cards.push('');
+  const html='<div class="a4page">'
+    +'<div class="top-row">'
+      +'<div class="slot left-slot">'+(cards[0]?'<div class="card">'+cards[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'<div class="slot right-slot">'+(cards[1]?'<div class="card">'+cards[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+    +'</div>'
+    +'<div class="cut-line"><span class="scissors">✂</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
+    +'<div class="bottom-row">'
+      +'<div class="slot left-slot">'+(cards[2]?'<div class="card">'+cards[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'<div class="slot right-slot">'+(cards[3]?'<div class="card">'+cards[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+    +'</div>'
+  +'</div>';
+  openPrintWindow(html,'Individual Bills');
+}
+
+// ── Class-wise billing ──
+function printClassBills(cid){
+  if(!S[cid].students.length){toast(CN[cid]+' has no students');return;}
+  openPrintWindow(buildA4Grid(cid,S[cid].students),'Bills — '+CN[cid]);
+}
+
+// ── All students billing — ALL classes packed continuously, no gaps between classes ──
+function printEveryBill(){
+  // Collect every student from all classes in order
+  let allCards=[];
+  CLASSES.forEach(cid=>{
+    S[cid].students.forEach(st=>{
+      allCards.push(buildPrintCard(cid,st));
+    });
+  });
+  if(!allCards.length){toast('No students to print');return;}
+  // Pack ALL cards into A4 pages of 4 — no empty slots mid-print, only last page may have empties
+  let html='';
+  for(let i=0;i<allCards.length;i+=4){
+    const g=allCards.slice(i,i+4);
+    while(g.length<4) g.push('');
+    html+='<div class="a4page">'
+      +'<div class="top-row">'
+        +'<div class="slot left-slot">'+(g[0]?'<div class="card">'+g[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+        +'<div class="slot right-slot">'+(g[1]?'<div class="card">'+g[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'</div>'
+      +'<div class="cut-line"><span class="scissors">&#9988;</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
+      +'<div class="bottom-row">'
+        +'<div class="slot left-slot">'+(g[2]?'<div class="card">'+g[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+        +'<div class="slot right-slot">'+(g[3]?'<div class="card">'+g[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'</div>'
+    +'</div>';
+  }
+  openPrintWindow(html,'All Students — All Classes');
+}
+
+// ── Single student bill ──
+function showStudentBill(cid,sid){
+  const books=BOOKS[cid],st=S[cid].students.find(s=>s.id===sid);
+  const t=S[cid].ticks[sid]||{},nb=S[cid].nb[sid]||{};
+  let items=[],grand=0;
+  books.forEach((b,i)=>{
+    if(b.nb){const qty=nb[i]||0;if(qty>0){items.push({n:b.n,p:b.p,qty,tot:b.p*qty,nb:1});grand+=b.p*qty;}}
+    else if(t[i]){items.push({n:b.n,p:b.p,qty:1,tot:b.p,nb:0});grand+=b.p;}
+  });
+  const today=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  document.getElementById('rcp-body').innerHTML=
+    '<div class="rcp-hd">'
+      +'<div class="rcp-title">MALIK DEENAR ISLAMIC ACADEMY</div>'
+      +'<div class="rcp-sub">Thalanagara, Kasaragod · College Book Purchase List 2026–27</div>'
+    +'</div>'
+    +'<div class="rcp-meta">'
+      +'<div><b>AD NO:</b> '+st.admNo+'</div><div><b>DATE:</b> '+today+'</div>'
+      +'<div><b>NAME:</b> '+st.name+'</div><div><b>CLASS:</b> '+CN[cid]+'</div>'
+    +'</div>'
+    +(items.length===0?'<div style="text-align:center;padding:14px;color:#999;font-size:11px">No books selected</div>':'')
+    +items.map(it=>it.nb
+      ?'<div class="rcp-nb"><div class="rcp-nb-name">📓 '+it.n+'</div><div class="rcp-nb-small">'+it.qty+' × ₹'+it.p+' =</div><span class="rcp-nb-big">₹'+it.tot.toLocaleString()+'</span></div>'
+      :'<div class="rcp-bk"><div class="rcp-bk-name">📗 '+it.n+'</div><div class="rcp-bk-amt">₹'+it.tot.toLocaleString()+'</div></div>'
+    ).join('')
+    +'<div class="rcp-grand"><div class="rcp-grand-lbl">TOTAL AMOUNT</div><div class="rcp-grand-amt">₹'+grand.toLocaleString()+'</div></div>'
+    +'<div class="rcp-foot">Malik Deenar Islamic Academy · Thalanagara, Kasaragod</div>';
+  document.getElementById('rcp-ovl').classList.add('open');
+}
+
+// ══════════════════════════════════════════════════════
+// PRINT FUNCTIONS
+// ══════════════════════════════════════════════════════
+function printRcp(){
+  const h=document.getElementById('rcp-body').innerHTML;
+  openPrintWindow('<div class="rcp-single">'+h+'</div>','Receipt');
+}
+
+// Build A4 page grid: 4 bills per page (2 cols × 2 rows)
+function buildA4Grid(cid,students){
+  if(!students||students.length===0) return '';
+  const cards=students.map(st=>buildPrintCard(cid,st));
+  let html='';
+  for(let i=0;i<cards.length;i+=4){
+    const g=cards.slice(i,i+4);
+    while(g.length<4) g.push('');
+    html+='<div class="a4page">'
+      +'<div class="top-row">'
+        +'<div class="slot left-slot">'+(g[0]?'<div class="card">'+g[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+        +'<div class="slot right-slot">'+(g[1]?'<div class="card">'+g[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'</div>'
+      +'<div class="cut-line"><span class="scissors">&#9988;</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
+      +'<div class="bottom-row">'
+        +'<div class="slot left-slot">'+(g[2]?'<div class="card">'+g[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+        +'<div class="slot right-slot">'+(g[3]?'<div class="card">'+g[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
+      +'</div>'
+    +'</div>';
+  }
+  return html;
+}
+
+// Build one student bill card (inner content for print)
+function buildPrintCard(cid,st){
+  const books=BOOKS[cid]||[],t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+  let items=[],grand=0;
+  books.forEach((b,i)=>{
+    if(b.nb){const q=nb[i]||0;if(q>0){const tot=b.p*q;items.push({n:b.n,p:b.p,q,tot,nb:1});grand+=tot;}}
+    else if(t[i]){items.push({n:b.n,p:b.p,q:1,tot:b.p,nb:0});grand+=b.p;}
+  });
+  const d=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  const rows=items.map((it,idx)=>
+    '<div class="brow'+(it.nb?' nb':'')+'"><span class="br-sl">'+(idx+1)+'</span>'
+    +'<span class="br-name">'+it.n+(it.nb?'<span class="nb-rate">'+it.q+' nos \u00d7 \u20b9'+it.p+'</span>':'')+'</span>'
+    +'<span class="br-rate">'+(it.nb?'':'\u20b9'+it.p)+'</span>'
+    +'<span class="br-amt">\u20b9'+it.tot.toLocaleString()+'</span></div>'
+  ).join('');
+  return '<div class="card-hd">'
+      +'<div><div class="card-hd-title">MALIK DEENAR ISLAMIC ACADEMY</div><div class="card-hd-sub">Thalanagara, Kasaragod · College Book Purchase List 2026–27</div></div>'
+      +'<div class="card-hd-total"><div class="card-hd-amt">\u20b9'+grand.toLocaleString()+'</div><div class="card-hd-lbl">TOTAL</div></div>'
+    +'</div>'
+    +'<div class="card-info">'
+      +'<div class="info-row"><span class="il">AD NO</span><span class="iv">'+st.admNo+'</span><span class="il ml2">DATE</span><span class="iv">'+d+'</span></div>'
+      +'<div class="info-row"><span class="il">NAME</span><span class="iv iv-name">'+st.name+'</span></div>'
+      +'<div class="info-row"><span class="il">CLASS</span><span class="iv">'+CN[cid]+'</span></div>'
+    +'</div>'
+    +'<div class="book-hdr"><span class="bh-sl">#</span><span class="bh-name">BOOK NAME</span><span class="bh-rate">RATE</span><span class="bh-amt">AMOUNT</span></div>'
+    +'<div class="book-list">'+(items.length===0?'<div class="no-items">No books selected yet</div>':rows)+'</div>'
+    +'<div class="card-ft"><span class="ft-lbl">TOTAL AMOUNT</span><span class="ft-amt">\u20b9'+grand.toLocaleString()+'</span></div>';
+}
+
+// Open a new print window with full CSS
+function openPrintWindow(body,title){
+  const w=window.open('','_blank');
+  const css=`
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;font-family:'Nunito',sans-serif;color:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:210mm 297mm;margin:0}
+.a4page{width:210mm;height:297mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;background:#fff}
+.top-row,.bottom-row{width:210mm;height:141mm;display:flex;flex-direction:row;flex-shrink:0;overflow:hidden}
+.cut-line{width:210mm;height:15mm;display:flex;align-items:center;padding:0 5mm;gap:2mm;flex-shrink:0;background:#fff}
+.scissors{font-size:10pt;color:#aaa;flex-shrink:0}
+.dashes{font-size:7pt;color:#ccc;letter-spacing:2px;flex:1;overflow:hidden;white-space:nowrap;border-top:1px dashed #ccc;margin-top:2px}
+.slot{width:105mm;height:141mm;padding:3mm 3.5mm;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+.left-slot{border-right:1px dashed #ccc}
+.empty-slot{width:100%;height:100%;background:#fafafa;border:1px dashed #e0e0e0;border-radius:4px}
+.card{width:100%;height:100%;border:1.5px solid #1e3028;border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.card-hd{background:#1e3028;padding:4px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.card-hd-title{font-size:7.5pt;font-weight:800;letter-spacing:.5px;color:#dff0e8}
+.card-hd-sub{font-size:5.5pt;color:#7aaa90;margin-top:1px}
+.card-hd-total{background:rgba(255,255,255,.15);border-radius:3px;padding:2px 6px;text-align:right;flex-shrink:0}
+.card-hd-amt{font-size:15pt;font-weight:700;color:#7ecba1;font-family:'JetBrains Mono',monospace;line-height:1}
+.card-hd-lbl{font-size:5pt;color:#6aaa80;letter-spacing:.5px;text-transform:uppercase}
+.card-info{padding:3px 7px;background:#f5f5f2;border-bottom:1px solid #d5d5cc;flex-shrink:0}
+.info-row{display:flex;align-items:baseline;gap:4px;margin-bottom:2px}
+.info-row:last-child{margin-bottom:0}
+.il{font-size:5.5pt;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.2px;min-width:27px;flex-shrink:0}
+.ml2{margin-left:8px}
+.iv{font-size:8pt;font-weight:700;color:#1e3028;font-family:'JetBrains Mono',monospace}
+.iv-name{font-size:8.5pt;font-weight:800;color:#1e3028;font-family:'Nunito',sans-serif}
+.book-hdr{display:flex;align-items:center;padding:2px 7px;background:#e4ede6;border-bottom:1px solid #c0d0c2;flex-shrink:0}
+.bh-sl{font-size:5.5pt;font-weight:700;color:#3a6a4a;min-width:12px}
+.bh-name{font-size:5.5pt;font-weight:700;color:#3a6a4a;flex:1;padding-left:3px;text-transform:uppercase;letter-spacing:.2px}
+.bh-rate{font-size:5.5pt;font-weight:700;color:#3a6a4a;width:24px;text-align:right}
+.bh-amt{font-size:5.5pt;font-weight:700;color:#3a6a4a;width:34px;text-align:right}
+.book-list{flex:1;overflow:hidden;padding:1px 7px;display:flex;flex-direction:column}
+.brow{display:flex;align-items:flex-start;gap:3px;padding:2px 0;border-bottom:1px dotted #ebebeb}
+.brow:last-child{border-bottom:none}
+.br-sl{font-size:6pt;color:#c0c0c0;font-family:'JetBrains Mono',monospace;min-width:12px;flex-shrink:0;padding-top:1px}
+.br-name{font-size:7.5pt;font-weight:600;color:#111;flex:1;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brow.nb .br-name{color:#7a3800}
+.nb-rate{display:block;font-size:6pt;color:#a05000;font-family:'JetBrains Mono',monospace;font-weight:400;line-height:1.4}
+.br-rate{font-size:6.5pt;color:#999;font-family:'JetBrains Mono',monospace;width:24px;text-align:right;flex-shrink:0;padding-top:1px}
+.br-amt{font-size:8.5pt;font-weight:700;color:#1e4030;font-family:'JetBrains Mono',monospace;width:34px;text-align:right;flex-shrink:0}
+.brow.nb .br-amt{color:#7a3800;font-size:9pt}
+.no-items{font-size:7pt;color:#bbb;text-align:center;padding:8px;font-style:italic}
+.card-ft{background:#1e3028;padding:3px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.ft-lbl{font-size:6pt;font-weight:700;color:#7aaa90;text-transform:uppercase;letter-spacing:.5px}
+.ft-amt{font-size:15pt;font-weight:700;color:#fff;font-family:'JetBrains Mono',monospace}
+.rcp-single{max-width:170mm;margin:15mm auto;font-family:'JetBrains Mono',monospace;border:2px solid #111;padding:14px;border-radius:4px}
+.rcp-hd{text-align:center;border-bottom:2px dashed #111;padding-bottom:10px;margin-bottom:10px}
+.rcp-title{font-size:13pt;font-weight:700;letter-spacing:2px}
+.rcp-sub{font-size:8pt;color:#666;margin-top:2px}
+.rcp-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:9pt;margin-bottom:10px}
+.rcp-bk{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;gap:8px}
+.rcp-bk-name{font-size:11pt;font-weight:600;flex:1;font-family:'Nunito',sans-serif}
+.rcp-bk-amt{font-size:14pt;font-weight:700;color:#1e4030}
+.rcp-nb{padding:6px 0;border-bottom:1px solid #eee}
+.rcp-nb-name{font-size:10pt;font-weight:600;color:#444;font-family:'Nunito',sans-serif;margin-bottom:2px}
+.rcp-nb-small{font-size:9pt;color:#888}
+.rcp-nb-big{font-size:18pt;font-weight:700;color:#7a4f10;display:block;margin-top:2px}
+.rcp-grand{display:flex;justify-content:space-between;align-items:center;border-top:2px solid #111;padding-top:10px;margin-top:8px}
+.rcp-grand-lbl{font-size:11pt;font-weight:700}
+.rcp-grand-amt{font-size:22pt;font-weight:700;color:#1e4030}
+.rcp-foot{text-align:center;font-size:8pt;color:#aaa;margin-top:10px;border-top:1px dashed #ddd;padding-top:7px}`;
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+title+'</title>'
+    +'<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">'
+    +'<style>'+css+'</style></head><body>'+body+'</body></html>');
+  w.document.close();
+  w.focus();
+  setTimeout(function(){w.print();},1200);
+}
+
+// UTILS
+function exportCSV(){
+  const rows=[['Class','ADM No','Name','Book','Type','Qty','Price','Total']];
+  CLASSES.forEach(cid=>{S[cid].students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};BOOKS[cid].forEach((b,i)=>{if(b.nb){const q=nb[i]||0;if(q>0)rows.push([CN[cid],st.admNo,st.name,b.n,'Notebook',q,b.p,b.p*q]);}else if(t[i])rows.push([CN[cid],st.admNo,st.name,b.n,'Book',1,b.p,b.p]);});});});
+  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);a.download='billing_2026_27.csv';a.click();toast('Exported ✓');
+}
+function closeModals(){document.querySelectorAll('.ovl').forEach(o=>o.classList.remove('open'));}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2600);}
+</script>
+</body>
+</html>
