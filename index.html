@@ -57,13 +57,22 @@ body{font-family:var(--body);background:var(--bg);color:var(--ink);min-height:10
 .btn-rd{background:var(--redbg);color:var(--red);border:1px solid #f5b8b8}.btn-rd:hover{background:#f5b8b8}
 .btn-gh{background:var(--s1);border:1px solid var(--border);color:var(--ink2)}.btn-gh:hover{background:var(--s0)}
 .btn-dk{background:var(--head);color:#fff}.btn-dk:hover{background:#2e4a3a}
+.btn-blue{background:#e8f0fe;color:#1a56db;border:1.5px solid #b3c6f9}.btn-blue:hover{background:#d0e1fc}
+.btn-purple{background:#f0eaff;color:#6b21a8;border:1.5px solid #d0bbf7}.btn-purple:hover{background:#e5d8ff}
 .btn-sm{padding:4px 9px;font-size:11px}.btn-xs{padding:3px 7px;font-size:10px}
 .fg{display:flex;flex-direction:column;gap:3px}
 .fg label{font-size:10px;font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.3px}
 .fg input,.fg select{padding:7px 10px;border:1.5px solid var(--border);border-radius:6px;font-family:var(--body);font-size:13px;color:var(--ink);background:#fff}
 .fg input:focus,.fg select:focus{outline:none;border-color:var(--g3)}
-.shdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.shdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px}
 .shdr-title{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--g)}
+
+/* ── Import/Export Bar ── */
+.ie-bar{display:flex;align-items:center;gap:6px;margin-bottom:10px;padding:8px 12px;background:var(--s0);border:1px solid var(--border);border-radius:8px;flex-wrap:wrap}
+.ie-bar-label{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.4px;margin-right:4px}
+.ie-divider{width:1px;height:20px;background:var(--border);margin:0 4px;flex-shrink:0}
+.ie-hint{font-size:10px;color:var(--ink3);margin-left:auto;font-style:italic}
+
 .stats-strip{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .spill{background:var(--s0);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;color:var(--ink2)}
 .spill b{color:var(--g2);font-weight:800}
@@ -276,10 +285,39 @@ table.billtbl tr:hover td{background:#f5faf7}
 .abs-sc-meta{display:flex;gap:14px;font-size:11px;color:var(--ink3);font-family:var(--mono)}
 .abs-sc-meta span{display:flex;align-items:center;gap:3px}
 .abs-grand-row{display:flex;justify-content:space-between;align-items:center;background:var(--head);color:#7ecba1;padding:12px 16px;border-radius:8px;margin-top:4px;font-weight:700;font-family:var(--mono)}
+
+/* ── Import Preview Modal Styles ── */
+.imp-preview{max-height:240px;overflow-y:auto;border:1px solid var(--border);border-radius:7px;margin:10px 0}
+table.imp-tbl{width:100%;border-collapse:collapse;font-size:12px}
+table.imp-tbl th{background:var(--head);color:var(--headfg);padding:5px 9px;font-size:10px;font-weight:700;letter-spacing:.3px;text-align:left}
+table.imp-tbl td{padding:5px 9px;border-bottom:1px solid var(--border);font-size:12px}
+table.imp-tbl tr:last-child td{border-bottom:none}
+table.imp-tbl tr.row-ok td{background:#f0fdf4}
+table.imp-tbl tr.row-dup td{background:#fffbeb}
+table.imp-tbl tr.row-err td{background:#fef2f2}
+.imp-badge{display:inline-block;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:700}
+.imp-badge.ok{background:#d1fae5;color:#065f46}
+.imp-badge.dup{background:#fef3c7;color:#92400e}
+.imp-badge.err{background:#fee2e2;color:#991b1b}
+.imp-stats-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0;font-size:11px;font-weight:600;color:var(--ink2)}
+.imp-stats-row span{padding:3px 10px;border-radius:20px;background:var(--s1);border:1px solid var(--border)}
+.imp-stats-row span b{font-weight:800}
+.imp-mode-tabs{display:flex;gap:6px;margin-bottom:12px}
+.imp-mode-tab{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--s1);color:var(--ink3);transition:all .12s}
+.imp-mode-tab.active{background:var(--g);border-color:var(--g);color:#fff}
+.imp-drop-zone{border:2px dashed var(--border2);border-radius:10px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:12px}
+.imp-drop-zone:hover,.imp-drop-zone.drag{border-color:var(--g3);background:var(--gbg)}
+.imp-drop-zone .dz-icon{font-size:32px;margin-bottom:8px}
+.imp-drop-zone .dz-title{font-size:13px;font-weight:700;color:var(--g);margin-bottom:4px}
+.imp-drop-zone .dz-sub{font-size:11px;color:var(--ink3)}
+.imp-format-hint{background:var(--s1);border:1px solid var(--border);border-radius:7px;padding:10px 12px;font-size:11px;color:var(--ink2);margin-bottom:12px;line-height:1.6}
+.imp-format-hint code{background:#e8e5de;padding:1px 5px;border-radius:3px;font-family:var(--mono);font-size:10px;color:var(--g)}
+
 @media(max-width:700px){
   .bill-options{grid-template-columns:1fr}
   .ind4-inputs{grid-template-columns:1fr 1fr}
   .cls-print-grid{grid-template-columns:repeat(2,1fr)}
+  .ie-bar{flex-direction:column;align-items:flex-start}
 }
 </style>
 
@@ -346,8 +384,21 @@ table.billtbl tr:hover td{background:#f5faf7}
     <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
       <input type="text" class="stu-search" id="stu-q" placeholder="Search name or ADM…" oninput="renderStudents()">
       <button class="btn btn-g btn-sm" onclick="openAddForm()">+ Add Student</button>
+      <button class="btn btn-rd btn-sm" onclick="clearAllStudents()">🗑 Clear All</button>
     </div>
   </div>
+
+  <!-- Students Import/Export Bar -->
+  <div class="ie-bar no-print">
+    <span class="ie-bar-label">📤 Export</span>
+    <button class="btn btn-gh btn-sm" onclick="exportStudentsCSV()">⬇ CSV</button>
+    <button class="btn btn-gh btn-sm" onclick="exportStudentsJSON()">⬇ JSON</button>
+    <div class="ie-divider"></div>
+    <span class="ie-bar-label">📥 Import</span>
+    <button class="btn btn-blue btn-sm" onclick="openImportStudents()">⬆ Import Students</button>
+    <span class="ie-hint">CSV or JSON · supports all classes</span>
+  </div>
+
   <div class="add-form" id="add-form">
     <div class="fg"><label>ADM No.</label><input type="text" id="ef-adm" placeholder="e.g. 1081" style="width:100px"></div>
     <div class="fg"><label>Name</label><input type="text" id="ef-name" placeholder="Full Name" style="width:195px" onkeydown="if(event.key==='Enter')saveForm()"></div>
@@ -382,8 +433,23 @@ table.billtbl tr:hover td{background:#f5faf7}
 <div class="iface" id="if2">
   <div class="shdr">
     <div class="shdr-title" id="i2-title">Books & Prices</div>
-    <button class="btn btn-g btn-sm no-print" onclick="openAddBook()">+ Add Book</button>
+    <div style="display:flex;gap:6px;align-items:center">
+      <button class="btn btn-g btn-sm no-print" onclick="openAddBook()">+ Add Book</button>
+      <button class="btn btn-rd btn-sm no-print" onclick="clearAllBooks()">🗑 Clear All</button>
+    </div>
   </div>
+
+  <!-- Books Import/Export Bar -->
+  <div class="ie-bar no-print">
+    <span class="ie-bar-label">📤 Export</span>
+    <button class="btn btn-gh btn-sm" onclick="exportBooksJSON()">⬇ JSON (All Classes)</button>
+    <button class="btn btn-gh btn-sm" onclick="exportBooksCSV()">⬇ CSV</button>
+    <div class="ie-divider"></div>
+    <span class="ie-bar-label">📥 Import</span>
+    <button class="btn btn-purple btn-sm" onclick="openImportBooks()">⬆ Import Books</button>
+    <span class="ie-hint">JSON format · merges or replaces per class</span>
+  </div>
+
   <div id="book-container"></div>
 </div>
 
@@ -411,9 +477,7 @@ table.billtbl tr:hover td{background:#f5faf7}
       </div>
     </div>
   </div>
-  <div id="tick-all-container">
-    <!-- rendered by JS - single class or all stacked -->
-  </div>
+  <div id="tick-all-container"></div>
 </div>
 
 <!-- ═══ IF4: BILLING (3 options) ═══ -->
@@ -422,135 +486,60 @@ table.billtbl tr:hover td{background:#f5faf7}
     <div class="shdr-title">💰 Billing</div>
     <div class="stats-strip" id="i4-stats" style="margin:0"></div>
   </div>
-
-  <!-- 3 BIG OPTION CARDS -->
   <div class="bill-options no-print">
-
-    <!-- Option 1: Individual -->
     <div class="bill-opt-card" id="bopt-ind">
       <div class="boc-icon">👤</div>
       <div class="boc-title">Individual Billing</div>
       <div class="boc-desc">Enter 4 ADM numbers → print their bills on one A4 sheet (2×2)</div>
       <button class="btn btn-g" onclick="selectBillOpt('ind')">Select →</button>
     </div>
-
-    <!-- Option 2: Class-wise -->
     <div class="bill-opt-card" id="bopt-cls">
       <div class="boc-icon">📋</div>
       <div class="boc-title">Class-wise Billing</div>
       <div class="boc-desc">Select a class → print every student's bill (4 per A4 page)</div>
       <button class="btn btn-g" onclick="selectBillOpt('cls')">Select →</button>
     </div>
-
-    <!-- Option 3: All Students -->
     <div class="bill-opt-card" id="bopt-all">
       <div class="boc-icon">📚</div>
       <div class="boc-title">All Students Billing</div>
       <div class="boc-desc">Print bills for every student across all classes (4 per page)</div>
       <button class="btn btn-dk" onclick="selectBillOpt('all')">Print All →</button>
     </div>
-
   </div>
-
-  <!-- ── OPTION 1 PANEL: Individual 4-ADM input ── -->
   <div class="bill-panel" id="bpanel-ind" style="display:none">
     <div class="bpanel-hdr">
       <span>👤 Individual Billing — Enter up to 4 ADM Numbers</span>
       <button class="btn btn-gh btn-sm" onclick="closeBillPanel()">✕ Close</button>
     </div>
     <div class="ind4-inputs">
-      <div class="ind4-slot" id="ind4s-0">
-        <div class="ind4-num">1</div>
-        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-0" placeholder="e.g. 788" oninput="ind4Preview(0)"></div>
-        <div class="ind4-name" id="ind4-name-0">—</div>
-        <div class="ind4-cls" id="ind4-cls-0"></div>
-      </div>
-      <div class="ind4-slot" id="ind4s-1">
-        <div class="ind4-num">2</div>
-        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-1" placeholder="e.g. 1081" oninput="ind4Preview(1)"></div>
-        <div class="ind4-name" id="ind4-name-1">—</div>
-        <div class="ind4-cls" id="ind4-cls-1"></div>
-      </div>
-      <div class="ind4-slot" id="ind4s-2">
-        <div class="ind4-num">3</div>
-        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-2" placeholder="optional" oninput="ind4Preview(2)"></div>
-        <div class="ind4-name" id="ind4-name-2">—</div>
-        <div class="ind4-cls" id="ind4-cls-2"></div>
-      </div>
-      <div class="ind4-slot" id="ind4s-3">
-        <div class="ind4-num">4</div>
-        <div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-3" placeholder="optional" oninput="ind4Preview(3)"></div>
-        <div class="ind4-name" id="ind4-name-3">—</div>
-        <div class="ind4-cls" id="ind4-cls-3"></div>
-      </div>
+      <div class="ind4-slot" id="ind4s-0"><div class="ind4-num">1</div><div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-0" placeholder="e.g. 788" oninput="ind4Preview(0)"></div><div class="ind4-name" id="ind4-name-0">—</div><div class="ind4-cls" id="ind4-cls-0"></div></div>
+      <div class="ind4-slot" id="ind4s-1"><div class="ind4-num">2</div><div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-1" placeholder="e.g. 1081" oninput="ind4Preview(1)"></div><div class="ind4-name" id="ind4-name-1">—</div><div class="ind4-cls" id="ind4-cls-1"></div></div>
+      <div class="ind4-slot" id="ind4s-2"><div class="ind4-num">3</div><div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-2" placeholder="optional" oninput="ind4Preview(2)"></div><div class="ind4-name" id="ind4-name-2">—</div><div class="ind4-cls" id="ind4-cls-2"></div></div>
+      <div class="ind4-slot" id="ind4s-3"><div class="ind4-num">4</div><div class="fg"><label>ADM No.</label><input type="text" id="ind4-adm-3" placeholder="optional" oninput="ind4Preview(3)"></div><div class="ind4-name" id="ind4-name-3">—</div><div class="ind4-cls" id="ind4-cls-3"></div></div>
     </div>
     <div style="margin-top:14px;display:flex;gap:8px;align-items:center">
       <button class="btn btn-g" onclick="printInd4()">🖨 Print These 4 Bills on A4</button>
       <span id="ind4-msg" style="font-size:12px;color:var(--red)"></span>
     </div>
   </div>
-
-  <!-- ── OPTION 2 PANEL: Class-wise ── -->
   <div class="bill-panel" id="bpanel-cls" style="display:none">
     <div class="bpanel-hdr">
       <span>📋 Class-wise Billing — Select Class to Print</span>
       <button class="btn btn-gh btn-sm" onclick="closeBillPanel()">✕ Close</button>
     </div>
     <div class="cls-print-grid">
-      <div class="cls-print-card" onclick="printClassBills('1')">
-        <div class="cpc-name">Class 1</div>
-        <div class="cpc-count" id="cpc-1">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('2')">
-        <div class="cpc-name">Class 2</div>
-        <div class="cpc-count" id="cpc-2">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('3')">
-        <div class="cpc-name">Class 3</div>
-        <div class="cpc-count" id="cpc-3">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('4')">
-        <div class="cpc-name">Class 4</div>
-        <div class="cpc-count" id="cpc-4">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('5')">
-        <div class="cpc-name">Class 5</div>
-        <div class="cpc-count" id="cpc-5">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('6')">
-        <div class="cpc-name">Class 6</div>
-        <div class="cpc-count" id="cpc-6">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('7')">
-        <div class="cpc-name">Class 7</div>
-        <div class="cpc-count" id="cpc-7">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('8')">
-        <div class="cpc-name">Class 8</div>
-        <div class="cpc-count" id="cpc-8">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('9')">
-        <div class="cpc-name">Class 9</div>
-        <div class="cpc-count" id="cpc-9">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
-      <div class="cls-print-card" onclick="printClassBills('10')">
-        <div class="cpc-name">Class 10</div>
-        <div class="cpc-count" id="cpc-10">0 students</div>
-        <div class="cpc-btn">🖨 Print</div>
-      </div>
+      <div class="cls-print-card" onclick="printClassBills('1')"><div class="cpc-name">Class 1</div><div class="cpc-count" id="cpc-1">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('2')"><div class="cpc-name">Class 2</div><div class="cpc-count" id="cpc-2">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('3')"><div class="cpc-name">Class 3</div><div class="cpc-count" id="cpc-3">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('4')"><div class="cpc-name">Class 4</div><div class="cpc-count" id="cpc-4">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('5')"><div class="cpc-name">Class 5</div><div class="cpc-count" id="cpc-5">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('6')"><div class="cpc-name">Class 6</div><div class="cpc-count" id="cpc-6">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('7')"><div class="cpc-name">Class 7</div><div class="cpc-count" id="cpc-7">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('8')"><div class="cpc-name">Class 8</div><div class="cpc-count" id="cpc-8">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('9')"><div class="cpc-name">Class 9</div><div class="cpc-count" id="cpc-9">0 students</div><div class="cpc-btn">🖨 Print</div></div>
+      <div class="cls-print-card" onclick="printClassBills('10')"><div class="cpc-name">Class 10</div><div class="cpc-count" id="cpc-10">0 students</div><div class="cpc-btn">🖨 Print</div></div>
     </div>
   </div>
-
-  <!-- ── OPTION 3 PANEL: All Students ── -->
   <div class="bill-panel" id="bpanel-all" style="display:none">
     <div class="bpanel-hdr">
       <span>📚 All Students Billing</span>
@@ -558,13 +547,10 @@ table.billtbl tr:hover td{background:#f5faf7}
     </div>
     <div class="all-bill-summary" id="all-bill-summary"></div>
     <div style="margin-top:16px">
-      <button class="btn btn-dk" style="font-size:14px;padding:12px 28px" onclick="printEveryBill()">
-        🖨 Print All Students — All Classes
-      </button>
+      <button class="btn btn-dk" style="font-size:14px;padding:12px 28px" onclick="printEveryBill()">🖨 Print All Students — All Classes</button>
     </div>
   </div>
-
-</div><!-- /if4 -->
+</div>
 
 </div><!-- /content -->
 </div><!-- /main -->
@@ -609,37 +595,172 @@ table.billtbl tr:hover td{background:#f5faf7}
   </div>
 </div>
 
+<!-- ══ IMPORT STUDENTS MODAL ══ -->
+<div class="ovl" id="import-stu-ovl">
+  <div class="modal" style="max-width:680px">
+    <div style="font-family:var(--serif);font-size:16px;font-weight:700;color:var(--g);margin-bottom:4px">📥 Import Students</div>
+    <div style="font-size:11px;color:var(--ink3);margin-bottom:14px">Upload a CSV or JSON file to add students. Duplicates (same ADM No in same class) are skipped.</div>
+
+    <!-- Format tabs -->
+    <div class="imp-mode-tabs">
+      <div class="imp-mode-tab active" id="stu-fmt-csv" onclick="setImpStuFmt('csv')">CSV Format</div>
+      <div class="imp-mode-tab" id="stu-fmt-json" onclick="setImpStuFmt('json')">JSON Format</div>
+    </div>
+
+    <!-- Format hint -->
+    <div class="imp-format-hint" id="stu-fmt-hint-csv">
+      <b>CSV columns (header required):</b><br>
+      <code>class,admNo,name</code><br><br>
+      Example rows:<br>
+      <code>2,1131,Mohammed Aslam</code><br>
+      <code>3,1050,Abdul Rahman K</code><br>
+      <small style="color:var(--ink3)">Class can be 1–10. ADM No must be unique within the class.</small>
+    </div>
+    <div class="imp-format-hint" style="display:none" id="stu-fmt-hint-json">
+      <b>JSON format — object keyed by class number:</b><br>
+      <code>{"2":[["1131","Mohammed Aslam"],["1132","Ahmed Razi"]],"3":[["1200","Abdul Rahman"]]}</code><br><br>
+      <small style="color:var(--ink3)">Or export existing students (JSON) and edit the file.</small>
+    </div>
+
+    <!-- Drop zone -->
+    <div class="imp-drop-zone" id="stu-drop-zone" onclick="document.getElementById('stu-file-inp').click()"
+         ondragover="event.preventDefault();this.classList.add('drag')"
+         ondragleave="this.classList.remove('drag')"
+         ondrop="handleStuDrop(event)">
+      <div class="dz-icon">📂</div>
+      <div class="dz-title">Click to choose file or drag & drop</div>
+      <div class="dz-sub" id="stu-drop-sub">Accepts .csv or .json</div>
+    </div>
+    <input type="file" id="stu-file-inp" accept=".csv,.json" style="display:none" onchange="handleStuFile(this)">
+
+    <!-- Preview -->
+    <div id="stu-imp-preview" style="display:none">
+      <div class="imp-stats-row" id="stu-imp-stats"></div>
+      <div class="imp-preview">
+        <table class="imp-tbl">
+          <thead><tr><th>Class</th><th>ADM No</th><th>Name</th><th>Status</th></tr></thead>
+          <tbody id="stu-imp-tbody"></tbody>
+        </table>
+      </div>
+      <div style="margin-top:6px;font-size:10px;color:var(--ink3)">
+        🟢 New · 🟡 Duplicate (skipped) · 🔴 Error (skipped)
+      </div>
+
+      <!-- Class filter for import -->
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <label style="font-size:11px;font-weight:700;color:var(--ink2)">Import into class:</label>
+        <select id="stu-imp-cls-filter" style="padding:5px 9px;border:1.5px solid var(--border);border-radius:5px;font-size:12px">
+          <option value="all">All classes in file</option>
+          <option value="1">Class 1 only</option><option value="2">Class 2 only</option>
+          <option value="3">Class 3 only</option><option value="4">Class 4 only</option>
+          <option value="5">Class 5 only</option><option value="6">Class 6 only</option>
+          <option value="7">Class 7 only</option><option value="8">Class 8 only</option>
+          <option value="9">Class 9 only</option><option value="10">Class 10 only</option>
+        </select>
+        <label style="font-size:11px;font-weight:700;color:var(--ink2)">Mode:</label>
+        <select id="stu-imp-mode" style="padding:5px 9px;border:1.5px solid var(--border);border-radius:5px;font-size:12px">
+          <option value="merge">Merge (keep existing, add new)</option>
+          <option value="replace">Replace class students</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:7px;margin-top:14px;align-items:center">
+      <button class="btn btn-g" id="stu-imp-confirm" style="display:none" onclick="confirmStuImport()">✓ Import Valid Students</button>
+      <button class="btn btn-gh" onclick="closeModals()">Cancel</button>
+      <span id="stu-imp-err" style="font-size:11px;color:var(--red);margin-left:4px"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ IMPORT BOOKS MODAL ══ -->
+<div class="ovl" id="import-book-ovl">
+  <div class="modal" style="max-width:680px">
+    <div style="font-family:var(--serif);font-size:16px;font-weight:700;color:var(--g);margin-bottom:4px">📥 Import Books & Prices</div>
+    <div style="font-size:11px;color:var(--ink3);margin-bottom:14px">Upload a JSON file exported from this app, or a manually created one.</div>
+
+    <div class="imp-format-hint">
+      <b>JSON format:</b><br>
+      <code>{"2":[{"n":"Book Name","p":50,"nb":0},{"n":"Notebook","p":50,"nb":1}],"3":[...]}</code><br><br>
+      <b>Fields:</b> <code>n</code> = book name &nbsp;|&nbsp; <code>p</code> = price (₹) &nbsp;|&nbsp; <code>nb</code> = 0 (regular) or 1 (notebook)<br>
+      <small style="color:var(--ink3)">Tip: Export Books JSON first, edit, then re-import.</small>
+    </div>
+
+    <div class="imp-drop-zone" id="book-drop-zone" onclick="document.getElementById('book-file-inp').click()"
+         ondragover="event.preventDefault();this.classList.add('drag')"
+         ondragleave="this.classList.remove('drag')"
+         ondrop="handleBookDrop(event)">
+      <div class="dz-icon">📂</div>
+      <div class="dz-title">Click to choose JSON file or drag & drop</div>
+      <div class="dz-sub" id="book-drop-sub">Accepts .json</div>
+    </div>
+    <input type="file" id="book-file-inp" accept=".json" style="display:none" onchange="handleBookFile(this)">
+
+    <div id="book-imp-preview" style="display:none">
+      <div class="imp-stats-row" id="book-imp-stats"></div>
+      <div class="imp-preview">
+        <table class="imp-tbl">
+          <thead><tr><th>Class</th><th>Book Name</th><th>Price</th><th>Type</th></tr></thead>
+          <tbody id="book-imp-tbody"></tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <label style="font-size:11px;font-weight:700;color:var(--ink2)">Import class:</label>
+        <select id="book-imp-cls-filter" style="padding:5px 9px;border:1.5px solid var(--border);border-radius:5px;font-size:12px">
+          <option value="all">All classes in file</option>
+          <option value="1">Class 1 only</option><option value="2">Class 2 only</option>
+          <option value="3">Class 3 only</option><option value="4">Class 4 only</option>
+          <option value="5">Class 5 only</option><option value="6">Class 6 only</option>
+          <option value="7">Class 7 only</option><option value="8">Class 8 only</option>
+          <option value="9">Class 9 only</option><option value="10">Class 10 only</option>
+        </select>
+        <label style="font-size:11px;font-weight:700;color:var(--ink2)">Mode:</label>
+        <select id="book-imp-mode" style="padding:5px 9px;border:1.5px solid var(--border);border-radius:5px;font-size:12px">
+          <option value="merge">Merge (add new books)</option>
+          <option value="replace">Replace class books</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:7px;margin-top:14px;align-items:center">
+      <button class="btn btn-g" id="book-imp-confirm" style="display:none" onclick="confirmBookImport()">✓ Import Books</button>
+      <button class="btn btn-gh" onclick="closeModals()">Cancel</button>
+      <span id="book-imp-err" style="font-size:11px;color:var(--red);margin-left:4px"></span>
+    </div>
+  </div>
+</div>
+
 <script>
 
 const CN={'1':'Class 1','2':'Class 2','3':'Class 3','4':'Class 4','5':'Class 5','6':'Class 6','7':'Class 7','8':'Class 8','9':'Class 9','10':'Class 10'};
 const CLASSES=['1','2','3','4','5','6','7','8','9','10'];
 
 const STUDENTS = {
-'1':[['611','MOHAMMED RAZI'],['666','MOHAMMED AFSAL'],['670','JALALUDHEEN K'],['681','MUHAMMAD RAZI'],['688','MUHAMMED MUZAMMIL'],['697','ABDUL JANIS'],['698','MUHAMMED SHANEED'],['699','ABDUL WADHOOD'],['702','AHMMED HASHIM M'],['703','MOHAMMED HASHIR'],['706','ABBAS AZNAB M.A'],['708','MAHAMMED SHAMEEL'],['709','AMEEN ABDULLA'],['710','ZULFIKARALI'],['711','MUHAMMED ANAS M.N'],['712','ABDULLA M HAKEEM'],['714','HASSAN SHADDAD UM'],['717','MOHAMMED SAHL CS'],['719','MOHAMMAD KHALANDAR ZIYAD'],['720','ABU THAHIR'],['723','MUHAMMAD SINAN NP'],['724','ABDUL RAHMAN MUNZIR'],['725','MOHAMMED MUZAMMIL P.M'],['726','MOHAMMED SALIH'],['738','MUHAMMED SUFAZ P'],['911','SAYYAD MOHAMMED VASIL'],['1012','MUHAMMED MIDHLAJ'],['1013','SHADIN G'],['1014','MEHAZIN AMAN T'],['1015','MUHAMMED UNAIS C K']],
-'2':[['1081','Muhammed B N'],['1093','ABOOBACKER FALAH M.I'],['1101','MOHAMMED ANSAF KA'],['1102','MUBASHIR M'],['1103','MOHAMMED'],['1104','AHMED SOUBAN U M'],['1105','MUHAMMED MEHRAN'],['1106','ABDULLA MASHUD'],['1107','MUHAMMED MARSAD B L'],['1108','NASHVAN ABDUL KADER B'],['1109','MUHAMMED ZEYAN'],['1110','SAYYID MUHAMMED MUHSIN N'],['1111','ABOOBAKKER SIDDIQ RAAFI'],['1112','MUHAMMED ASWIM NH'],['1113','MOHAMMED NAZEEF'],['1114','MUHAMMED AMEEN PA'],['1115','MOHAMMED SHAHIR K A'],['1116','MOHAMMED FAZIL B H'],['1117','MUHAMMED RISHAK M V'],['1118','MUHAMMED AZEEM M'],['1119','MUHAMMED FAIZAN BK'],['1120','HAYAAN ABDULLA A.M'],['1121','MUHAMMED RIZWAN K H'],['1122','ABDUL RAHMAN ADNAN T A'],['1123','MUHAMMED SHIFAN'],['1124','ABDUL KADAR BILAL P.A'],['1125','MUHAMMAD RAIHAN'],['1126','MUHAMMED RIHAN'],['1127','M THOUFIQ HUSSAIN'],['1128','SHAMIL AHMED BK'],['1129','ZEESHAN ABDUL RAHMAN N K'],['1130','MOHAMMED SHAHEEM M H']],
-'3':[['1021','Abdul Khader Uvais K A'],['1033','Muhammed Waheed R K'],['1046','MUHAMMED BIN JAFAR'],['1049','MUHAMMED SHIRAZ ISHAQUE'],['1053','MUHAMMED UVAIS.P. S'],['1065','NABEEH AHMAD C K'],['1066','MOHAMMED MIRZA M A'],['1067','AHMAD FARHATH'],['1068','Ahmed M.A.'],['1069','MIFZAL ABDULLA K M'],['1070','MOHAMMED SHAMIL'],['1071','MOHAMMAD SALMAN FARIS'],['1072','MUHAMMED MUHAD K Z'],['1073','SHAYAAN MOHAMMED.S'],['1074','MOHAMMED HABEEB. A'],['1075','ATHIF ABUTHAHIR P.P'],['1076','Muhammed Shahzadah T A'],['1077','MUHAMMAD AJMAL. TA'],['1078','MUHAMMED KHIDASH HYZAM'],['1079','ABDUL RAHMAN SHAHZAD K.S'],['1080','Muhammed Ashiq'],['1082','Mohammed Mayazin T.M'],['1083','MOHAMMED NABHAN C M'],['1084','MUHAMMED MUBASHIR P S'],['1085','HISHAD ABDULLA K'],['1086','MUHAMMED AFREED. A'],['1087','Abdul Nasir RA'],['1088','SALAHUDHEEN AYOOBI BADAKKAN'],['1089','MUHAMMED SHAHID AB'],['1090','MOHAMMED SHAYAN MOHIDDIN'],['1091','ABDULLA MUNAVVAR'],['1092','AMAN ABBAS'],['1094','MOHAMMED AZEEM CK'],['1095','MUHAMMED NAJAD'],['1096','MUHAMMAD SADIK K.M'],['1098','SAOOD BIN ABDUL NASSAR']],
-'4':[['941','MUHAMMED AFLAH.MK'],['968','ABDUL AFEEZ C.F'],['970','ABDULLAH A P'],['980','MOHAMMED QUBAIB A H'],['991','MUHAMMED AYAAN'],['1000','MUHAMMED TAMEEM'],['1006','THUFAIL'],['1009','AJZAL ASHRAF OV'],['1018','MUHAMMED RIZIN AMAN'],['1019','MUHAMMAD AZEEM'],['1020','MUHAMMED HAFIZ S T'],['1022','MUHAMMED ADHIL C H'],['1023','Mohammed Sinan N.A'],['1024','AHMED RAZI MR'],['1026','Muhammed Hisham K M'],['1027','HUSSAIN MUHAVIZ B A'],['1028','HILAL ABDULLA C H'],['1029','MOIDEEN KAIS'],['1030','MUHAMMED SHAHID K A'],['1031','K MUHAMMAD JALAL'],['1035','MUHAMMED HASHIR A K'],['1036','MOHAMMED NAFIH'],['1037','BEERAN MUEENUDHEEN MH'],['1038','MUHAMMAD K A'],['1039','IBRAHIM KALEEL'],['1040','MOHAMMED JASEEM'],['1041','MUHAMMED RAZI A T'],['1042','MUHAMMED ZAID'],['1043','MUHAMMED HAFEEZ'],['1044','MOHAMMED HAFEEZ'],['1050','JAUHAR ASHFAQUE MUHSIN'],['1051','YASEEN MUHAMMED'],['1052','MOHAMMED RAFAN A'],['1054','MOHAMMED SHUAIB K M'],['1056','MUHAMMED MOIDEEN KUNHI']],
-'5':[['899','HASAN THAMMEEM'],['936','HAFIL ADIL AMANULLAH K K'],['945','MUHAMMED SHUHAIR'],['946','Muhammed Anshad A'],['969','ABDULLA'],['972','AHAMED ADIL. A'],['974','AHMED WALEED K A'],['976','AYAAN ABOOBAKAR'],['977','FADIL AMEEN ABDULLA'],['978','MOHAMED JAWHAR J A'],['979','Mohammad Yaseen'],['981','MOHAMMED SAWA T A'],['982','MOHAMMED WASIM SHAHAD SM'],['985','Muhammad M'],['987','MUHAMMED ADNAN K.A'],['988','Muhammed Anas'],['989','MUHAMMED ASHIR M'],['992','MUHAMMED FAHAD'],['993','MUHAMMED FAREED A S'],['994','MUHAMMED LUQMAN TD'],['995','MUHAMMED MICDAD RAMEES A H'],['996','MUHAMMED MIDLAJ'],['997','Muhammed Naieem'],['998','MUHAMMED RAEES C A'],['1001','NAZWAN MOHAMMED'],['1002','P.V.AHMAD ANAS'],['1004','SAYYED MUHAMMED ABOOBACKER'],['1005','SHAHUL HAMEED B.I'],['1007','YOUSUF FAHEEM P']],
-'6':[['848','RAFNAS P'],['872','ABDUL GAFOOR'],['883','MOHAMMED ANAS A.A'],['890','MUHAMMED RAZI TM'],['892','AHMAD MUBASHAR'],['893','MOHAMMED NAFIH BA'],['912','MUHAMMED ZAMIL'],['913','ABDUL RAHIMAN FAIZ T A'],['914','AHAMMED SAFAR ZAKARIYA'],['915','MUHAMMED MUHAZ P A'],['916','MUHAMMED SAHEEM ASHRAF'],['917','SHARAZ AHAMMED'],['918','MUHAMMED IHTHISHAM P I'],['920','AMEEN RAHMAN MTP'],['921','HASSAN SAHAL N A'],['922','MOHAMMED SABIK BM'],['923','MUHAMMAD SABITH V K P'],['924','Muhammad Muaaz'],['925','ABDUL SA-AD'],['926','MOHAMMED RIYAN'],['927','MOHIDDEEN SHAHSHAD'],['928','MUHAMMAD FAYIZ B'],['929','MUHAMMED YASEEN'],['930','MOHAMMED RAED. UA'],['931','MUHAMMED SHANIFM P'],['932','AHAMMED JABIR K H'],['933','THANSEEHU RAHMAN'],['934','MOHAMMED AFNAN'],['935','MOHAMMED SABITH KU'],['937','MUHAMMED BASSIM. E'],['938','MUHAMMED SAEED THUFAIL'],['939','MEERAN MOHIUDHEEN RAFIH'],['943','ABDUL RAHIMAN AZAAN'],['944','MOHAMMED RAFIH M R'],['947','MUHAMMAD MIJVAD K'],['948','MOHAMMAD IJAN'],['949','HABEEB RAHMAN CA'],['950','Muhammad']],
-'7':[['797','AHAMMED MAHSHOOKM.B'],['845','MOHAMMED SHAHID'],['850','AHAMMED MINHAJ E M'],['853','MAHIN SINAN'],['856','P K ZAMEEL AHMED'],['862','MUHAMMED HAMDAN A.P'],['863','MOHAMMED SHADIL AP'],['864','MUHAMMED NAFIH CI'],['865','YASEEN NOORULLA PH'],['866','WASEEM NIHAD A M'],['867','MOHAMMED SHAMEEM B K'],['868','MOHAMMED BAQIR TS'],['869','MUHAMMED FARHAN PH'],['870','ABDULLA FAHAD T.U'],['875','MUHAMMED MUNAZIR MM'],['879','ABDUL KHADER ISHAQUE'],['880','ABDULLA ALBAS'],['882','MUHAMMED A'],['884','MUHAMMED MIHRAZ'],['885','FADIL MOHAMMED K M'],['886','AJMAL AHMED MT'],['888','MOHAMMED DAWOOD K'],['891','RAYHAN PH'],['898','MOHAMMED YOUNUS'],['900','RASALUL AMEEN T']],
-'8':[['750','IBRAHIM AFIL'],['767','MUHAMMED ABDUL NASIF P.A'],['784','MUHAMMED KASHIF'],['802','MUHAMMED ABDUL KADER'],['803','HADIL RIJAS'],['810','AHMAD MANAL KUDINGILA'],['811','ABDUL RAHMAN ANFHAL M I'],['823','ADIL ABDULLA A'],['824','ABDULLA SALMAN FARIS M'],['825','ABDULLA FARHAN M'],['827','MUHAMMAD ISMAIL HAMDULLA V K'],['829','MOHAMMED SADUDDEEN K'],['830','SEYYAD MUHAMMED FAHMAN'],['831','AJMAL RUWAIS'],['832','MOHAMMED ABDUL KHADER K'],['833','MUAHMMED ANAS P A'],['834','Muhammed fahiz A K'],['835','MUHAMMAD SHAMMAS'],['836','ARIFUDEEN ABBAS A'],['837','MAJID MUHAMMED M'],['840','ABDUL SALAM ARIF'],['842','MOHAMMED K H'],['846','MOHAMMED FAQRUDDEEN RAZI'],['849','MOHAMMED MUBASHIR'],['851','ADNAN ABDULLAH B A'],['857','MOHAMMED HISHAM']],
-'9':[['722','AJMAL AM'],['730','IBRAHIM AHRAZ'],['742','MUHAMMAD SHAZIN'],['751','SALMANUL FARIS'],['778','AHAMAD SHABAB P A'],['779','MOHAMMED SHAKIR HUSSAIN K.Y'],['781','MUHAMMED SHUHAIB S'],['783','MOHAMMED MOINUDDEEN CHISTY'],['785','SULAIMAN FAHAD AP'],['786','IJAS EBRAHIM'],['788','AHMAD MINHAJ'],['791','MUHAMMED SINAN M'],['792','MUHAMMED ASHKKAR ALI'],['794','SHAMEEL AHAMMED P'],['796','IMRAN HUSSAINTI'],['798','AHAMED ZAKI FOUZAN T.Z'],['799','MUHAMMED SHABEEB'],['800','ABDUL BAAIS N.A'],['801','MUHAMMED PK'],['805','MOHAMMED ASHMIL K A'],['806','MUHAMMED SABITH ALI TM'],['807','MUHAMMED AHMASH K'],['809','MOHAMMED RAZEEN S.P'],['812','HASSAN ZARKASH'],['813','ABDULLA RAMSHAD'],['815','HASAN YASIR'],['817','ABDUL FATHAH AHAMMED C'],['1016','MUHAMMED KAIF B S'],['1063','AHMED RAZA NA'],['1099','MUHAMMED SHAFI P'],['1100','SHAIN AHAMMED.K']],
-'10':[['704','AHAMMED AJEER'],['728','MOHAMMED ABDUL KHADER NABAVI E A'],['729','MUHAMMAD K.A'],['739','MOHAMMED SAHEED A.K'],['740','AHMED FAHEEM MA'],['747','MUHAMMAD IBN AHMAD'],['749','MUHAMMED MUJTHABA MK'],['754','MUHAMMED SHAHAN P.S'],['755','MOHAMMED THAJUDDEEN A R P'],['757','RUMAIZALI R IBRAHIM'],['760','MUHAMMED THASLEEM'],['762','AHAMED SHAMMAS C.M'],['771','ABDUL HADIL P.M'],['772','MUHAMMAD MUSTHAFA K.M'],['773','ABDULLAH MAZIN'],['776','MUHAMMED T A'],['777','MOHAMMED HUSSAIN'],['819','MUHAMMED ZAYAN N.S'],['1057','MUHAMMED SABITH KM'],['1058','Sufyan mk'],['1059','Abdunnafih'],['1060','MUHAMMED SWALIH TA'],['1061','MUHAMMED FARZAQ K'],['1062','MUHAMMAD NAZAL NAWAS K'],['1064','MUHEENUDHEEN MP'],['1097','MUHAMMED FARMAN']]
+'1':[['1136','ABOOBAKKER SIDDIQ RAAFI'],['1137','ZEESHAN ABDUL RAHMAN N K'],['1138','SHAZIL ABBAS'],['1139','ZIYAN MUHAMMED RK'],['1140','Mohammed Udaif K A'],['1141','Muhammed mujthaba Anchillath'],['1142','ABDULLA AAZIM K'],['1143','Mohammad Faizan'],['1144','Muhammed Rizwan KH'],['1145','ABDUL KADER NABHAN S T'],['1146','AHMED RILWAN'],['1147','Farih A L'],['1148','MUHAMMED SHAHEEM AARIF'],['1149','MOHAMMAD RAZEEN'],['1150','MOHAMMED MEHRAZ TM'],['1151','MUHAMMED SUFIYAN A'],['1152','HISHAM C H'],['1153','MUHAMMED ALFAZ N A'],['1154','MOHAMMED RAFIH'],['1155','ABOOBAKKAR AZAD'],['1156','Muhammad Thayyib AK'],['1157','SHAZIM ABDUL RAHMAN'],['1158','ABDUL KHADER RINAS AK'],['1159','ZAHRAN AK'],['1160','ABDULLAH MUHAMMED ALI'],['1161','MUHAMMED AMEEN'],['1162','Muhammad Abdusamad'],['1163','ABDULLAH BASITH'],['1164','MUHAMMED RIZWI'],['1165','IHSAN MUHAMMAD'],['1166','MUHAMMAD ZAID FA'],['1167','RABEEATH AHMAD']],
+'2':[['1046','MUHAMMED BIN JAFAR'],['1049','MUHAMMED SHIRAZ ISHAQUE'],['1065','NABEEH AHMAD C K'],['1069','MIFZAL ABDULLA K M'],['1093','ABOOBACKER FALAH M.I'],['1101','MOHAMMED ANSAF KA'],['1102','MUBASHIR M'],['1103','MOHAMMED'],['1105','MUHAMMED MEHRAN'],['1107','MUHAMMED MARSAD B L'],['1108','NASHVAN ABDUL KADER B'],['1109','MUHAMMED ZEYAN'],['1110','SAYYID MUHAMMED MUHSIN N'],['1112','MUHAMMED ASWIM NH'],['1113','MOHAMMED NAZEEF'],['1114','MUHAMMED AMEEN PA'],['1115','MOHAMMED SHAHIR K A'],['1116','MOHAMMED FAZIL B H'],['1117','MUHAMMED RISHAK M V'],['1118','MUHAMMED AZEEM M'],['1119','MUHAMMED FAIZAN BK'],['1120','HAYAAN ABDULLA A.M'],['1122','ABDUL RAHMAN ADNAN T A'],['1123','MUHAMMED SHIFAN'],['1124','ABDUL KADAR BILAL P.A'],['1125','MUHAMMAD RAIHAN'],['1126','MUHAMMED RIHAN'],['1127','M THOUFIQ HUSSAIN'],['1128','SHAMIL AHMED BK'],['1131','IBRAHIM KALEEL P H']],
+'3':[['1021','Abdul Khader Uvais K A'],['1053','MUHAMMED UVAIS.P. S'],['1066','MOHAMMED MIRZA M A'],['1067','AHMAD FARHATH'],['1068','Ahmed M.A.'],['1070','MOHAMMED SHAMIL'],['1072','MUHAMMED MUHAD K Z'],['1073','SHAYAAN MOHAMMED.S'],['1074','MOHAMMED HABEEB. A'],['1075','ATHIF ABUTHAHIR P.P'],['1076','Muhammed Shahzadah T A'],['1077','MUHAMMAD AJMAL. TA'],['1078','MUHAMMED KHIDASH HYZAM'],['1079','ABDUL RAHMAN SHAHZAD K.S'],['1080','Muhammed Ashiq'],['1082','Mohammed Mayazin T.M'],['1083','MOHAMMED NABHAN C M'],['1084','MUHAMMED MUBASHIR P S'],['1085','HISHAD ABDULLA K'],['1087','Abdul Nasir RA'],['1088','SALAHUDHEEN AYOOBI BADAKKAN'],['1089','MUHAMMED SHAHID AB'],['1090','MOHAMMED SHAYAN MOHIDDIN'],['1091','ABDULLA MUNAVVAR'],['1092','AMAN ABBAS'],['1094','MOHAMMED AZEEM CK'],['1095','MUHAMMED NAJAD'],['1096','MUHAMMAD SADIK K.M'],['1098','SAOOD BIN ABDUL NASSAR']],
+'4':[['941','MUHAMMED AFLAH.MK'],['970','ABDULLAH A P'],['980','MOHAMMED QUBAIB A H'],['1000','MUHAMMED TAMEEM'],['1006','THUFAIL'],['1009','AJZAL ASHRAF OV'],['1018','MUHAMMED RIZIN AMAN'],['1019','MUHAMMAD AZEEM'],['1020','MUHAMMED HAFIZ S T'],['1022','MUHAMMED ADHIL C H'],['1023','Mohammed Sinan N.A'],['1024','AHMED RAZI MR'],['1026','Muhammed Hisham K M'],['1027','HUSSAIN MUHAVIZ B A'],['1028','HILAL ABDULLA C H'],['1029','MOIDEEN KAIS'],['1030','MUHAMMED SHAHID K A'],['1031','K MUHAMMAD JALAL'],['1035','MUHAMMED HASHIR A K'],['1036','MOHAMMED NAFIH'],['1037','BEERAN MUEENUDHEEN MH'],['1038','MUHAMMAD K A'],['1039','IBRAHIM KALEEL'],['1041','MUHAMMED RAZI A T'],['1042','MUHAMMED ZAID'],['1043','MUHAMMED HAFEEZ'],['1044','MOHAMMED HAFEEZ'],['1050','JAUHAR ASHFAQUE MUHSIN'],['1051','YASEEN MUHAMMED'],['1052','MOHAMMED RAFAN A'],['1054','MOHAMMED SHUAIB K M'],['1056','MUHAMMED MOIDEEN KUNHI']],
+'5':[['899','HASAN THAMMEEM'],['923','MUHAMMAD SABITH V K P'],['938','MUHAMMED SAEED THUFAIL'],['945','MUHAMMED SHUHAIR'],['946','Muhammed Anshad A'],['972','AHAMED ADIL. A'],['974','AHMED WALEED K A'],['976','AYAAN ABOOBAKAR'],['977','FADIL AMEEN ABDULLA'],['978','MOHAMED JAWHAR J A'],['979','Mohammad Yaseen'],['981','MOHAMMED SAWA T A'],['985','Muhammad M'],['987','MUHAMMED ADNAN K.A'],['988','Muhammed Anas'],['989','MUHAMMED ASHIR M'],['992','MUHAMMED FAHAD'],['993','MUHAMMED FAREED A S'],['994','MUHAMMED LUQMAN TD'],['995','MUHAMMED MICDAD RAMEES A H'],['996','MUHAMMED MIDLAJ'],['997','Muhammed Naieem'],['998','MUHAMMED RAEES C A'],['1004','SAYYED MUHAMMED ABOOBACKER'],['1005','SHAHUL HAMEED B.I'],['1007','YOUSUF FAHEEM P']],
+'6':[['872','ABDUL GAFOOR'],['890','MUHAMMED RAZI TM'],['892','AHMAD MUBASHAR'],['893','MOHAMMED NAFIH BA'],['912','MUHAMMED ZAMIL'],['913','ABDUL RAHIMAN FAIZ T A'],['914','AHAMMED SAFAR ZAKARIYA'],['915','MUHAMMED MUHAZ P A'],['916','MUHAMMED SAHEEM ASHRAF'],['917','SHARAZ AHAMMED'],['918','MUHAMMED IHTHISHAM P I'],['920','AMEEN RAHMAN MTP'],['921','HASSAN SAHAL N A'],['922','MOHAMMED SABIK BM'],['924','Muhammad Muaaz'],['925','ABDUL SA-AD'],['926','MOHAMMED RIYAN'],['927','MOHIDDEEN SHAHSHAD'],['929','MUHAMMED YASEEN'],['930','MOHAMMED RAED. UA'],['931','MUHAMMED SHANIFM P'],['932','AHAMMED JABIR K H'],['933','THANSEEHU RAHMAN'],['934','MOHAMMED AFNAN'],['935','MOHAMMED SABITH KU'],['939','MEERAN MOHIUDHEEN RAFIH'],['943','ABDUL RAHIMAN AZAAN'],['944','MOHAMMED RAFIH M R'],['947','MUHAMMAD MIJVAD K'],['948','MOHAMMAD IJAN'],['949','HABEEB RAHMAN CA'],['950','Muhammed cs']],
+'7':[['845','MOHAMMED SHAHID'],['853','MAHIN SINAN'],['856','P K ZAMEEL AHMED'],['863','MOHAMMED SHADIL AP'],['865','YASEEN NOORULLA PH'],['866','WASEEM NIHAD A M'],['867','MOHAMMED SHAMEEM B K'],['868','MOHAMMED BAQIR TS'],['869','MUHAMMED FARHAN PH'],['870','ABDULLA FAHAD T.U'],['875','MUHAMMED MUNAZIR MM'],['879','ABDUL KHADER ISHAQUE'],['880','ABDULLA ALBAS'],['882','MUHAMMED A'],['884','MUHAMMED MIHRAZ'],['886','AJMAL AHMED MT'],['888','MOHAMMED DAWOOD K'],['891','RAYHAN PH'],['898','MOHAMMED YOUNUS'],['900','RASALUL AMEEN T']],
+'8':[['802','MUHAMMED ABDUL KADER'],['810','AHMAD MANAL KUDINGILA'],['811','ABDUL RAHMAN ANFHAL M I'],['824','ABDULLA SALMAN FARIS M'],['825','ABDULLA FARHAN M'],['829',"MOHAMMED SA'DUDDEEN K"],['830','SEYYAD MUHAMMED FAHMAN'],['831','AJMAL RUWAIS'],['832','MOHAMMED ABDUL KHADER K'],['833','MUAHMMED ANAS P A'],['835','MUHAMMAD SHAMMAS'],['836','ARIFUDEEN ABBAS A'],['837','MAJID MUHAMMED M'],['840','ABDUL SALAM ARIF'],['842','MOHAMMED K H'],['849','MOHAMMED MUBASHIR'],['851','ADNAN ABDULLAH B A'],['857','MOHAMMED HISHAM'],['1132','RAIHAN ABOOBACKER K'],['1133','MUHAMMED ADIL CP'],['1134','MOHAMMED ANSHID KP'],['1135','ZAID ADHIL M']],
+'9':[['722','AJMAL AM'],['730','IBRAHIM AHRAZ'],['742','MUHAMMAD SHAZIN'],['760','MUHAMMED THASLEEM'],['771','ABDUL HADIL P.M'],['778','AHAMAD SHABAB P A'],['779','MOHAMMED SHAKIR HUSSAIN K.Y'],['781','MUHAMMED SHUHAIB S'],['783','MOHAMMED MOINUDDEEN CHISTY'],['785','SULAIMAN FAHAD AP'],['786','IJAS EBRAHIM'],['788','AHMAD MINHAJ'],['791','MUHAMMED SINAN M'],['792','MUHAMMED ASHKKAR ALI'],['794','SHAMEEL AHAMMED P'],['796','IMRAN HUSSAIN TI'],['798','AHAMED ZAKI FOUZAN T.Z'],['799','MUHAMMED SHABEEB'],['800','ABDUL BAAIS N.A'],['801','MUHAMMED PK'],['805','MOHAMMED ASHMIL K A'],['806','MUHAMMED SABITH ALI TM'],['807','MUHAMMED AHMASH K'],['809','MOHAMMED RAZEEN S.P'],['812','HASSAN ZARKASH'],['813','ABDULLA RAMSHAD'],['1016','MUHAMMED KAIF B S'],['1063','AHMED RAZA N A'],['1099','MUHAMMED SHAFI P'],['1100','SHAIN AHAMMAD K']],
+'10':[['666','MOHAMMED AFSAL'],['704','AHAMMED AJEER'],['709','AMEEN ABDULLA'],['728','MOHAMMED ABDUL KHADER NABAVI E A'],['729','MUHAMMAD K.A'],['739','MOHAMMED SAHEED A.K'],['740','AHMED FAHEEM MA'],['747','MUHAMMAD IBN AHMAD'],['749','MUHAMMED MUJTHABA MK'],['754','MUHAMMED SHAHAN P.S'],['755','MOHAMMED THAJUDDEEN A R P'],['757','RUMAIZALI R IBRAHIM'],['762','AHAMED SHAMMAS C.M'],['772','MUHAMMAD MUSTHAFA K.M'],['773','ABDULLAH MAZIN'],['776','MUHAMMED T A'],['777','MOHAMMED HUSSAIN'],['819','MUHAMMED ZAYAN N.S'],['1057','MUHAMMED SABITH KM'],['1058','Sufyan mk'],['1059','Abdunnafih'],['1060','MUHAMMED SWALIH TA'],['1061','MUHAMMED FARZAQ K'],['1062','MUHAMMAD NAZAL NAWAS K'],['1064','MUHEENUDHEEN MP'],['1097','MUHAMMED FARMAN']]
 };
+
 
 const BOOKS = {
-'1':[],
-'2':[{n:'أحسن الأخلاق من أحاديث النبي الخلاق',p:50,nb:0},{n:'فقه الأطفال د/ بهاء الدين محمد المليباري',p:50,nb:0},{n:'النحو الواضح - الجزء الثاني',p:50,nb:0},{n:'العربية للجميع 2',p:50,nb:0},{n:'لغتي العربية II (extra reader)',p:50,nb:0},{n:'ARABI COPY',p:50,nb:0},{n:'الجواهر الكلامية في إيضاح العقيدة الإسلامية',p:50,nb:0},{n:'تاريخ الانبياء 2',p:50,nb:0},{n:'FI ILMU SARF',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'التجويد للأستاذ رفيق الهدوي - الجزء الثاني',p:50,nb:0},{n:'ابتدائ اردو - تیسری جماعت',p:50,nb:0},{n:'گلزار اردو - قواعد',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'HINDI SARANGI NCERT II',p:50,nb:0},{n:'HINDI COPY',p:50,nb:0},{n:'POORVI NCERT TEXTBOOK',p:50,nb:0},{n:'Parrot (English Grammar)',p:50,nb:0},{n:'An Alien Hand (Extra Reading NCERT VII)',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'Science CURIOSITY VII',p:50,nb:0},{n:'Mathematics VII',p:50,nb:0},{n:'Our Environment (Geography VII)',p:50,nb:0},{n:'Social and Political Life-2 (Class VII)',p:50,nb:0},{n:'Our Pasts II (History Class VII)',p:50,nb:0},{n:'ADISTHANA PADAVALI',p:50,nb:0},{n:'KERALA PADAVALI',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
-'3':[{n:'مختصر رياض الصالحين للإمام النووي',p:50,nb:0},{n:'التجويد الجزء الثاني - عبد الرفيق الهدوي',p:50,nb:0},{n:'فتح المعين بشرح قرة العين',p:50,nb:0},{n:'النحو الواضح - الجزء الثالث',p:50,nb:0},{n:'العربية للجميع 3',p:50,nb:0},{n:'ARABI COPY',p:50,nb:0},{n:'قصص النبيين للأطفال الجزء الثالث',p:50,nb:0},{n:'تيسير الولدان في تمرين الأوزان',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'أيها الولد - الإمام الغزالي',p:50,nb:0},{n:'ابتدائ اردو - چوتهی جماعت',p:50,nb:0},{n:'گلزار اردو - قواعد',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'HINDI VEENA NCERT 3',p:50,nb:0},{n:'HINDI COPY',p:50,nb:0},{n:'POORVI (NCERT VIII)',p:50,nb:0},{n:'Sparrow (English Grammar)',p:50,nb:0},{n:'It So Happened (NCERT VIII)',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'Science VIII BASIC SCIENCE',p:50,nb:0},{n:'GANITHAPRAKASH Mathematics VIII',p:50,nb:0},{n:'Social and Political Life (NCERT VIII)',p:50,nb:0},{n:'ADISTHANA PADAVALI VIII',p:50,nb:0},{n:'KERALA PADAVALI VIII',p:50,nb:0},{n:'COPY',p:50,nb:0},{n:'GRAMMER',p:50,nb:0},{n:'Resourse and Development (Geo VIII)',p:50,nb:0},{n:'Our Pasts III (History Class VIII)',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
-'4':[{n:'RIYALUSALIHEEN',p:50,nb:0},{n:'FATHHUL MUEEN',p:50,nb:0},{n:'NAHV 2-1',p:50,nb:0},{n:'ARABI LIL JAMEE',p:50,nb:0},{n:'LUGATHI AL ARABIYA',p:50,nb:0},{n:'KERALA READER, ARB 10TH CLASS',p:50,nb:0},{n:'COPY',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'QASAS 4',p:50,nb:0},{n:'ADKIYA',p:50,nb:0},{n:'TANVEERUL QULUB',p:50,nb:0},{n:'KHAYAL URDU IX',p:50,nb:0},{n:'GULZAR',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'SKYLARK GRMR',p:50,nb:0},{n:'MOMENTS',p:50,nb:0},{n:'ENG COPY',p:50,nb:0},{n:'ENGLISH SCERT IX',p:50,nb:0},{n:'HINDI SCERT IX',p:50,nb:0},{n:'PHYSICS SCERT IX',p:50,nb:0},{n:'CHEMISTRY SCERT IX',p:50,nb:0},{n:'BIOLOGY SCERT IX',p:50,nb:0},{n:'MATHS SCERT IX',p:50,nb:0},{n:'ARABIC IX',p:50,nb:0},{n:'ADISTHANA PADAVALI',p:50,nb:0},{n:'MALAYALAM SCERT IX',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'MALAYALAM GRMR',p:50,nb:0},{n:'SOCIAL SCIENCE SCERT',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
-'5':[{n:'JALALAINI 2',p:50,nb:0},{n:'RIYALUSALIHEEN',p:50,nb:0},{n:'FATHHUL MUEEN',p:50,nb:0},{n:'NAHV 2-2',p:50,nb:0},{n:'NAHV 2-3',p:50,nb:0},{n:'ALFIYA',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'ARABIC 10TH CLASS SCERT',p:50,nb:0},{n:'ADAB LIL JAMEE',p:50,nb:0},{n:'QASAS NABIYY',p:50,nb:0},{n:'AL ARAB QABLAL ISLAM',p:50,nb:0},{n:'THAALEEM MUTH',p:50,nb:0},{n:'KHAYAL',p:50,nb:0},{n:'GULZAR',p:50,nb:0},{n:'URDU COPY',p:50,nb:0},{n:'GULDAN',p:50,nb:0},{n:'SCERT TEXT',p:50,nb:0},{n:'NIGHTINGALE',p:50,nb:0},{n:'ENGLISH COPY',p:50,nb:0},{n:'FOOT PRINT WITHOUT FEET',p:50,nb:0},{n:'PHYSICS SCERT X',p:50,nb:0},{n:'CHEMISTRY SCERT X',p:50,nb:0},{n:'BIOLOGY SCERT X',p:50,nb:0},{n:'MALAYALAM GRAMMAR',p:50,nb:0},{n:'MALAYALAM COPY',p:50,nb:0},{n:'MALAYALAM SCERT X',p:50,nb:0},{n:'MATHEMATICS SCERT X',p:50,nb:0},{n:'SOCIAL 10TH SCERT',p:50,nb:0},{n:'HINDI SCERT X',p:50,nb:0},{n:'MALAYALAM GRMR',p:50,nb:0},{n:'NOTE BOOK RULED',p:50,nb:1},{n:'NOTE UN RULED',p:50,nb:1}],
-'6':[{n:'تفسير الجلالين الجزء الأول والثاني',p:50,nb:0},{n:'مشكاة المصابيح',p:50,nb:0},{n:'فتح المعين بشرح قرة العين',p:50,nb:0},{n:'التبيان في علوم القرآن',p:50,nb:0},{n:'شرح إبن عقيل على الألفية إبن مالك',p:50,nb:0},{n:'البلاغة الواضحة',p:50,nb:0},{n:'Translation & Composition',p:50,nb:0},{n:'الأدب العربي للسنة الأولى من ثانوية العليا',p:50,nb:0},{n:'Text book for Arabic XI SCERT',p:50,nb:0},{n:'Text book for English XI SCERT',p:50,nb:0},{n:'Phoenix - English Grammar',p:50,nb:0},{n:'Sociology XI',p:50,nb:0},{n:'Politics XI',p:50,nb:0},{n:'History XI',p:50,nb:0},{n:'Economics XI',p:50,nb:0},{n:'ACCOUNTANCY XI',p:50,nb:0},{n:'BUSINESS STUDIES XI',p:50,nb:0},{n:'COMP APPLI XI',p:50,nb:0},{n:'MATHS XI',p:50,nb:0},{n:'KHAYAL NCERT VIII',p:50,nb:0},{n:'Ruled Notebook',p:50,nb:1},{n:'Plane Notebook',p:50,nb:1}],
-'7':[{n:'JALALAINI',p:50,nb:0},{n:'MISHKATH',p:50,nb:0},{n:'FATHUL MUEEN',p:50,nb:0},{n:'SHARAHUL VARAQAT',p:50,nb:0},{n:'MINHAJUL ABIDEEN',p:50,nb:0},{n:'ALFIYA',p:50,nb:0},{n:'BALAGA',p:50,nb:0},{n:'T&C',p:50,nb:0},{n:'الأدب العربي لصف الثاني من الثانوية العليا',p:50,nb:0},{n:'SCERT ARABIC XII',p:50,nb:0},{n:'NAVAE URD X',p:50,nb:0},{n:'SCERT ENGLISH XII',p:50,nb:0},{n:'SCERT SOCIOLOGY XII',p:50,nb:0},{n:'SCERT POLIT SCI XII',p:50,nb:0},{n:'SCERT HISTORY XII',p:50,nb:0},{n:'SCERT ECONOMICS XII',p:50,nb:0},{n:'ACCOUNTANCY XII',p:50,nb:0},{n:'BUSINESS STUDIES XII',p:50,nb:0},{n:'COMP APPLI XII',p:50,nb:0},{n:'MATHS XII',p:50,nb:0},{n:'NOTE RULED',p:50,nb:1},{n:'NOTE UNRULED',p:50,nb:1}],
-'8':[{n:'صفوة التفاسير (من الأعلى إلى الناس)',p:50,nb:0},{n:'NASAI',p:50,nb:0},{n:'IBNU MAJA',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الأول',p:50,nb:0},{n:'KHULASA',p:50,nb:0},{n:'JAMUL JAVAMI VOL 1',p:50,nb:0},{n:'MUKHTASAR',p:50,nb:0},{n:'DEEVAAN',p:50,nb:0},{n:'MATHNUL KAFI',p:50,nb:0},{n:'NAKAHTE ADAB 1 & 2',p:50,nb:0},{n:'ENG LITERATURE',p:50,nb:0},{n:'TASREEH MNTQ',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
-'9':[{n:'THAFSEER NASAFI',p:50,nb:0},{n:'تفسير الكشاف (سورة آل عمران)',p:50,nb:0},{n:'جامع الترمذي وشمائل الترمذي',p:50,nb:0},{n:'سنن أبي داؤد',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الأول',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء الثاني',p:50,nb:0},{n:'شرح العقائد النسفية',p:50,nb:0},{n:'JAM AL JAVAMIH',p:50,nb:0},{n:'شرح التهذيب - الإمام التفتازاني',p:50,nb:0},{n:'مختصر المعاني لسعد الدين التفتازاني',p:50,nb:0},{n:'NAKAHTE ADAB 3 & 4',p:50,nb:0},{n:'Academic Reading and Writing',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}],
-'10':[{n:'أنوار التنزيل وأسرار التأويل للبيضاوي',p:50,nb:0},{n:'نزهة النظر في شرح نخبة الفكر لإبن حجر',p:50,nb:0},{n:'MUATHWA',p:50,nb:0},{n:'شرح المنهاج للإمام المحلي - الجزء 2',p:50,nb:0},{n:'شرح المحلي على جمع الجوامع الجزء الثاني',p:50,nb:0},{n:'KUBRAL YAQEENIYATH',p:50,nb:0},{n:'RASHEEDIYA',p:50,nb:0},{n:'الأدب العربي الهند',p:50,nb:0},{n:'MUKTHASAR MAANI',p:50,nb:0},{n:'NAKAHTE ADAB 5 & 6',p:50,nb:0},{n:'Ruled Notebook (വരയുള്ളത്)',p:50,nb:1},{n:'Plane Notebook (വരയില്ലാത്തത്)',p:50,nb:1}]
+'1':[{n:'Muktasarul Akhlaq',p:35,nb:0},{n:'mathnul Arbaeen',p:35,nb:0},{n:'Fiqh',p:75,nb:0},{n:'Nahv',p:45,nb:0},{n:'Arabic copy',p:30,nb:0},{n:'Thasawuf',p:45,nb:0},{n:'Meezan',p:45,nb:0},{n:'shahnai',p:70,nb:0},{n:'Gulzar',p:45,nb:0},{n:'Urdu COpy',p:30,nb:0},{n:'Hind Copy',p:55,nb:0},{n:'Thajweed',p:30,nb:0},{n:'thareq',p:75,nb:0},{n:'swarf (burhan)',p:80,nb:0},{n:'beginning(SQL)',p:85,nb:0},{n:'DOVE',p:70,nb:0},{n:'ENG COPY',p:30,nb:0},{n:'MATHEMATICS',p:145,nb:0},{n:'SARANGI',p:70,nb:0},{n:'POORVI',p:70,nb:0},{n:'CURIOSITY',p:70,nb:0},{n:'SOCIAL EXPLORING SOCIETY',p:70,nb:0}],
+'2':[{n:'\u0623\u062d\u0633\u0646 \u0627\u0644\u0623\u062e\u0644\u0627\u0642 \u0645\u0646 \u0623\u062d\u0627\u062f\u064a\u062b \u0627\u0644\u0646\u0628\u064a \u0627\u0644\u062e\u0644\u0627\u0642',p:60,nb:0},{n:'\u0641\u0642\u0647 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 \u062f/ \u0628\u0647\u0627\u0621 \u0627\u0644\u062f\u064a\u0646 \u0645\u062d\u0645\u062f \u0627\u0644\u0645\u0644\u064a\u0628\u0627\u0631\u064a',p:65,nb:0},{n:'\u0627\u0644\u0646\u062d\u0648 \u0627\u0644\u0648\u0627\u0636\u062d - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a',p:50,nb:0},{n:'\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0644\u0644\u062c\u0645\u064a\u0639 2',p:0,nb:0},{n:'\u0644\u063a\u062a\u064a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 II (extra reader)',p:0,nb:0},{n:'ARABI COPY',p:30,nb:0},{n:'\u0627\u0644\u062c\u0648\u0627\u0647\u0631 \u0627\u0644\u0643\u0644\u0627\u0645\u064a\u0629 \u0641\u064a \u0625\u064a\u0636\u0627\u062d \u0627\u0644\u0639\u0642\u064a\u062f\u0629 \u0627\u0644\u0625\u0633\u0644\u0627\u0645\u064a\u0629',p:40,nb:0},{n:'\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0646\u0628\u064a\u0627\u0621 2',p:95,nb:0},{n:'FI ILMU SARF',p:55,nb:0},{n:'Translation & Composition',p:80,nb:0},{n:'\u0627\u0644\u062a\u062c\u0648\u064a\u062f \u0644\u0644\u0623\u0633\u062a\u0627\u0630 \u0631\u0641\u064a\u0642 \u0627\u0644\u0647\u062f\u0648\u064a - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a',p:0,nb:0},{n:'\u0627\u0628\u062a\u062f\u0627\u0626 \u0627\u0631\u062f\u0648 - \u062a\u06cc\u0633\u0631\u06cc \u062c\u0645\u0627\u0639\u062a',p:70,nb:0},{n:'\u06af\u0644\u0632\u0627\u0631 \u0627\u0631\u062f\u0648 - \u0642\u0648\u0627\u0639\u062f',p:50,nb:0},{n:'URDU COPY',p:0,nb:0},{n:'HINDI SARANGI NCERT II',p:70,nb:0},{n:'HINDI COPY',p:30,nb:0},{n:'POORVI NCERT TEXTBOOK',p:70,nb:0},{n:'Parrot (English Grammar)',p:75,nb:0},{n:'An Alien Hand (Extra Reading NCERT VII)',p:0,nb:0},{n:'ENGLISH COPY',p:30,nb:0},{n:'Science CURIOSITY VII',p:70,nb:0},{n:'Mathematics VII',p:140,nb:0},{n:'Our Environment (Geography VII)',p:0,nb:0},{n:'Social (Exploring Society) Class VII',p:140,nb:0},{n:'Our Pasts II (History Class VII)',p:0,nb:0},{n:'ADISTHANA PADAVALI',p:0,nb:0},{n:'KERALA PADAVALI',p:0,nb:0},{n:'MALAYALAM COPY',p:30,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'3':[{n:'\u0645\u062e\u062a\u0635\u0631 \u0631\u064a\u0627\u0636 \u0627\u0644\u0635\u0627\u0644\u062d\u064a\u0646 \u0644\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u0646\u0648\u0648\u064a',p:165,nb:0},{n:'\u0627\u0644\u062a\u062c\u0648\u064a\u062f \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a - \u0639\u0628\u062f \u0627\u0644\u0631\u0641\u064a\u0642 \u0627\u0644\u0647\u062f\u0648\u064a',p:40,nb:0},{n:'\u0641\u062a\u062d \u0627\u0644\u0645\u0639\u064a\u0646 \u0628\u0634\u0631\u062d \u0642\u0631\u0629 \u0627\u0644\u0639\u064a\u0646',p:165,nb:0},{n:'\u0627\u0644\u0646\u062d\u0648 \u0627\u0644\u0648\u0627\u0636\u062d - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0644\u062b',p:50,nb:0},{n:'\u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0644\u0644\u062c\u0645\u064a\u0639 3',p:0,nb:0},{n:'ARABI COPY',p:30,nb:0},{n:'\u0642\u0635\u0635 \u0627\u0644\u0646\u0628\u064a\u064a\u0646 \u0644\u0644\u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0644\u062b',p:115,nb:0},{n:'\u062a\u064a\u0633\u064a\u0631 \u0627\u0644\u0648\u0644\u062f\u0627\u0646 \u0641\u064a \u062a\u0645\u0631\u064a\u0646 \u0627\u0644\u0623\u0648\u0632\u0627\u0646',p:55,nb:0},{n:'Translation & Composition',p:80,nb:0},{n:'\u0623\u064a\u0647\u0627 \u0627\u0644\u0648\u0644\u062f - \u0627\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u063a\u0632\u0627\u0644\u064a',p:55,nb:0},{n:'\u0627\u0628\u062a\u062f\u0627\u0626 \u0627\u0631\u062f\u0648 - \u0686\u0648\u062a\u06be\u06cc \u062c\u0645\u0627\u0639\u062a',p:70,nb:0},{n:'\u06af\u0644\u0632\u0627\u0631 \u0627\u0631\u062f\u0648 - \u0642\u0648\u0627\u0639\u062f',p:60,nb:0},{n:'GULDAN',p:35,nb:0},{n:'URDU COPY',p:30,nb:0},{n:'HINDI VEENA NCERT 3',p:70,nb:0},{n:'HINDI COPY',p:55,nb:0},{n:'POORVI (NCERT VIII)',p:70,nb:0},{n:'Sparrow (English Grammar)',p:50,nb:0},{n:'It So Happened (NCERT VIII)',p:0,nb:0},{n:'ENGLISH COPY',p:30,nb:0},{n:'Science VIII BASIC SCIENCE',p:0,nb:0},{n:'GANITHAPRAKASH Mathematics VIII',p:140,nb:0},{n:'Social and Political Life (NCERT VIII)',p:0,nb:0},{n:'ADISTHANA PADAVALI VIII',p:0,nb:0},{n:'KERALA PADAVALI VIII',p:0,nb:0},{n:'COPY',p:0,nb:0},{n:'GRAMMER MLM',p:50,nb:0},{n:'Resourse and Development (Geo VIII)',p:0,nb:0},{n:'Our Pasts III (History Class VIII)',p:0,nb:0},{n:'MALAYALAM COPY',p:30,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'4':[{n:'RIYALUSALIHEEN',p:165,nb:0},{n:'FATHHUL MUEEN',p:165,nb:0},{n:'NAHV 2-1',p:50,nb:0},{n:'ARABI LIL JAMEE',p:0,nb:0},{n:'LUGATHI AL ARABIYA',p:0,nb:0},{n:'KERALA READER ARB 10TH CLASS',p:0,nb:0},{n:'COPY ARB',p:0,nb:0},{n:'T&C',p:85,nb:0},{n:'QASAS 4',p:40,nb:0},{n:'ADKIYA',p:55,nb:0},{n:'TANVEERUL QULUB',p:55,nb:0},{n:'KHAYAL URDU IX',p:70,nb:0},{n:'GULZAR',p:45,nb:0},{n:'GULDAN',p:0,nb:0},{n:'URDU COPY',p:0,nb:0},{n:'SKYLARK GRMR',p:50,nb:0},{n:'MOMENTS',p:0,nb:0},{n:'ENG COPY',p:0,nb:0},{n:'ENGLISH SCERT IX',p:0,nb:0},{n:'HINDI SCERT IX',p:0,nb:0},{n:'PHYSICS SCERT IX',p:0,nb:0},{n:'CHEMISTRY SCERT IX',p:0,nb:0},{n:'BIOLOGY SCERT IX',p:0,nb:0},{n:'MATHS SCERT IX',p:0,nb:0},{n:'ARABIC IX',p:0,nb:0},{n:'ADISTHANA PADAVALI',p:0,nb:0},{n:'MALAYALAM SCERT IX',p:0,nb:0},{n:'MALAYALAM COPY',p:0,nb:0},{n:'MALAYALAM GRMR',p:50,nb:0},{n:'SOCIAL SCIENCE SCERT',p:0,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'5':[{n:'JALALAINI 2',p:345,nb:0},{n:'RIYALUSALIHEEN',p:165,nb:0},{n:'FATHHUL MUEEN',p:165,nb:0},{n:'NAHV 2-2',p:60,nb:0},{n:'NAHV 2-3',p:50,nb:0},{n:'ALFIYA',p:225,nb:0},{n:'T&C',p:85,nb:0},{n:'ARABIC 10TH CLASS SCERT',p:0,nb:0},{n:'ADAB LIL JAMEE',p:75,nb:0},{n:'QASAS NABIYY',p:85,nb:0},{n:'AL ARAB QABLAL ISLAM',p:0,nb:0},{n:'THAALEEM MUTH',p:50,nb:0},{n:'KHAYAL',p:40,nb:0},{n:'GULZAR',p:40,nb:0},{n:'URDU COPY',p:0,nb:0},{n:'GULDAN',p:50,nb:0},{n:'SCERT TEXT',p:0,nb:0},{n:'NIGHTINGALE',p:50,nb:0},{n:'ENGLISH COPY',p:0,nb:0},{n:'FOOT PRINT WITHOUT FEET',p:20,nb:0},{n:'PHYSICS SCERT X',p:0,nb:0},{n:'CHEMISTRY SCERT X',p:0,nb:0},{n:'BIOLOGY SCERT X',p:0,nb:0},{n:'MALAYALAM GRAMMAR',p:50,nb:0},{n:'MALAYALAM COPY',p:0,nb:0},{n:'MALAYALAM SCERT X',p:0,nb:0},{n:'MATHEMATICS SCERT X',p:0,nb:0},{n:'SOCIAL 10TH SCERT',p:0,nb:0},{n:'HINDI SCERT X',p:0,nb:0},{n:'MALAYALAM GRMR',p:0,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'6':[{n:'\u062a\u0641\u0633\u064a\u0631 \u0627\u0644\u062c\u0644\u0627\u0644\u064a\u0646 \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u0623\u0648\u0644 \u0648\u0627\u0644\u062b\u0627\u0646\u064a',p:345,nb:0},{n:'\u0645\u0634\u0643\u0627\u0629 \u0627\u0644\u0645\u0635\u0627\u0628\u064a\u062d',p:405,nb:0},{n:'\u0641\u062a\u062d \u0627\u0644\u0645\u0639\u064a\u0646 \u0628\u0634\u0631\u062d \u0642\u0631\u0629 \u0627\u0644\u0639\u064a\u0646',p:165,nb:0},{n:'\u0627\u0644\u062a\u0628\u064a\u0627\u0646 \u0641\u064a \u0639\u0644\u0648\u0645 \u0627\u0644\u0642\u0631\u0622\u0646',p:130,nb:0},{n:'\u0634\u0631\u062d \u0625\u0628\u0646 \u0639\u0642\u064a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0623\u0644\u0641\u064a\u0629 \u0625\u0628\u0646 \u0645\u0627\u0644\u0643',p:0,nb:0},{n:'\u0627\u0644\u0628\u0644\u0627\u063a\u0629 \u0627\u0644\u0648\u0627\u0636\u062d\u0629',p:145,nb:0},{n:'Translation & Composition',p:85,nb:0},{n:'\u0627\u0644\u0623\u062f\u0628 \u0627\u0644\u0639\u0631\u0628\u064a \u0644\u0644\u0633\u0646\u0629 \u0627\u0644\u0623\u0648\u0644\u0649 \u0645\u0646 \u062b\u0627\u0646\u0648\u064a\u0629 \u0627\u0644\u0639\u0644\u064a\u0627',p:50,nb:0},{n:'Text book for Arabic XI SCERT',p:0,nb:0},{n:'Text book for English XI SCERT',p:0,nb:0},{n:'Phoenix - English Grammar',p:65,nb:0},{n:'Sociology XI',p:0,nb:0},{n:'Politics XI',p:0,nb:0},{n:'History XI',p:0,nb:0},{n:'Economics XI',p:0,nb:0},{n:'ACCOUNTANCY XI',p:0,nb:0},{n:'BUSINESS STUDIES XI',p:0,nb:0},{n:'COMP APPLI XI',p:0,nb:0},{n:'MATHS XI',p:0,nb:0},{n:'KHAYAL NCERT VIII',p:70,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'7':[{n:'JALALAINI',p:0,nb:0},{n:'MISHKATH',p:0,nb:0},{n:'FATHUL MUEEN',p:165,nb:0},{n:'SHARAHUL VARAQAT',p:45,nb:0},{n:'MINHAJUL ABIDEEN',p:165,nb:0},{n:'ALFIYA',p:0,nb:0},{n:'BALAGA',p:0,nb:0},{n:'T&C',p:90,nb:0},{n:'\u0627\u0644\u0623\u062f\u0628 \u0627\u0644\u0639\u0631\u0628\u064a \u0644\u0635\u0641 \u0627\u0644\u062b\u0627\u0646\u064a \u0645\u0646 \u0627\u0644\u062b\u0627\u0646\u0648\u064a\u0629 \u0627\u0644\u0639\u0644\u064a\u0627',p:65,nb:0},{n:'SCERT ARABIC XII',p:0,nb:0},{n:'NAVAE URD X',p:90,nb:0},{n:'SCERT ENGLISH XII',p:0,nb:0},{n:'SCERT SOCIOLOGY XII',p:0,nb:0},{n:'SCERT POLIT SCI XII',p:0,nb:0},{n:'SCERT HISTORY XII',p:0,nb:0},{n:'SCERT ECONOMICS XII',p:0,nb:0},{n:'ACCOUNTANCY XII',p:0,nb:0},{n:'BUSINESS STUDIES XII',p:0,nb:0},{n:'COMP APPLI XII',p:0,nb:0},{n:'MATHS XII',p:0,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'8':[{n:'\u0635\u0641\u0648\u0629 \u0627\u0644\u062a\u0641\u0627\u0633\u064a\u0631 (\u0645\u0646 \u0627\u0644\u0623\u0639\u0644\u0649 \u0625\u0644\u0649 \u0627\u0644\u0646\u0627\u0633)',p:255,nb:0},{n:'NASAI',p:135,nb:0},{n:'IBNU MAJA',p:155,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0645\u0646\u0647\u0627\u062c \u0644\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u0645\u062d\u0644\u064a - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u0623\u0648\u0644',p:265,nb:0},{n:'KHULASA',p:45,nb:0},{n:'JAMUL JAVAMI VOL 1',p:255,nb:0},{n:'MUKHTASAR',p:280,nb:0},{n:'DEEVAAN',p:80,nb:0},{n:'MATHNUL KAFI',p:35,nb:0},{n:'NAKAHTE ADAB 1 & 2',p:90,nb:0},{n:'ENG LITERATURE',p:90,nb:0},{n:'TASREEH MNTQ',p:105,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'9':[{n:'THAFSEER NASAFI',p:165,nb:0},{n:'\u062a\u0641\u0633\u064a\u0631 \u0627\u0644\u0643\u0634\u0627\u0641 (\u0633\u0648\u0631\u0629 \u0622\u0644 \u0639\u0645\u0631\u0627\u0646)',p:165,nb:0},{n:'\u062c\u0627\u0645\u0639 \u0627\u0644\u062a\u0631\u0645\u0630\u064a \u0648\u0634\u0645\u0627\u0626\u0644 \u0627\u0644\u062a\u0631\u0645\u0630\u064a',p:175,nb:0},{n:'\u0633\u0646\u0646 \u0623\u0628\u064a \u062f\u0627\u0624\u0648\u062f',p:135,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0645\u0646\u0647\u0627\u062c \u0644\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u0645\u062d\u0644\u064a - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u0623\u0648\u0644',p:265,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0645\u0646\u0647\u0627\u062c \u0644\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u0645\u062d\u0644\u064a - \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a',p:285,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0639\u0642\u0627\u0626\u062f \u0627\u0644\u0646\u0633\u0641\u064a\u0629',p:255,nb:0},{n:'JAM AL JAVAMIH',p:255,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u062a\u0647\u0630\u064a\u0628 - \u0627\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u062a\u0641\u062a\u0627\u0632\u0627\u0646\u064a',p:155,nb:0},{n:'\u0645\u062e\u062a\u0635\u0631 \u0627\u0644\u0645\u0639\u0627\u0646\u064a \u0644\u0633\u0639\u062f \u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u062a\u0641\u062a\u0627\u0632\u0627\u0646\u064a',p:280,nb:0},{n:'NAKAHTE ADAB 3 & 4',p:95,nb:0},{n:'Academic Reading and Writing',p:90,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}],
+'10':[{n:'\u0623\u0646\u0648\u0627\u0631 \u0627\u0644\u062a\u0646\u0632\u064a\u0644 \u0648\u0623\u0633\u0631\u0627\u0631 \u0627\u0644\u062a\u0623\u0648\u064a\u0644 \u0644\u0644\u0628\u064a\u0636\u0627\u0648\u064a',p:305,nb:0},{n:'\u0646\u0632\u0647\u0629 \u0627\u0644\u0646\u0638\u0631 \u0641\u064a \u0634\u0631\u062d \u0646\u062e\u0628\u0629 \u0627\u0644\u0641\u0643\u0631 \u0644\u0625\u0628\u0646 \u062d\u062c\u0631',p:80,nb:0},{n:'MUATHWA',p:55,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0645\u0646\u0647\u0627\u062c \u0644\u0644\u0625\u0645\u0627\u0645 \u0627\u0644\u0645\u062d\u0644\u064a - \u0627\u0644\u062c\u0632\u0621 2',p:285,nb:0},{n:'\u0634\u0631\u062d \u0627\u0644\u0645\u062d\u0644\u064a \u0639\u0644\u0649 \u062c\u0645\u0639 \u0627\u0644\u062c\u0648\u0627\u0645\u0639 \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a',p:255,nb:0},{n:'KUBRAL YAQEENIYATH',p:130,nb:0},{n:'RASHEEDIYA',p:110,nb:0},{n:'\u0627\u0644\u0623\u062f\u0628 \u0627\u0644\u0639\u0631\u0628\u064a \u0627\u0644\u0647\u0646\u062f',p:50,nb:0},{n:'MUKTHASAR MAANI',p:280,nb:0},{n:'NAKAHTE ADAB 5 & 6',p:85,nb:0},{n:'Ruled Notebook',p:30,nb:1},{n:'Plane Notebook',p:40,nb:1},{n:'CCE BOOK',p:40,nb:0},{n:'RECORD BOOK',p:100,nb:0},{n:'JERSEY',p:595,nb:0}]
 };
-
 // STATE
 let S={};
 function initS(){
@@ -653,173 +774,90 @@ function initS(){
 initS();
 
 // ════════════════════════════════════════════════
-// FIREBASE FIRESTORE — Auto-save & Real-time Sync
+// FIREBASE FIRESTORE
 // ════════════════════════════════════════════════
 const FB_CONFIG = {
-  apiKey:            "AIzaSyBo_lE5Awh48zWXMWV4K4xnCPsh0f2Q69E",
-  authDomain:        "college-billing.firebaseapp.com",
-  projectId:         "college-billing",
-  storageBucket:     "college-billing.firebasestorage.app",
-  messagingSenderId: "224505038507",
-  appId:             "1:224505038507:web:e41570a093bd08829a99ee"
+  apiKey:"AIzaSyBo_lE5Awh48zWXMWV4K4xnCPsh0f2Q69E",
+  authDomain:"college-billing.firebaseapp.com",
+  projectId:"college-billing",
+  storageBucket:"college-billing.firebasestorage.app",
+  messagingSenderId:"224505038507",
+  appId:"1:224505038507:web:e41570a093bd08829a99ee"
 };
+let db=null,fbReady=false,saveTimer=null,listenerActive=false;
 
-let db = null;
-let fbReady = false;
-let saveTimer = null;
-let listenerActive = false;
-
-// ── Load Firebase SDKs dynamically (compat v10) ──
 function loadFirebase(){
   return new Promise(resolve=>{
-    const s1 = document.createElement('script');
-    s1.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js';
-    s1.onload = ()=>{
-      const s2 = document.createElement('script');
-      s2.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js';
-      s2.onload = ()=>{
-        try{
-          if(!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
-          db = firebase.firestore();
-          fbReady = true;
-        }catch(e){ console.warn('Firebase init error:',e); fbReady=false; }
+    const s1=document.createElement('script');
+    s1.src='https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js';
+    s1.onload=()=>{
+      const s2=document.createElement('script');
+      s2.src='https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js';
+      s2.onload=()=>{
+        try{if(!firebase.apps.length)firebase.initializeApp(FB_CONFIG);db=firebase.firestore();fbReady=true;}catch(e){fbReady=false;}
         resolve();
       };
-      s2.onerror = ()=>{ console.warn('Firestore SDK load failed'); resolve(); };
+      s2.onerror=()=>resolve();
       document.head.appendChild(s2);
     };
-    s1.onerror = ()=>{ console.warn('Firebase app SDK load failed'); resolve(); };
+    s1.onerror=()=>resolve();
     document.head.appendChild(s1);
   });
 }
-
-// ── Load data: Firestore first, localStorage fallback ──
 async function loadData(){
   setLoader('Loading your data…');
-  if(fbReady && db){
+  if(fbReady&&db){
     try{
-      const doc = await db.collection('billing').doc('state').get();
+      const doc=await db.collection('billing').doc('state').get();
       if(doc.exists){
-        const data = doc.data();
-        CLASSES.forEach(cid=>{
-          if(data[cid]&&data[cid].students&&data[cid].students.length>0){
-            S[cid] = data[cid];
-            if(!S[cid].nb)    S[cid].nb={};
-            if(!S[cid].ticks) S[cid].ticks={};
-          }
-        });
-        // Mirror to localStorage as offline backup
-        try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
-        setSyncBadge(true, '☁ Loaded');
-      } else {
-        // First ever run — push all default data to Firestore
+        const data=doc.data();
+        CLASSES.forEach(cid=>{if(data[cid]&&data[cid].students&&data[cid].students.length>0){S[cid]=data[cid];if(!S[cid].nb)S[cid].nb={};if(!S[cid].ticks)S[cid].ticks={};}});
+        try{localStorage.setItem('sb26v8',JSON.stringify(S));}catch(e){}
+        setSyncBadge(true,'☁ Loaded');
+      }else{
         setLoader('Setting up cloud database…');
         await db.collection('billing').doc('state').set(S);
-        setSyncBadge(true, '☁ Initialised');
+        setSyncBadge(true,'☁ Initialised');
       }
-    }catch(e){
-      console.warn('Firestore load failed, using localStorage:', e);
-      loadLocal();
-      setSyncBadge(false, '⚠ Offline');
-    }
-  } else {
-    loadLocal();
-  }
+    }catch(e){loadLocal();setSyncBadge(false,'⚠ Offline');}
+  }else{loadLocal();}
 }
-
 function loadLocal(){
-  try{
-    const sv = localStorage.getItem('sb26v8');
-    if(sv){
-      const ld = JSON.parse(sv);
-      CLASSES.forEach(cid=>{
-        if(ld[cid]&&ld[cid].students&&ld[cid].students.length>0){
-          S[cid]=ld[cid];
-          if(!S[cid].nb)    S[cid].nb={};
-          if(!S[cid].ticks) S[cid].ticks={};
-        }
-      });
-    }
-  }catch(e){}
+  try{const sv=localStorage.getItem('sb26v8');if(sv){const ld=JSON.parse(sv);CLASSES.forEach(cid=>{if(ld[cid]&&ld[cid].students&&ld[cid].students.length>0){S[cid]=ld[cid];if(!S[cid].nb)S[cid].nb={};if(!S[cid].ticks)S[cid].ticks={};}});}}catch(e){}
 }
-
-// ── Save: localStorage immediately + Firestore debounced 1s ──
 function save(){
-  // Instant local backup
-  try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
-  // Debounced cloud save
-  if(saveTimer) clearTimeout(saveTimer);
-  saveTimer = setTimeout(async()=>{
-    if(!fbReady||!db){ setSyncBadge(false,'⚠ Offline'); return; }
-    try{
-      await db.collection('billing').doc('state').set(S);
-      setSyncBadge(true,'☁ Saved');
-    }catch(e){
-      console.warn('Firestore save failed:', e);
-      setSyncBadge(false,'⚠ Save failed');
-    }
-  }, 1000);
+  try{localStorage.setItem('sb26v8',JSON.stringify(S));}catch(e){}
+  if(saveTimer)clearTimeout(saveTimer);
+  saveTimer=setTimeout(async()=>{
+    if(!fbReady||!db){setSyncBadge(false,'⚠ Offline');return;}
+    try{await db.collection('billing').doc('state').set(S);setSyncBadge(true,'☁ Saved');}
+    catch(e){setSyncBadge(false,'⚠ Save failed');}
+  },1000);
 }
-
-// ── Real-time listener: any device change updates all others instantly ──
 function startRealtime(){
-  if(!fbReady||!db||listenerActive) return;
-  listenerActive = true;
+  if(!fbReady||!db||listenerActive)return;
+  listenerActive=true;
   db.collection('billing').doc('state').onSnapshot(snap=>{
-    if(!snap.exists) return;
-    const data = snap.data();
-    let changed = false;
-    CLASSES.forEach(cid=>{
-      if(data[cid]&&data[cid].students&&data[cid].students.length>0){
-        S[cid] = data[cid];
-        if(!S[cid].nb)    S[cid].nb={};
-        if(!S[cid].ticks) S[cid].ticks={};
-        changed = true;
-      }
-    });
-    if(changed){
-      try{ localStorage.setItem('sb26v8', JSON.stringify(S)); }catch(e){}
-      render();
-      setSyncBadge(true,'☁ Synced');
-    }
-  }, err=>{ console.warn('Snapshot error:', err); setSyncBadge(false,'⚠ Offline'); });
+    if(!snap.exists)return;
+    const data=snap.data();let changed=false;
+    CLASSES.forEach(cid=>{if(data[cid]&&data[cid].students&&data[cid].students.length>0){S[cid]=data[cid];if(!S[cid].nb)S[cid].nb={};if(!S[cid].ticks)S[cid].ticks={};changed=true;}});
+    if(changed){try{localStorage.setItem('sb26v8',JSON.stringify(S));}catch(e){}render();setSyncBadge(true,'☁ Synced');}
+  },err=>{setSyncBadge(false,'⚠ Offline');});
 }
-
-// ── UI helpers ──
-function setLoader(msg){
-  const el = document.getElementById('fb-loader');
-  const ml = document.getElementById('fb-loader-msg');
-  if(el) el.style.display='flex';
-  if(ml) ml.textContent = msg||'Loading…';
+function setLoader(msg){const el=document.getElementById('fb-loader'),ml=document.getElementById('fb-loader-msg');if(el)el.style.display='flex';if(ml)ml.textContent=msg||'Loading…';}
+function hideLoader(){const el=document.getElementById('fb-loader');if(el)el.style.display='none';}
+function setSyncBadge(ok,text){
+  const el=document.getElementById('sync-badge');if(!el)return;
+  el.textContent=text||(ok?'☁ Saved':'⚠ Offline');
+  el.style.background=ok?'#e4f0ea':'#fde8e8';el.style.color=ok?'#2a5c43':'#8b1a1a';el.style.borderColor=ok?'#c8e6d4':'#f5b8b8';el.style.opacity='1';
+  clearTimeout(el._t);el._t=setTimeout(()=>{el.style.opacity=ok?'.45':'1';},3000);
 }
-function hideLoader(){
-  const el = document.getElementById('fb-loader');
-  if(el) el.style.display='none';
-}
-function setSyncBadge(ok, text){
-  const el = document.getElementById('sync-badge');
-  if(!el) return;
-  el.textContent = text||(ok?'☁ Saved':'⚠ Offline');
-  el.style.background = ok?'#e4f0ea':'#fde8e8';
-  el.style.color       = ok?'#2a5c43':'#8b1a1a';
-  el.style.borderColor = ok?'#c8e6d4':'#f5b8b8';
-  el.style.opacity='1';
-  clearTimeout(el._t);
-  el._t = setTimeout(()=>{ el.style.opacity = ok?'.45':'1'; }, 3000);
-}
+(async function boot(){await loadFirebase();await loadData();hideLoader();render();startRealtime();})();
 
-// ── Boot: load Firebase → load data → render → start realtime ──
-(async function boot(){
-  await loadFirebase();
-  await loadData();
-  hideLoader();
-  render();
-  startRealtime();
-})();
+let curC='all',curI=1,editTarget=null,bpSel=new Set();
+// Import state
+let stuImportRows=[],bookImportData={},stuImpFmt='csv';
 
-let curC='all',curI=1,editTarget=null,bpSel=new Set(),billMode='class';
-
-// NAV
 function goIface(n){
   curI=n;
   document.querySelectorAll('.iface').forEach(e=>e.classList.remove('active'));
@@ -836,108 +874,228 @@ function pickClass(cid){
   document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
   document.querySelector('[data-c="'+cid+'"]')?.classList.add('active');
   bpSel=new Set();
-  // 'all' on non-billing interfaces: go to billing
-  if(cid==='all' && curI!==4){ goIface(4); return; }
+  if(cid==='all'&&curI!==4){goIface(4);return;}
   render();
 }
 function render(){
-  if(curI===1) renderStudents();
-  else if(curI===2) renderBooks();
-  else if(curI===3) renderTicks();
-  else if(curI===4) renderBilling4();
+  if(curI===1)renderStudents();
+  else if(curI===2)renderBooks();
+  else if(curI===3)renderTicks();
+  else if(curI===4)renderBilling4();
 }
 
 // ══════════════════════════════════════════════════════
-// IF1: STUDENTS — show ALL or class-specific
+// IF1: STUDENTS
 // ══════════════════════════════════════════════════════
 function renderStudents(){
   const q=(document.getElementById('stu-q')?.value||'').toLowerCase();
   const isAll=(curC==='all');
   document.getElementById('i1-title').textContent=isAll?'All Students':CN[curC]+' — Students';
-  // Collect students
-  let rows='', totalStu=0, totalRev=0;
+  let rows='',totalStu=0,totalRev=0;
   const scope=isAll?CLASSES:[curC];
   let sl=1;
   scope.forEach(cid=>{
     const students=S[cid].students.filter(s=>!q||(s.name.toLowerCase().includes(q)||s.admNo.includes(q)));
-    if(isAll && students.length>0){
-      rows+='<tr style="background:var(--head)"><td colspan="5" style="padding:6px 11px;font-size:10px;font-weight:700;color:var(--headfg);letter-spacing:.4px;text-transform:uppercase">'+CN[cid]+' — '+S[cid].students.length+' students</td></tr>';
-    }
+    if(isAll&&students.length>0)rows+='<tr style="background:var(--head)"><td colspan="5" style="padding:6px 11px;font-size:10px;font-weight:700;color:var(--headfg);letter-spacing:.4px;text-transform:uppercase">'+CN[cid]+' — '+S[cid].students.length+' students</td></tr>';
     students.forEach(st=>{
-      let rev=0;
-      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
+      let rev=0;const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
       (BOOKS[cid]||[]).forEach((b,i)=>{rev+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
-      totalRev+=rev; totalStu++;
-      rows+='<tr>'
-        +'<td style="color:var(--ink3);font-family:var(--mono);font-size:10px">'+sl+'</td>'
-        +'<td><span class="adm-tag">'+st.admNo+'</span></td>'
-        +'<td style="font-weight:600">'+st.name+'</td>'
-        +'<td><span class="cls-tag">'+CN[cid]+'</span></td>'
-        +'<td class="no-print"><div class="stu-acts">'
-          +'<button class="btn btn-am btn-xs" onclick="startEdit(\''+cid+'\',\''+st.id+'\')">✏️</button>'
-          +'<button class="btn btn-rd btn-xs" onclick="delStu(\''+cid+'\',\''+st.id+'\')">✕</button>'
-          +'<button class="btn btn-gh btn-xs" onclick="showStudentBill(\''+cid+'\',\''+st.id+'\')">🧾</button>'
-        +'</div></td>'
-      +'</tr>';
+      totalRev+=rev;totalStu++;
+      rows+='<tr><td style="color:var(--ink3);font-family:var(--mono);font-size:10px">'+sl+'</td><td><span class="adm-tag">'+st.admNo+'</span></td><td style="font-weight:600">'+st.name+'</td><td><span class="cls-tag">'+CN[cid]+'</span></td><td class="no-print"><div class="stu-acts"><button class="btn btn-am btn-xs" onclick="startEdit(\''+cid+'\',\''+st.id+'\')">✏️</button><button class="btn btn-rd btn-xs" onclick="delStu(\''+cid+'\',\''+st.id+'\')">✕</button><button class="btn btn-gh btn-xs" onclick="showStudentBill(\''+cid+'\',\''+st.id+'\')">🧾</button></div></td></tr>';
       sl++;
     });
   });
-  document.getElementById('i1-stats').innerHTML=
-    '<div class="spill"><b>'+totalStu+'</b> Students</div>'
-    +'<div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Revenue</div>';
+  document.getElementById('i1-stats').innerHTML='<div class="spill"><b>'+totalStu+'</b> Students</div><div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Revenue</div>';
   document.getElementById('stu-body').innerHTML=rows||'<tr class="empty-r"><td colspan="5">No students found</td></tr>';
 }
-
-function openAddForm(){
-  editTarget=null;
-  document.getElementById('ef-adm').value='';
-  document.getElementById('ef-name').value='';
-  document.getElementById('ef-cls').value=(curC==='all'?'1':curC);
-  document.getElementById('ef-btn').textContent='Add';
-  document.getElementById('add-form').classList.add('open');
-}
+function openAddForm(){editTarget=null;document.getElementById('ef-adm').value='';document.getElementById('ef-name').value='';document.getElementById('ef-cls').value=(curC==='all'?'1':curC);document.getElementById('ef-btn').textContent='Add';document.getElementById('add-form').classList.add('open');}
 function startEdit(cid,sid){
-  const st=S[cid].students.find(s=>s.id===sid); if(!st) return;
+  const st=S[cid].students.find(s=>s.id===sid);if(!st)return;
   editTarget={cid,sid};
-  document.getElementById('ef-adm').value=st.admNo;
-  document.getElementById('ef-name').value=st.name;
-  document.getElementById('ef-cls').value=cid;
-  document.getElementById('ef-btn').textContent='Save';
-  document.getElementById('add-form').classList.add('open');
-  document.getElementById('add-form').scrollIntoView({behavior:'smooth',block:'nearest'});
+  document.getElementById('ef-adm').value=st.admNo;document.getElementById('ef-name').value=st.name;document.getElementById('ef-cls').value=cid;document.getElementById('ef-btn').textContent='Save';
+  document.getElementById('add-form').classList.add('open');document.getElementById('add-form').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function saveForm(){
-  const adm=document.getElementById('ef-adm').value.trim();
-  const name=document.getElementById('ef-name').value.trim();
-  const cls=document.getElementById('ef-cls').value;
+  const adm=document.getElementById('ef-adm').value.trim(),name=document.getElementById('ef-name').value.trim(),cls=document.getElementById('ef-cls').value;
   if(!adm||!name){toast('Enter ADM No. and Name');return;}
   if(editTarget){
-    const {cid,sid}=editTarget, st=S[cid].students.find(s=>s.id===sid); if(!st) return;
-    if(cid!==cls){
-      S[cid].students=S[cid].students.filter(s=>s.id!==sid);
-      const ns={id:cls+'_'+adm,admNo:adm,name};
-      S[cls].students.push(ns);
-      if(S[cid].ticks[sid]){S[cls].ticks[ns.id]=S[cid].ticks[sid];delete S[cid].ticks[sid];}
-      if(S[cid].nb[sid]){S[cls].nb[ns.id]=S[cid].nb[sid];delete S[cid].nb[sid];}
-    } else { st.admNo=adm; st.name=name; }
+    const{cid,sid}=editTarget,st=S[cid].students.find(s=>s.id===sid);if(!st)return;
+    if(cid!==cls){S[cid].students=S[cid].students.filter(s=>s.id!==sid);const ns={id:cls+'_'+adm,admNo:adm,name};S[cls].students.push(ns);if(S[cid].ticks[sid]){S[cls].ticks[ns.id]=S[cid].ticks[sid];delete S[cid].ticks[sid];}if(S[cid].nb[sid]){S[cls].nb[ns.id]=S[cid].nb[sid];delete S[cid].nb[sid];}}
+    else{st.admNo=adm;st.name=name;}
     toast('Updated ✓');
-  } else {
+  }else{
     if(S[cls].students.find(s=>s.admNo===adm)){toast('ADM No. exists in this class!');return;}
-    S[cls].students.push({id:cls+'_'+Date.now(),admNo:adm,name});
-    toast(name+' added ✓');
+    S[cls].students.push({id:cls+'_'+Date.now(),admNo:adm,name});toast(name+' added ✓');
   }
-  save(); closeAddForm(); render();
+  save();closeAddForm();render();
 }
 function closeAddForm(){document.getElementById('add-form').classList.remove('open');editTarget=null;}
-function delStu(cid,sid){
-  if(!confirm('Remove?')) return;
-  S[cid].students=S[cid].students.filter(s=>s.id!==sid);
-  delete S[cid].ticks[sid]; delete S[cid].nb[sid];
-  save(); toast('Removed'); render();
+function delStu(cid,sid){if(!confirm('Remove?'))return;S[cid].students=S[cid].students.filter(s=>s.id!==sid);delete S[cid].ticks[sid];delete S[cid].nb[sid];save();toast('Removed');render();}
+function clearAllStudents(){
+  const scope=curC==='all'?CLASSES:[curC];
+  const label=curC==='all'?'ALL classes':CN[curC];
+  if(!confirm('Clear ALL students from '+label+'? This cannot be undone.'))return;
+  scope.forEach(cid=>{S[cid].students=[];S[cid].ticks={};S[cid].nb={};});
+  save();toast('All students cleared ✓');render();
+}
+function clearAllBooks(){
+  const scope=curC==='all'?CLASSES:[curC];
+  const label=curC==='all'?'ALL classes':CN[curC];
+  if(!confirm('Clear ALL books from '+label+'? This cannot be undone.'))return;
+  scope.forEach(cid=>{BOOKS[cid]=[];});
+  save();toast('All books cleared ✓');render();
 }
 
 // ══════════════════════════════════════════════════════
-// IF2: BOOKS — show ALL or class-specific
+// STUDENTS: EXPORT
+// ══════════════════════════════════════════════════════
+function exportStudentsCSV(){
+  const scope=(curC==='all')?CLASSES:[curC];
+  let rows=[['class','admNo','name']];
+  scope.forEach(cid=>{S[cid].students.forEach(st=>{rows.push([cid,st.admNo,st.name]);});});
+  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  dlFile('\uFEFF'+csv,'students_export_'+(curC==='all'?'all':'class'+curC)+'.csv','text/csv');
+  toast('Students CSV exported ✓');
+}
+function exportStudentsJSON(){
+  const scope=(curC==='all')?CLASSES:[curC];
+  const out={};
+  scope.forEach(cid=>{out[cid]=S[cid].students.map(st=>[st.admNo,st.name]);});
+  dlFile(JSON.stringify(out,null,2),'students_export_'+(curC==='all'?'all':'class'+curC)+'.json','application/json');
+  toast('Students JSON exported ✓');
+}
+
+// ══════════════════════════════════════════════════════
+// STUDENTS: IMPORT
+// ══════════════════════════════════════════════════════
+function setImpStuFmt(fmt){
+  stuImpFmt=fmt;
+  document.getElementById('stu-fmt-csv').classList.toggle('active',fmt==='csv');
+  document.getElementById('stu-fmt-json').classList.toggle('active',fmt==='json');
+  document.getElementById('stu-fmt-hint-csv').style.display=fmt==='csv'?'':'none';
+  document.getElementById('stu-fmt-hint-json').style.display=fmt==='json'?'':'none';
+  document.getElementById('stu-file-inp').accept=fmt==='csv'?'.csv,.json':'.json,.csv';
+  resetStuImport();
+}
+function openImportStudents(){
+  resetStuImport();
+  document.getElementById('import-stu-ovl').classList.add('open');
+}
+function resetStuImport(){
+  stuImportRows=[];
+  document.getElementById('stu-imp-preview').style.display='none';
+  document.getElementById('stu-imp-confirm').style.display='none';
+  document.getElementById('stu-imp-err').textContent='';
+  document.getElementById('stu-drop-sub').textContent='Accepts .csv or .json';
+  document.getElementById('stu-file-inp').value='';
+}
+function handleStuDrop(e){
+  e.preventDefault();e.currentTarget.classList.remove('drag');
+  const f=e.dataTransfer.files[0];if(f)processStuFile(f);
+}
+function handleStuFile(inp){const f=inp.files[0];if(f)processStuFile(f);}
+function processStuFile(f){
+  const ext=f.name.split('.').pop().toLowerCase();
+  document.getElementById('stu-drop-sub').textContent='📄 '+f.name;
+  document.getElementById('stu-imp-err').textContent='';
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      let rows=[];
+      if(ext==='csv'||stuImpFmt==='csv'){rows=parseStuCSV(e.target.result);}
+      else{rows=parseStuJSON(e.target.result);}
+      stuImportRows=rows;
+      showStuImportPreview(rows);
+    }catch(err){document.getElementById('stu-imp-err').textContent='Parse error: '+err.message;}
+  };
+  reader.readAsText(f);
+}
+function parseStuCSV(txt){
+  const lines=txt.trim().split('\n').filter(l=>l.trim());
+  const rows=[];
+  if(!lines.length)throw new Error('Empty file');
+  // Detect header
+  const firstCols=lines[0].split(',').map(c=>c.replace(/^"|"$/g,'').trim().toLowerCase());
+  let startRow=0;
+  if(firstCols.includes('class')||firstCols.includes('admno')||firstCols.includes('adm')){startRow=1;}
+  for(let i=startRow;i<lines.length;i++){
+    const cols=splitCSVRow(lines[i]);
+    if(cols.length<3)continue;
+    const cls=cols[0].trim(),adm=cols[1].trim(),name=cols[2].trim();
+    if(!cls||!adm||!name)continue;
+    const clsNum=cls.replace(/[^0-9]/g,'');
+    if(!CLASSES.includes(clsNum)){rows.push({cls:clsNum,adm,name,status:'err',reason:'Invalid class'});continue;}
+    const dup=S[clsNum].students.find(s=>s.admNo===adm);
+    rows.push({cls:clsNum,adm,name,status:dup?'dup':'ok',reason:dup?'Duplicate':'New'});
+  }
+  return rows;
+}
+function parseStuJSON(txt){
+  const data=JSON.parse(txt);
+  const rows=[];
+  Object.keys(data).forEach(cls=>{
+    const clsNum=String(cls).replace(/[^0-9]/g,'');
+    if(!CLASSES.includes(clsNum)){data[cls].forEach(([adm,name])=>rows.push({cls:clsNum,adm,name,status:'err',reason:'Invalid class'}));return;}
+    (data[cls]||[]).forEach(entry=>{
+      let adm,name;
+      if(Array.isArray(entry)){[adm,name]=entry;}
+      else{adm=entry.admNo||entry.adm;name=entry.name;}
+      if(!adm||!name)return;
+      adm=String(adm).trim();name=String(name).trim();
+      const dup=S[clsNum].students.find(s=>s.admNo===adm);
+      rows.push({cls:clsNum,adm,name,status:dup?'dup':'ok',reason:dup?'Duplicate':'New'});
+    });
+  });
+  return rows;
+}
+function splitCSVRow(row){
+  const cols=[];let cur='',inQ=false;
+  for(let i=0;i<row.length;i++){
+    const c=row[i];
+    if(c==='"'){if(inQ&&row[i+1]==='"'){cur+='"';i++;}else inQ=!inQ;}
+    else if(c===','&&!inQ){cols.push(cur.trim());cur='';}
+    else cur+=c;
+  }
+  cols.push(cur.trim());
+  return cols;
+}
+function showStuImportPreview(rows){
+  const ok=rows.filter(r=>r.status==='ok').length;
+  const dup=rows.filter(r=>r.status==='dup').length;
+  const err=rows.filter(r=>r.status==='err').length;
+  document.getElementById('stu-imp-stats').innerHTML=
+    '<span>📋 Total: <b>'+rows.length+'</b></span>'
+    +'<span style="color:#065f46">🟢 New: <b>'+ok+'</b></span>'
+    +'<span style="color:#92400e">🟡 Duplicates: <b>'+dup+'</b></span>'
+    +(err?'<span style="color:#991b1b">🔴 Errors: <b>'+err+'</b></span>':'');
+  document.getElementById('stu-imp-tbody').innerHTML=rows.map(r=>
+    '<tr class="row-'+r.status+'"><td><b>'+CN[r.cls]||('Class '+r.cls)+'</b></td><td style="font-family:var(--mono);font-weight:700">'+r.adm+'</td><td>'+r.name+'</td><td><span class="imp-badge '+r.status+'">'+r.reason+'</span></td></tr>'
+  ).join('');
+  document.getElementById('stu-imp-preview').style.display='';
+  document.getElementById('stu-imp-confirm').style.display=ok>0?'':'none';
+}
+function confirmStuImport(){
+  const clsFilter=document.getElementById('stu-imp-cls-filter').value;
+  const mode=document.getElementById('stu-imp-mode').value;
+  const toImport=stuImportRows.filter(r=>r.status==='ok'&&(clsFilter==='all'||r.cls===clsFilter));
+  if(!toImport.length){toast('No new students to import');return;}
+  // Group by class
+  const byClass={};
+  toImport.forEach(r=>{if(!byClass[r.cls])byClass[r.cls]=[];byClass[r.cls].push(r);});
+  Object.keys(byClass).forEach(cid=>{
+    if(mode==='replace')S[cid].students=[];
+    byClass[cid].forEach(r=>{
+      if(!S[cid].students.find(s=>s.admNo===r.adm)){
+        S[cid].students.push({id:cid+'_'+r.adm,admNo:r.adm,name:r.name});
+      }
+    });
+  });
+  save();closeModals();render();
+  toast('✓ Imported '+toImport.length+' student'+(toImport.length>1?'s':''));
+}
+
+// ══════════════════════════════════════════════════════
+// IF2: BOOKS & PRICES
 // ══════════════════════════════════════════════════════
 function renderBooks(){
   const isAll=(curC==='all');
@@ -945,554 +1103,320 @@ function renderBooks(){
   const scope=isAll?CLASSES:[curC];
   document.getElementById('book-container').innerHTML=scope.map(cid=>{
     const books=BOOKS[cid]||[];
-    return '<div class="book-card">'
-      +'<div class="bc-hd"><div class="bc-cls">'+CN[cid]+'</div><div class="bc-cnt">'+books.length+' books</div></div>'
+    return '<div class="book-card"><div class="bc-hd"><div class="bc-cls">'+CN[cid]+'</div><div class="bc-cnt">'+books.length+' books</div></div>'
       +'<div>'+books.map((b,i)=>
         '<div class="brow">'
-          +'<div class="brow-edit-view" id="bv-'+cid+'-'+i+'">'
-            +'<div class="brow-name'+(b.nb?' nb':'')+'">'+( b.nb?'📓':'📗')+' '+b.n+'</div>'
-          +'</div>'
-          +'<div class="brow-edit-form" id="be-'+cid+'-'+i+'">'
-            +'<input class="be-inp" id="be-n-'+cid+'-'+i+'" value="'+b.n.replace(/"/g,'&quot;')+'">'
-            +'<input type="number" class="be-price" id="be-p-'+cid+'-'+i+'" value="'+b.p+'">'
-            +'<select class="be-type" id="be-t-'+cid+'-'+i+'"><option value="0"'+(b.nb?'':' selected')+'>Regular</option><option value="1"'+(b.nb?' selected':'')+'>Notebook</option></select>'
-            +'<button class="btn btn-g btn-xs" onclick="saveBookEdit(\''+cid+'\','+i+')">✓</button>'
-            +'<button class="btn btn-gh btn-xs" onclick="cancelBookEdit(\''+cid+'\','+i+')">✕</button>'
-          +'</div>'
-          +'<div style="display:flex;align-items:center;gap:4px">'
-            +'<span class="price-tag">₹'+b.p+'</span>'+(b.nb?'<span class="nb-tag">NB</span>':'')
-            +'<button class="btn btn-am btn-xs no-print" onclick="startBookEdit(\''+cid+'\','+i+')">✏️</button>'
-            +'<button class="btn btn-rd btn-xs no-print" onclick="delBook(\''+cid+'\','+i+')">✕</button>'
-          +'</div>'
+          +'<div class="brow-edit-view" id="bv-'+cid+'-'+i+'"><div class="brow-name'+(b.nb?' nb':'')+'">'+( b.nb?'📓':'📗')+' '+b.n+'</div></div>'
+          +'<div class="brow-edit-form" id="be-'+cid+'-'+i+'"><input class="be-inp" id="be-n-'+cid+'-'+i+'" value="'+b.n.replace(/"/g,'&quot;')+'"><input type="number" class="be-price" id="be-p-'+cid+'-'+i+'" value="'+b.p+'"><select class="be-type" id="be-t-'+cid+'-'+i+'"><option value="0"'+(b.nb?'':' selected')+'>Regular</option><option value="1"'+(b.nb?' selected':'')+'>Notebook</option></select><button class="btn btn-g btn-xs" onclick="saveBookEdit(\''+cid+'\','+i+')">✓</button><button class="btn btn-gh btn-xs" onclick="cancelBookEdit(\''+cid+'\','+i+')">✕</button></div>'
+          +'<div style="display:flex;align-items:center;gap:4px"><span class="price-tag">₹'+b.p+'</span>'+(b.nb?'<span class="nb-tag">NB</span>':'')+'<button class="btn btn-am btn-xs no-print" onclick="startBookEdit(\''+cid+'\','+i+')">✏️</button><button class="btn btn-rd btn-xs no-print" onclick="delBook(\''+cid+'\','+i+')">✕</button></div>'
         +'</div>'
-      ).join('')+'</div>'
-    +'</div>';
+      ).join('')+'</div></div>';
   }).join('');
 }
 function startBookEdit(cid,i){document.getElementById('bv-'+cid+'-'+i).style.display='none';document.getElementById('be-'+cid+'-'+i).classList.add('open');}
 function cancelBookEdit(cid,i){document.getElementById('bv-'+cid+'-'+i).style.display='';document.getElementById('be-'+cid+'-'+i).classList.remove('open');}
-function saveBookEdit(cid,i){
-  BOOKS[cid][i].n=document.getElementById('be-n-'+cid+'-'+i).value.trim();
-  BOOKS[cid][i].p=parseInt(document.getElementById('be-p-'+cid+'-'+i).value)||50;
-  BOOKS[cid][i].nb=parseInt(document.getElementById('be-t-'+cid+'-'+i).value);
-  save(); toast('Updated ✓'); renderBooks();
-}
+function saveBookEdit(cid,i){BOOKS[cid][i].n=document.getElementById('be-n-'+cid+'-'+i).value.trim();BOOKS[cid][i].p=parseInt(document.getElementById('be-p-'+cid+'-'+i).value)||50;BOOKS[cid][i].nb=parseInt(document.getElementById('be-t-'+cid+'-'+i).value);save();toast('Updated ✓');renderBooks();}
 function delBook(cid,i){if(!confirm('Remove?'))return;BOOKS[cid].splice(i,1);save();toast('Removed');renderBooks();}
 function openAddBook(){document.getElementById('ab-cls').value=(curC==='all'?'1':curC);document.getElementById('addbook-ovl').classList.add('open');}
 function saveBook(){
-  const n=document.getElementById('ab-name').value.trim();
-  const cid=document.getElementById('ab-cls').value;
-  const p=parseInt(document.getElementById('ab-price').value)||50;
-  const nb=parseInt(document.getElementById('ab-type').value);
+  const n=document.getElementById('ab-name').value.trim(),cid=document.getElementById('ab-cls').value,p=parseInt(document.getElementById('ab-price').value)||50,nb=parseInt(document.getElementById('ab-type').value);
   if(!n){toast('Enter book name');return;}
-  BOOKS[cid].push({n,p,nb}); save(); closeModals(); toast('"'+n+'" added ✓'); renderBooks();
+  BOOKS[cid].push({n,p,nb});save();closeModals();toast('"'+n+'" added ✓');renderBooks();
 }
 
 // ══════════════════════════════════════════════════════
-// IF3: TICK LIST — show ALL stacked or single class
+// BOOKS: EXPORT
+// ══════════════════════════════════════════════════════
+function exportBooksJSON(){
+  const scope=(curC==='all')?CLASSES:[curC];
+  const out={};scope.forEach(cid=>{out[cid]=BOOKS[cid].map(b=>({n:b.n,p:b.p,nb:b.nb}));});
+  dlFile(JSON.stringify(out,null,2),'books_export_'+(curC==='all'?'all':'class'+curC)+'.json','application/json');
+  toast('Books JSON exported ✓');
+}
+function exportBooksCSV(){
+  const scope=(curC==='all')?CLASSES:[curC];
+  let rows=[['class','bookName','price','type']];
+  scope.forEach(cid=>{BOOKS[cid].forEach(b=>{rows.push([cid,b.n,b.p,b.nb?'Notebook':'Regular']);});});
+  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  dlFile('\uFEFF'+csv,'books_export_'+(curC==='all'?'all':'class'+curC)+'.csv','text/csv');
+  toast('Books CSV exported ✓');
+}
+
+// ══════════════════════════════════════════════════════
+// BOOKS: IMPORT
+// ══════════════════════════════════════════════════════
+function openImportBooks(){
+  bookImportData={};
+  document.getElementById('book-imp-preview').style.display='none';
+  document.getElementById('book-imp-confirm').style.display='none';
+  document.getElementById('book-imp-err').textContent='';
+  document.getElementById('book-drop-sub').textContent='Accepts .json';
+  document.getElementById('book-file-inp').value='';
+  document.getElementById('import-book-ovl').classList.add('open');
+}
+function handleBookDrop(e){
+  e.preventDefault();e.currentTarget.classList.remove('drag');
+  const f=e.dataTransfer.files[0];if(f)processBookFile(f);
+}
+function handleBookFile(inp){const f=inp.files[0];if(f)processBookFile(f);}
+function processBookFile(f){
+  document.getElementById('book-drop-sub').textContent='📄 '+f.name;
+  document.getElementById('book-imp-err').textContent='';
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      bookImportData=data;
+      showBookImportPreview(data);
+    }catch(err){document.getElementById('book-imp-err').textContent='JSON parse error: '+err.message;}
+  };
+  reader.readAsText(f);
+}
+function showBookImportPreview(data){
+  let rows=[],totalBooks=0,validClasses=0;
+  Object.keys(data).forEach(cls=>{
+    const clsNum=String(cls).replace(/[^0-9]/g,'');
+    if(!CLASSES.includes(clsNum)){(data[cls]||[]).forEach(b=>{rows.push({cls:clsNum,name:b.n||b.name||'?',p:b.p||50,nb:b.nb||0,valid:false});});return;}
+    validClasses++;
+    (data[cls]||[]).forEach(b=>{
+      const name=b.n||b.name||'';const price=parseInt(b.p)||50;const nb=b.nb?1:0;
+      if(!name){rows.push({cls:clsNum,name:'(empty)',p:price,nb,valid:false});return;}
+      totalBooks++;
+      rows.push({cls:clsNum,name,p:price,nb,valid:true});
+    });
+  });
+  document.getElementById('book-imp-stats').innerHTML=
+    '<span>📚 Classes: <b>'+validClasses+'</b></span>'
+    +'<span>📖 Books: <b>'+totalBooks+'</b></span>';
+  document.getElementById('book-imp-tbody').innerHTML=rows.map(r=>
+    '<tr class="row-'+(r.valid?'ok':'err')+'"><td><b>'+(CN[r.cls]||'Class '+r.cls)+'</b></td><td>'+(r.nb?'📓 ':'📗 ')+r.name+'</td><td style="font-family:var(--mono);font-weight:700">₹'+r.p+'</td><td>'+(r.nb?'<span class="nb-tag">Notebook</span>':'Regular')+'</td></tr>'
+  ).join('');
+  document.getElementById('book-imp-preview').style.display='';
+  document.getElementById('book-imp-confirm').style.display=totalBooks>0?'':'none';
+}
+function confirmBookImport(){
+  const clsFilter=document.getElementById('book-imp-cls-filter').value;
+  const mode=document.getElementById('book-imp-mode').value;
+  let imported=0;
+  Object.keys(bookImportData).forEach(cls=>{
+    const clsNum=String(cls).replace(/[^0-9]/g,'');
+    if(!CLASSES.includes(clsNum))return;
+    if(clsFilter!=='all'&&clsNum!==clsFilter)return;
+    const books=bookImportData[cls]||[];
+    if(mode==='replace')BOOKS[clsNum]=[];
+    books.forEach(b=>{
+      const name=b.n||b.name||'';if(!name)return;
+      BOOKS[clsNum].push({n:name,p:parseInt(b.p)||50,nb:b.nb?1:0});
+      imported++;
+    });
+  });
+  save();closeModals();renderBooks();
+  toast('✓ Imported '+imported+' book'+(imported>1?'s':''));
+}
+
+// ══════════════════════════════════════════════════════
+// IF3: TICK LIST
 // ══════════════════════════════════════════════════════
 function renderTicks(){
   const isAll=(curC==='all');
   document.getElementById('i3-title').textContent=isAll?'All Tick Lists':'Tick List — '+CN[curC];
   const scope=isAll?CLASSES:[curC];
-  // Update bulk panel for current class (only single class mode)
   if(!isAll){
     const books=BOOKS[curC]||[];
-    const bpsel=document.getElementById('bp-sel');
-    const prev=bpsel.value;
-    bpsel.innerHTML='<option value="">— Select book —</option>'+books.map((b,i)=>b.nb
-      ?'<option value="'+i+'" disabled style="color:#bbb">📓 '+b.n+'</option>'
-      :'<option value="'+i+'">📗 '+b.n+' (₹'+b.p+')</option>').join('');
-    if(prev) bpsel.value=prev;
+    const bpsel=document.getElementById('bp-sel');const prev=bpsel.value;
+    bpsel.innerHTML='<option value="">— Select book —</option>'+books.map((b,i)=>b.nb?'<option value="'+i+'" disabled style="color:#bbb">📓 '+b.n+'</option>':'<option value="'+i+'">📗 '+b.n+' (₹'+b.p+')</option>').join('');
+    if(prev)bpsel.value=prev;
     document.getElementById('bp-sel').closest('.bulk-panel').style.display='';
-    // Stats for single class
     let rev=0,bks=0;
-    S[curC].students.forEach(st=>{
-      const t=S[curC].ticks[st.id]||{},nb=S[curC].nb[st.id]||{};
-      books.forEach((b,i)=>{if(b.nb){const q=nb[i]||0;rev+=b.p*q;bks+=q;}else if(t[i]){rev+=b.p;bks++;}});
-    });
-    document.getElementById('i3-stats').innerHTML=
-      '<div class="spill"><b>'+S[curC].students.length+'</b> Students</div>'
-      +'<div class="spill"><b>'+bks+'</b> Items</div>'
-      +'<div class="spill"><b>₹'+rev.toLocaleString()+'</b></div>';
-  } else {
+    S[curC].students.forEach(st=>{const t=S[curC].ticks[st.id]||{},nb=S[curC].nb[st.id]||{};books.forEach((b,i)=>{if(b.nb){const q=nb[i]||0;rev+=b.p*q;bks+=q;}else if(t[i]){rev+=b.p;bks++;}});});
+    document.getElementById('i3-stats').innerHTML='<div class="spill"><b>'+S[curC].students.length+'</b> Students</div><div class="spill"><b>'+bks+'</b> Items</div><div class="spill"><b>₹'+rev.toLocaleString()+'</b></div>';
+  }else{
     document.getElementById('bp-sel').closest('.bulk-panel').style.display='none';
     let totalStu=0,totalRev=0;
     CLASSES.forEach(cid=>{totalStu+=S[cid].students.length;S[cid].students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};(BOOKS[cid]||[]).forEach((b,i)=>{if(b.nb){const q=nb[i]||0;totalRev+=b.p*q;}else if(t[i]){totalRev+=b.p;}});});});
-    document.getElementById('i3-stats').innerHTML=
-      '<div class="spill"><b>'+totalStu+'</b> Total Students</div>'
-      +'<div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Total Revenue</div>';
+    document.getElementById('i3-stats').innerHTML='<div class="spill"><b>'+totalStu+'</b> Total Students</div><div class="spill"><b>₹'+totalRev.toLocaleString()+'</b> Total Revenue</div>';
   }
-  // Build tick tables
   const container=document.getElementById('tick-all-container');
   container.innerHTML=scope.map(cid=>buildTickTableHTML(cid,isAll)).join('');
 }
-
 function buildTickTableHTML(cid,showLabel){
   const books=BOOKS[cid]||[],{students,ticks,nb}=S[cid];
-  if(!books.length) return showLabel?'<div style="padding:12px 0;color:var(--ink3);font-size:12px">'+CN[cid]+' — No books set up</div>':'';
-  const colT=books.map((_,i)=>{
-    if(books[i].nb){let t=0;students.forEach(st=>{t+=(nb[st.id]?.[i]||0);});return t;}
-    else{let t=0;students.forEach(st=>{if(ticks[st.id]?.[i])t++;});return t;}
-  });
-  let grand=0;
-  students.forEach(st=>{const t=ticks[st.id]||{},n=nb[st.id]||{};books.forEach((b,i)=>{grand+=b.nb?(b.p*(n[i]||0)):(t[i]?b.p:0);});});
+  if(!books.length)return showLabel?'<div style="padding:12px 0;color:var(--ink3);font-size:12px">'+CN[cid]+' — No books set up</div>':'';
+  const colT=books.map((_,i)=>{if(books[i].nb){let t=0;students.forEach(st=>{t+=(nb[st.id]?.[i]||0);});return t;}else{let t=0;students.forEach(st=>{if(ticks[st.id]?.[i])t++;});return t;}});
+  let grand=0;students.forEach(st=>{const t=ticks[st.id]||{},n=nb[st.id]||{};books.forEach((b,i)=>{grand+=b.nb?(b.p*(n[i]||0)):(t[i]?b.p:0);});});
   const label=showLabel?'<div class="tick-class-label">'+CN[cid]+' — '+students.length+' students</div>':'';
-  return '<div class="tick-class-section'+(showLabel?' tgwrap':' tgwrap')+'">'
-    +label
-    +'<div class="tgscroll"><table class="tg">'
-      +'<thead>'
-        +'<tr class="tg-rot">'
-          +'<td class="fix" style="width:30px">SL</td>'
-          +'<td class="fix" style="width:54px">ADM</td>'
-          +'<td class="fix" style="width:170px">NAME</td>'
-          +books.map(b=>'<td style="width:36px"><div class="rot-wrap"><span class="rot-txt'+(b.nb?' nbc':'')+'">'+b.n+'</span></div></td>').join('')
-          +'<td style="width:68px"><div class="rot-wrap"><span class="rot-txt" style="color:#7ecba1">TOTAL ₹</span></div></td>'
-        +'</tr>'
-        +'<tr class="tg-price"><td class="fix" colspan="3">₹/UNIT</td>'
-          +books.map(b=>'<td>₹'+b.p+'</td>').join('')
-          +'<td></td>'
-        +'</tr>'
-      +'</thead>'
-      +'<tbody>'
-        +(students.length===0?'<tr><td colspan="'+(books.length+4)+'" style="text-align:center;padding:16px;color:var(--ink3)">No students yet</td></tr>'
-          :students.map((st,si)=>buildTickRow(cid,books,st,si+1)).join(''))
-      +'</tbody>'
-      +'<tfoot><tr>'
-        +'<td colspan="3" class="fl">TOTAL ↓</td>'
-        +books.map((_,i)=>'<td id="ct-'+cid+'-'+i+'">'+(colT[i]||'')+'</td>').join('')
-        +'<td class="fgt" id="gt-'+cid+'">₹'+grand.toLocaleString()+'</td>'
-      +'</tr></tfoot>'
-    +'</table></div>'
-  +'</div>';
+  return '<div class="tick-class-section tgwrap">'+label+'<div class="tgscroll"><table class="tg"><thead><tr class="tg-rot"><td class="fix" style="width:30px">SL</td><td class="fix" style="width:54px">ADM</td><td class="fix" style="width:170px">NAME</td>'+books.map(b=>'<td style="width:36px"><div class="rot-wrap"><span class="rot-txt'+(b.nb?' nbc':'')+'">'+b.n+'</span></div></td>').join('')+'<td style="width:68px"><div class="rot-wrap"><span class="rot-txt" style="color:#7ecba1">TOTAL ₹</span></div></td></tr><tr class="tg-price"><td class="fix" colspan="3">₹/UNIT</td>'+books.map(b=>'<td>₹'+b.p+'</td>').join('')+'<td></td></tr></thead><tbody>'+(students.length===0?'<tr><td colspan="'+(books.length+4)+'" style="text-align:center;padding:16px;color:var(--ink3)">No students yet</td></tr>':students.map((st,si)=>buildTickRow(cid,books,st,si+1)).join(''))+'</tbody><tfoot><tr><td colspan="3" class="fl">TOTAL ↓</td>'+books.map((_,i)=>'<td id="ct-'+cid+'-'+i+'">'+(colT[i]||'')+'</td>').join('')+'<td class="fgt" id="gt-'+cid+'">₹'+grand.toLocaleString()+'</td></tr></tfoot></table></div></div>';
 }
-
 function buildTickRow(cid,books,st,sl){
   const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
-  let tot=0;
-  books.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
-  return '<tr id="row-'+cid+'-'+st.id+'">'
-    +'<td class="tc-sl">'+sl+'</td>'
-    +'<td class="tc-adm">'+st.admNo+'</td>'
-    +'<td class="tc-name" title="'+st.name+'">'+st.name+'</td>'
-    +books.map((b,i)=>{
-      if(b.nb){
-        const q=nb[i]||0;
-        return '<td class="tc-nb'+(q>0?' hv':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'">'
-          +'<input type="number" class="nb-inp" value="'+(q||'')+'" min="0" placeholder="0"'
-          +' onchange="setNb(\''+cid+'\',\''+st.id+'\','+i+',this.value)"'
-          +' onclick="event.stopPropagation()"></td>';
-      } else {
-        const on=t[i]?1:0;
-        return '<td class="tc-tick'+(on?' on':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'" onclick="doTick(\''+cid+'\',\''+st.id+'\','+i+')">'
-          +'<div class="tbox"><span class="ckv">✓</span></div></td>';
-      }
-    }).join('')
-    +'<td class="tc-tot" id="rt-'+cid+'-'+st.id+'">₹'+(tot>0?tot.toLocaleString():'')+'</td>'
-  +'</tr>';
+  let tot=0;books.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
+  return '<tr id="row-'+cid+'-'+st.id+'"><td class="tc-sl">'+sl+'</td><td class="tc-adm">'+st.admNo+'</td><td class="tc-name" title="'+st.name+'">'+st.name+'</td>'+books.map((b,i)=>{if(b.nb){const q=nb[i]||0;return '<td class="tc-nb'+(q>0?' hv':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'"><input type="number" class="nb-inp" value="'+(q||'')+'" min="0" placeholder="0" onchange="setNb(\''+cid+'\',\''+st.id+'\','+i+',this.value)" onclick="event.stopPropagation()"></td>';}else{const on=t[i]?1:0;return '<td class="tc-tick'+(on?' on':'')+'" id="cell-'+cid+'-'+st.id+'-'+i+'" onclick="doTick(\''+cid+'\',\''+st.id+'\','+i+')"><div class="tbox"><span class="ckv">✓</span></div></td>';}}).join('')+'<td class="tc-tot" id="rt-'+cid+'-'+st.id+'">₹'+(tot>0?tot.toLocaleString():'')+'</td></tr>';
 }
-
-function doTick(cid,sid,bi){
-  if(!S[cid].ticks[sid]) S[cid].ticks[sid]={};
-  const t=S[cid].ticks[sid]; if(t[bi]) delete t[bi]; else t[bi]=1;
-  save();
-  const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);
-  if(cell) cell.className='tc-tick'+(t[bi]?' on':'');
-  updR(cid,sid); updC(cid,bi); updG(cid);
-}
-function setNb(cid,sid,bi,v){
-  const q=Math.max(0,parseInt(v)||0);
-  if(!S[cid].nb[sid]) S[cid].nb[sid]={};
-  if(q>0) S[cid].nb[sid][bi]=q; else delete S[cid].nb[sid][bi];
-  const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);
-  if(cell) cell.className='tc-nb'+(q>0?' hv':'');
-  save(); updR(cid,sid); updC(cid,bi); updG(cid);
-}
-function updR(cid,sid){
-  const bks=BOOKS[cid],t=S[cid].ticks[sid]||{},nb=S[cid].nb[sid]||{};
-  let tot=0; bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
-  const el=document.getElementById('rt-'+cid+'-'+sid); if(el) el.textContent=tot>0?'₹'+tot.toLocaleString():'';
-}
-function updC(cid,bi){
-  const bks=BOOKS[cid],sts=S[cid].students; let tot=0;
-  if(bks[bi]&&bks[bi].nb) sts.forEach(st=>{tot+=(S[cid].nb[st.id]?.[bi]||0);});
-  else sts.forEach(st=>{if(S[cid].ticks[st.id]?.[bi])tot++;});
-  const el=document.getElementById('ct-'+cid+'-'+bi); if(el) el.textContent=tot||'';
-}
-function updG(cid){
-  const bks=BOOKS[cid],sts=S[cid].students; let tot=0;
-  sts.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});});
-  const el=document.getElementById('gt-'+cid); if(el) el.textContent='₹'+tot.toLocaleString();
-}
+function doTick(cid,sid,bi){if(!S[cid].ticks[sid])S[cid].ticks[sid]={};const t=S[cid].ticks[sid];if(t[bi])delete t[bi];else t[bi]=1;save();const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);if(cell)cell.className='tc-tick'+(t[bi]?' on':'');updR(cid,sid);updC(cid,bi);updG(cid);}
+function setNb(cid,sid,bi,v){const q=Math.max(0,parseInt(v)||0);if(!S[cid].nb[sid])S[cid].nb[sid]={};if(q>0)S[cid].nb[sid][bi]=q;else delete S[cid].nb[sid][bi];const cell=document.getElementById('cell-'+cid+'-'+sid+'-'+bi);if(cell)cell.className='tc-nb'+(q>0?' hv':'');save();updR(cid,sid);updC(cid,bi);updG(cid);}
+function updR(cid,sid){const bks=BOOKS[cid],t=S[cid].ticks[sid]||{},nb=S[cid].nb[sid]||{};let tot=0;bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});const el=document.getElementById('rt-'+cid+'-'+sid);if(el)el.textContent=tot>0?'₹'+tot.toLocaleString():'';}
+function updC(cid,bi){const bks=BOOKS[cid],sts=S[cid].students;let tot=0;if(bks[bi]&&bks[bi].nb)sts.forEach(st=>{tot+=(S[cid].nb[st.id]?.[bi]||0);});else sts.forEach(st=>{if(S[cid].ticks[st.id]?.[bi])tot++;});const el=document.getElementById('ct-'+cid+'-'+bi);if(el)el.textContent=tot||'';}
+function updG(cid){const bks=BOOKS[cid],sts=S[cid].students;let tot=0;sts.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};bks.forEach((b,i)=>{tot+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});});const el=document.getElementById('gt-'+cid);if(el)el.textContent='₹'+tot.toLocaleString();}
 function renderBulkGrid(){
-  const bi=document.getElementById('bp-sel').value;
-  const grid=document.getElementById('bp-grid');
-  const sts=S[curC].students;
+  const bi=document.getElementById('bp-sel').value;const grid=document.getElementById('bp-grid');const sts=S[curC].students;
   if(bi===''){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;color:var(--ink3);font-size:12px;padding:12px">Select a book above</div>';return;}
-  bpSel=new Set(); sts.forEach(st=>{if(S[curC].ticks[st.id]?.[bi]) bpSel.add(st.id);});
-  grid.innerHTML=sts.map(st=>'<div class="bp-stu'+(bpSel.has(st.id)?' sel':'')+'" id="bps-'+st.id+'" onclick="toggleBpStu(\''+st.id+'\')">'
-    +'<div class="bp-chk"><span class="bp-ci">✓</span></div>'
-    +'<div class="bp-adm">'+st.admNo+'</div>'
-    +'<div class="bp-nm" title="'+st.name+'">'+st.name+'</div></div>').join('')
-    ||'<div style="grid-column:1/-1;text-align:center;padding:12px;font-size:12px;color:var(--ink3)">No students</div>';
+  bpSel=new Set();sts.forEach(st=>{if(S[curC].ticks[st.id]?.[bi])bpSel.add(st.id);});
+  grid.innerHTML=sts.map(st=>'<div class="bp-stu'+(bpSel.has(st.id)?' sel':'')+'" id="bps-'+st.id+'" onclick="toggleBpStu(\''+st.id+'\')">'+'<div class="bp-chk"><span class="bp-ci">✓</span></div><div class="bp-adm">'+st.admNo+'</div><div class="bp-nm" title="'+st.name+'">'+st.name+'</div></div>').join('')||'<div style="grid-column:1/-1;text-align:center;padding:12px;font-size:12px;color:var(--ink3)">No students</div>';
   document.getElementById('bp-cnt').textContent=bpSel.size;
 }
-function toggleBpStu(sid){
-  const el=document.getElementById('bps-'+sid);
-  if(bpSel.has(sid)){bpSel.delete(sid);el?.classList.remove('sel');}
-  else{bpSel.add(sid);el?.classList.add('sel');}
-  document.getElementById('bp-cnt').textContent=bpSel.size;
-}
+function toggleBpStu(sid){const el=document.getElementById('bps-'+sid);if(bpSel.has(sid)){bpSel.delete(sid);el?.classList.remove('sel');}else{bpSel.add(sid);el?.classList.add('sel');}document.getElementById('bp-cnt').textContent=bpSel.size;}
 function bpAll(){S[curC].students.forEach(st=>{bpSel.add(st.id);document.getElementById('bps-'+st.id)?.classList.add('sel');});document.getElementById('bp-cnt').textContent=bpSel.size;}
 function bpClear(){bpSel.forEach(sid=>document.getElementById('bps-'+sid)?.classList.remove('sel'));bpSel.clear();document.getElementById('bp-cnt').textContent=0;}
 function bpApply(val){
-  const bi=document.getElementById('bp-sel').value;
-  if(bi===''){toast('Select a book first');return;}
-  if(bpSel.size===0){toast('Select students first');return;}
-  bpSel.forEach(sid=>{
-    if(!S[curC].ticks[sid]) S[curC].ticks[sid]={};
-    if(val) S[curC].ticks[sid][bi]=1; else delete S[curC].ticks[sid][bi];
-    const cell=document.getElementById('cell-'+curC+'-'+sid+'-'+bi);
-    if(cell) cell.className='tc-tick'+(val?' on':'');
-    updR(curC,sid);
-  });
-  save(); updC(curC,parseInt(bi)); updG(curC); renderBulkGrid();
-  toast((val?'✓ Ticked':'✕ Unticked')+' "'+BOOKS[curC][bi].n+'" for '+bpSel.size+' students');
+  const bi=document.getElementById('bp-sel').value;if(bi===''){toast('Select a book first');return;}if(bpSel.size===0){toast('Select students first');return;}
+  bpSel.forEach(sid=>{if(!S[curC].ticks[sid])S[curC].ticks[sid]={};if(val)S[curC].ticks[sid][bi]=1;else delete S[curC].ticks[sid][bi];const cell=document.getElementById('cell-'+curC+'-'+sid+'-'+bi);if(cell)cell.className='tc-tick'+(val?' on':'');updR(curC,sid);});
+  save();updC(curC,parseInt(bi));updG(curC);renderBulkGrid();toast((val?'✓ Ticked':'✕ Unticked')+' "'+BOOKS[curC][bi].n+'" for '+bpSel.size+' students');
 }
 
 // ══════════════════════════════════════════════════════
-// IF4: BILLING — 3 options
+// IF4: BILLING
 // ══════════════════════════════════════════════════════
 function renderBilling4(){
-  // Update class-wise counts
-  CLASSES.forEach(cid=>{
-    const el=document.getElementById('cpc-'+cid);
-    if(el) el.textContent=S[cid].students.length+' students';
-  });
-  // Stats
-  let grandTotal=0, grandStu=0;
-  CLASSES.forEach(cid=>{
-    grandStu+=S[cid].students.length;
-    S[cid].students.forEach(st=>{
-      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
-      (BOOKS[cid]||[]).forEach((b,i)=>{grandTotal+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
-    });
-  });
-  document.getElementById('i4-stats').innerHTML=
-    '<div class="spill"><b>'+grandStu+'</b> Total Students</div>'
-    +'<div class="spill"><b>₹'+grandTotal.toLocaleString()+'</b> Total Revenue</div>';
+  CLASSES.forEach(cid=>{const el=document.getElementById('cpc-'+cid);if(el)el.textContent=S[cid].students.length+' students';});
+  let grandTotal=0,grandStu=0;
+  CLASSES.forEach(cid=>{grandStu+=S[cid].students.length;S[cid].students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};(BOOKS[cid]||[]).forEach((b,i)=>{grandTotal+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});});});
+  document.getElementById('i4-stats').innerHTML='<div class="spill"><b>'+grandStu+'</b> Total Students</div><div class="spill"><b>₹'+grandTotal.toLocaleString()+'</b> Total Revenue</div>';
 }
-
 function selectBillOpt(opt){
-  // Hide all panels first
-  ['ind','cls','all'].forEach(o=>{
-    document.getElementById('bpanel-'+o).style.display='none';
-  });
-  // Show chosen panel
-  const panel=document.getElementById('bpanel-'+opt);
-  panel.style.display='block';
-  // If All Students — build the student grid class by class
-  if(opt==='all') buildAllStudentsBillPanel();
+  ['ind','cls','all'].forEach(o=>{document.getElementById('bpanel-'+o).style.display='none';});
+  const panel=document.getElementById('bpanel-'+opt);panel.style.display='block';
+  if(opt==='all')buildAllStudentsBillPanel();
   panel.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-
-function closeBillPanel(){
-  ['ind','cls','all'].forEach(o=>document.getElementById('bpanel-'+o).style.display='none');
-}
-
-// Build All Students panel — summary cards only, no student rows, no print buttons per class
+function closeBillPanel(){['ind','cls','all'].forEach(o=>document.getElementById('bpanel-'+o).style.display='none');}
 function buildAllStudentsBillPanel(){
-  let html='';
-  let totalStu=0, totalRev=0;
+  let html='',totalStu=0,totalRev=0;
   CLASSES.forEach(cid=>{
-    const students=S[cid].students;
-    if(!students.length) return;
-    let clsRev=0;
-    students.forEach(st=>{
-      const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
-      (BOOKS[cid]||[]).forEach((b,i)=>{clsRev+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});
-    });
-    totalStu+=students.length; totalRev+=clsRev;
-    html+='<div class="abs-summary-card">'
-      +'<div class="abs-sc-left">'
-        +'<div class="abs-sc-cls">'+CN[cid]+'</div>'
-        +'<div class="abs-sc-meta">'
-          +'<span>👥 '+students.length+' students</span>'
-          +'<span>₹'+clsRev.toLocaleString()+'</span>'
-        +'</div>'
-      +'</div>'
-    +'</div>';
+    const students=S[cid].students;if(!students.length)return;
+    let clsRev=0;students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};(BOOKS[cid]||[]).forEach((b,i)=>{clsRev+=b.nb?(b.p*(nb[i]||0)):(t[i]?b.p:0);});});
+    totalStu+=students.length;totalRev+=clsRev;
+    html+='<div class="abs-summary-card"><div class="abs-sc-left"><div class="abs-sc-cls">'+CN[cid]+'</div><div class="abs-sc-meta"><span>👥 '+students.length+' students</span><span>₹'+clsRev.toLocaleString()+'</span></div></div></div>';
   });
-  // Grand summary row — total pages = all students packed 4 per page, no gaps
   const totalPages=Math.ceil(totalStu/4);
-  html+='<div class="abs-grand-row">'
-    +'<div style="display:flex;flex-direction:column;gap:3px">'
-      +'<span style="font-size:14px;font-weight:800">ALL CLASSES</span>'
-      +'<span style="font-size:11px;color:#7aaa90">'+totalStu+' students · '+totalPages+' pages A4</span>'
-    +'</div>'
-    +'<span style="font-size:16px">₹'+totalRev.toLocaleString()+'</span>'
-  +'</div>';
+  html+='<div class="abs-grand-row"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:800">ALL CLASSES</span><span style="font-size:11px;color:#7aaa90">'+totalStu+' students · '+totalPages+' pages A4</span></div><span style="font-size:16px">₹'+totalRev.toLocaleString()+'</span></div>';
   document.getElementById('all-bill-summary').innerHTML=html;
 }
-
-// ── Individual 4-student billing ──
 function ind4Preview(slot){
   const adm=document.getElementById('ind4-adm-'+slot).value.trim();
-  const nameEl=document.getElementById('ind4-name-'+slot);
-  const clsEl=document.getElementById('ind4-cls-'+slot);
-  const slotEl=document.getElementById('ind4s-'+slot);
+  const nameEl=document.getElementById('ind4-name-'+slot),clsEl=document.getElementById('ind4-cls-'+slot),slotEl=document.getElementById('ind4s-'+slot);
   if(!adm){nameEl.textContent='—';clsEl.textContent='';slotEl.className='ind4-slot';return;}
   let found=null,foundCid=null;
-  for(const cid of CLASSES){
-    const st=S[cid].students.find(s=>s.admNo===adm);
-    if(st){found=st;foundCid=cid;break;}
-  }
-  if(found){
-    nameEl.textContent=found.name;
-    clsEl.textContent=CN[foundCid];
-    slotEl.className='ind4-slot found';
-  } else {
-    nameEl.textContent='Not found';
-    clsEl.textContent='';
-    slotEl.className='ind4-slot notfound';
-  }
+  for(const cid of CLASSES){const st=S[cid].students.find(s=>s.admNo===adm);if(st){found=st;foundCid=cid;break;}}
+  if(found){nameEl.textContent=found.name;clsEl.textContent=CN[foundCid];slotEl.className='ind4-slot found';}
+  else{nameEl.textContent='Not found';clsEl.textContent='';slotEl.className='ind4-slot notfound';}
 }
 function printInd4(){
-  const msg=document.getElementById('ind4-msg');
-  const slots=[];
+  const msg=document.getElementById('ind4-msg');const pairs=[];
   for(let i=0;i<4;i++){
-    const adm=document.getElementById('ind4-adm-'+i).value.trim();
-    if(!adm){slots.push(null);continue;}
-    let found=null,foundCid=null;
-    for(const cid of CLASSES){
-      const st=S[cid].students.find(s=>s.admNo===adm);
-      if(st){found=st;foundCid=cid;break;}
-    }
-    if(found) slots.push({cid:foundCid,st:found});
-    else{msg.textContent='ADM '+adm+' not found';return;}
+    const adm=document.getElementById('ind4-adm-'+i).value.trim();if(!adm)continue;
+    let found=null,foundCid=null;for(const cid of CLASSES){const st=S[cid].students.find(s=>s.admNo===adm);if(st){found=st;foundCid=cid;break;}}
+    if(found)pairs.push({cid:foundCid,st:found});else{msg.textContent='ADM '+adm+' not found';return;}
   }
-  if(slots.every(s=>s===null)){msg.textContent='Enter at least 1 ADM number';return;}
+  if(!pairs.length){msg.textContent='Enter at least 1 ADM number';return;}
   msg.textContent='';
-  // Build exactly 4 cards (pad with empty)
-  const cards=slots.map(s=>s?buildPrintCard(s.cid,s.st):'');
-  while(cards.length<4) cards.push('');
-  const html='<div class="a4page">'
-    +'<div class="top-row">'
-      +'<div class="slot left-slot">'+(cards[0]?'<div class="card">'+cards[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'<div class="slot right-slot">'+(cards[1]?'<div class="card">'+cards[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-    +'</div>'
-    +'<div class="cut-line"><span class="scissors">✂</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
-    +'<div class="bottom-row">'
-      +'<div class="slot left-slot">'+(cards[2]?'<div class="card">'+cards[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'<div class="slot right-slot">'+(cards[3]?'<div class="card">'+cards[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-    +'</div>'
-  +'</div>';
-  openPrintWindow(html,'Individual Bills');
+  openPrintWindow(buildDuplexGrid(pairs),'Individual Bills');
 }
-
-// ── Class-wise billing ──
-function printClassBills(cid){
-  if(!S[cid].students.length){toast(CN[cid]+' has no students');return;}
-  openPrintWindow(buildA4Grid(cid,S[cid].students),'Bills — '+CN[cid]);
-}
-
-// ── All students billing — ALL classes packed continuously, no gaps between classes ──
+function printClassBills(cid){if(!S[cid].students.length){toast(CN[cid]+' has no students');return;}openPrintWindow(buildA4Grid(cid,S[cid].students),'Bills — '+CN[cid]);}
 function printEveryBill(){
-  // Collect every student from all classes in order
-  let allCards=[];
-  CLASSES.forEach(cid=>{
-    S[cid].students.forEach(st=>{
-      allCards.push(buildPrintCard(cid,st));
-    });
-  });
-  if(!allCards.length){toast('No students to print');return;}
-  // Pack ALL cards into A4 pages of 4 — no empty slots mid-print, only last page may have empties
-  let html='';
-  for(let i=0;i<allCards.length;i+=4){
-    const g=allCards.slice(i,i+4);
-    while(g.length<4) g.push('');
-    html+='<div class="a4page">'
-      +'<div class="top-row">'
-        +'<div class="slot left-slot">'+(g[0]?'<div class="card">'+g[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-        +'<div class="slot right-slot">'+(g[1]?'<div class="card">'+g[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'</div>'
-      +'<div class="cut-line"><span class="scissors">&#9988;</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
-      +'<div class="bottom-row">'
-        +'<div class="slot left-slot">'+(g[2]?'<div class="card">'+g[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-        +'<div class="slot right-slot">'+(g[3]?'<div class="card">'+g[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'</div>'
-    +'</div>';
-  }
-  openPrintWindow(html,'All Students — All Classes');
+  let pairs=[];CLASSES.forEach(cid=>{S[cid].students.forEach(st=>{pairs.push({cid,st});});});
+  if(!pairs.length){toast('No students to print');return;}
+  openPrintWindow(buildDuplexGrid(pairs),'All Students — All Classes');
 }
-
-// ── Single student bill ──
 function showStudentBill(cid,sid){
   const books=BOOKS[cid],st=S[cid].students.find(s=>s.id===sid);
   const t=S[cid].ticks[sid]||{},nb=S[cid].nb[sid]||{};
   let items=[],grand=0;
-  books.forEach((b,i)=>{
-    if(b.nb){const qty=nb[i]||0;if(qty>0){items.push({n:b.n,p:b.p,qty,tot:b.p*qty,nb:1});grand+=b.p*qty;}}
-    else if(t[i]){items.push({n:b.n,p:b.p,qty:1,tot:b.p,nb:0});grand+=b.p;}
-  });
+  books.forEach((b,i)=>{if(b.nb){const qty=nb[i]||0;if(qty>0){items.push({n:b.n,p:b.p,qty,tot:b.p*qty,nb:1});grand+=b.p*qty;}}else if(t[i]){items.push({n:b.n,p:b.p,qty:1,tot:b.p,nb:0});grand+=b.p;}});
   const today=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
-  document.getElementById('rcp-body').innerHTML=
-    '<div class="rcp-hd">'
-      +'<div class="rcp-title">MALIK DEENAR ISLAMIC ACADEMY</div>'
-      +'<div class="rcp-sub">Thalanagara, Kasaragod · College Book Purchase List 2026–27</div>'
-    +'</div>'
-    +'<div class="rcp-meta">'
-      +'<div><b>AD NO:</b> '+st.admNo+'</div><div><b>DATE:</b> '+today+'</div>'
-      +'<div><b>NAME:</b> '+st.name+'</div><div><b>CLASS:</b> '+CN[cid]+'</div>'
-    +'</div>'
-    +(items.length===0?'<div style="text-align:center;padding:14px;color:#999;font-size:11px">No books selected</div>':'')
-    +items.map(it=>it.nb
-      ?'<div class="rcp-nb"><div class="rcp-nb-name">📓 '+it.n+'</div><div class="rcp-nb-small">'+it.qty+' × ₹'+it.p+' =</div><span class="rcp-nb-big">₹'+it.tot.toLocaleString()+'</span></div>'
-      :'<div class="rcp-bk"><div class="rcp-bk-name">📗 '+it.n+'</div><div class="rcp-bk-amt">₹'+it.tot.toLocaleString()+'</div></div>'
-    ).join('')
-    +'<div class="rcp-grand"><div class="rcp-grand-lbl">TOTAL AMOUNT</div><div class="rcp-grand-amt">₹'+grand.toLocaleString()+'</div></div>'
-    +'<div class="rcp-foot">Malik Deenar Islamic Academy · Thalanagara, Kasaragod</div>';
+  document.getElementById('rcp-body').innerHTML='<div class="rcp-hd"><div class="rcp-title">MALIK DEENAR ISLAMIC ACADEMY</div><div class="rcp-sub">Thalanagara, Kasaragod · College Book Purchase List 2026–27</div></div><div class="rcp-meta"><div><b>AD NO:</b> '+st.admNo+'</div><div><b>DATE:</b> '+today+'</div><div><b>NAME:</b> '+st.name+'</div><div><b>CLASS:</b> '+CN[cid]+'</div></div>'+(items.length===0?'<div style="text-align:center;padding:14px;color:#999;font-size:11px">No books selected</div>':'')+items.map(it=>it.nb?'<div class="rcp-nb"><div class="rcp-nb-name">📓 '+it.n+'</div><div class="rcp-nb-small">'+it.qty+' × ₹'+it.p+' =</div><span class="rcp-nb-big">₹'+it.tot.toLocaleString()+'</span></div>':'<div class="rcp-bk"><div class="rcp-bk-name">📗 '+it.n+'</div><div class="rcp-bk-amt">₹'+it.tot.toLocaleString()+'</div></div>').join('')+'<div class="rcp-grand"><div class="rcp-grand-lbl">TOTAL AMOUNT</div><div class="rcp-grand-amt">₹'+grand.toLocaleString()+'</div></div><div class="rcp-foot">Malik Deenar Islamic Academy · Thalanagara, Kasaragod</div>';
   document.getElementById('rcp-ovl').classList.add('open');
 }
-
-// ══════════════════════════════════════════════════════
-// PRINT FUNCTIONS
-// ══════════════════════════════════════════════════════
-function printRcp(){
-  const h=document.getElementById('rcp-body').innerHTML;
-  openPrintWindow('<div class="rcp-single">'+h+'</div>','Receipt');
+function printRcp(){const h=document.getElementById('rcp-body').innerHTML;openPrintWindow('<div class="rcp-single">'+h+'</div>','Receipt');}
+function a4slot(c){return c?'<div class="card">'+c+'</div>':'<div class="empty-slot"></div>';}
+function buildA4Page(tl,tr,bl,br){
+  return '<div class="a4page"><div class="top-row"><div class="slot left-slot">'+a4slot(tl)+'</div><div class="slot right-slot">'+a4slot(tr)+'</div></div><div class="cut-line"><span class="scissors">&#9988;</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div><div class="bottom-row"><div class="slot left-slot">'+a4slot(bl)+'</div><div class="slot right-slot">'+a4slot(br)+'</div></div></div>';
 }
-
-// Build A4 page grid: 4 bills per page (2 cols × 2 rows)
-function buildA4Grid(cid,students){
-  if(!students||students.length===0) return '';
-  const cards=students.map(st=>buildPrintCard(cid,st));
+function buildDuplexGrid(pairs){
+  /* pairs = [{cid,st},...] 
+     Page layout:
+       FRONT PAGE:  A(TL) B(TR) / C(BL) D(BR)
+       BACK PAGE:   B(TL) A(TR) / D(BL) C(BR)  ← mirrored for duplex flip
+  */
   let html='';
-  for(let i=0;i<cards.length;i+=4){
-    const g=cards.slice(i,i+4);
-    while(g.length<4) g.push('');
-    html+='<div class="a4page">'
-      +'<div class="top-row">'
-        +'<div class="slot left-slot">'+(g[0]?'<div class="card">'+g[0]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-        +'<div class="slot right-slot">'+(g[1]?'<div class="card">'+g[1]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'</div>'
-      +'<div class="cut-line"><span class="scissors">&#9988;</span><span class="dashes">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>'
-      +'<div class="bottom-row">'
-        +'<div class="slot left-slot">'+(g[2]?'<div class="card">'+g[2]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-        +'<div class="slot right-slot">'+(g[3]?'<div class="card">'+g[3]+'</div>':'<div class="empty-slot"></div>')+'</div>'
-      +'</div>'
-    +'</div>';
+  for(let i=0;i<pairs.length;i+=4){
+    const g=pairs.slice(i,i+4);
+    while(g.length<4)g.push(null);
+    const c=g.map(p=>p?buildPrintCards(p.cid,p.st):[null,null]);
+    // front page: A B / C D
+    html+=buildA4Page(c[0][0],c[1][0],c[2][0],c[3][0]);
+    // back page mirrored: B A / D C
+    html+=buildA4Page(c[1][1],c[0][1],c[3][1],c[2][1]);
   }
   return html;
 }
-
-// Build one student bill card (inner content for print)
-function buildPrintCard(cid,st){
+function buildA4Grid(cid,students){
+  if(!students||!students.length)return'';
+  return buildDuplexGrid(students.map(st=>({cid,st})));
+}
+function buildPrintCards(cid,st){
   const books=BOOKS[cid]||[],t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};
   let items=[],grand=0;
-  books.forEach((b,i)=>{
-    if(b.nb){const q=nb[i]||0;if(q>0){const tot=b.p*q;items.push({n:b.n,p:b.p,q,tot,nb:1});grand+=tot;}}
-    else if(t[i]){items.push({n:b.n,p:b.p,q:1,tot:b.p,nb:0});grand+=b.p;}
-  });
-  const d=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
-  const rows=items.map((it,idx)=>
-    '<div class="brow'+(it.nb?' nb':'')+'"><span class="br-sl">'+(idx+1)+'</span>'
-    +'<span class="br-name">'+it.n+(it.nb?'<span class="nb-rate">'+it.q+' nos \u00d7 \u20b9'+it.p+'</span>':'')+'</span>'
-    +'<span class="br-rate">'+(it.nb?'':'\u20b9'+it.p)+'</span>'
-    +'<span class="br-amt">\u20b9'+it.tot.toLocaleString()+'</span></div>'
-  ).join('');
-  return '<div class="card-hd">'
-      +'<div><div class="card-hd-title">MALIK DEENAR ISLAMIC ACADEMY</div><div class="card-hd-sub">Thalanagara, Kasaragod · College Book Purchase List 2026–27</div></div>'
-      +'<div class="card-hd-total"><div class="card-hd-amt">\u20b9'+grand.toLocaleString()+'</div><div class="card-hd-lbl">TOTAL</div></div>'
-    +'</div>'
-    +'<div class="card-info">'
-      +'<div class="info-row"><span class="il">AD NO</span><span class="iv">'+st.admNo+'</span><span class="il ml2">DATE</span><span class="iv">'+d+'</span></div>'
-      +'<div class="info-row"><span class="il">NAME</span><span class="iv iv-name">'+st.name+'</span></div>'
-      +'<div class="info-row"><span class="il">CLASS</span><span class="iv">'+CN[cid]+'</span></div>'
-    +'</div>'
-    +'<div class="book-hdr"><span class="bh-sl">#</span><span class="bh-name">BOOK NAME</span><span class="bh-rate">RATE</span><span class="bh-amt">AMOUNT</span></div>'
-    +'<div class="book-list">'+(items.length===0?'<div class="no-items">No books selected yet</div>':rows)+'</div>'
-    +'<div class="card-ft"><span class="ft-lbl">TOTAL AMOUNT</span><span class="ft-amt">\u20b9'+grand.toLocaleString()+'</span></div>';
+  books.forEach((b,i)=>{if(b.nb){const q=nb[i]||0;if(q>0){const tot=b.p*q;items.push({n:b.n,p:b.p,q,tot,nb:1});grand+=tot;}}else if(t[i]){items.push({n:b.n,p:b.p,q:1,tot:b.p,nb:0});grand+=b.p;}});
+  const FRONT_MAX=16;
+  const BACK_START=17;
+  const front=items.slice(0,FRONT_MAX);
+  const back=items.slice(FRONT_MAX);
+  const hasTwoPages=back.length>0;
+  const frontCard=buildSingleCard(cid,st,front,grand,false,1,hasTwoPages?2:1);
+  const backCard=hasTwoPages?buildSingleCard(cid,st,back,grand,true,2,2):null;
+  return[frontCard,backCard];
 }
-
-// Open a new print window with full CSS
+function buildSingleCard(cid,st,items,grand,isBack,pageNum,totalPages){
+  const d=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  const rows=items.map((it,idx)=>{
+    const globalIdx=isBack?16+idx:idx;
+    return '<div class="brow'+(it.nb?' nb':'')+'"><span class="br-sl">'+(globalIdx+1)+'</span><span class="br-name">'+it.n+(it.nb?'<span class="nb-rate">'+it.q+'\u00d7\u20b9'+it.p+'</span>':'')+'</span><span class="br-rate">'+(it.nb?'':'\u20b9'+it.p)+'</span><span class="br-amt">\u20b9'+it.tot.toLocaleString()+'</span></div>';
+  }).join('');
+  const backBadge=isBack?'<div class="card-back-badge">\u21a9 BACK SIDE \u2022 PAGE '+pageNum+'/'+totalPages+' \u2022 Items '+(20+1)+'\u2013'+(20+items.length)+'</div>':'';
+  const pgIndic=(!isBack&&totalPages>1)?'<div class="card-pg-cont">\u2192 Continued on back side (items 1-20 shown, '+totalPages+' pages total)</div>':'';
+  return '<div class="card-hd"><div><div class="card-hd-title">MALIK DEENAR ISLAMIC ACADEMY</div><div class="card-hd-sub">Thalanagara, Kasaragod \u00b7 Book Purchase 2026\u201327</div></div><div class="card-hd-total"><div class="card-hd-amt">\u20b9'+grand.toLocaleString()+'</div><div class="card-hd-lbl">TOTAL</div></div></div><div class="card-info"><div class="info-row"><span class="il">ADM</span><span class="iv">'+st.admNo+'</span><span class="il ml2">DATE</span><span class="iv">'+d+'</span><span class="il ml2">CLASS</span><span class="iv">'+CN[cid]+'</span></div><div class="info-row"><span class="il">NAME</span><span class="iv iv-name">'+st.name+'</span></div></div>'+backBadge+'<div class="book-hdr"><span class="bh-sl">#</span><span class="bh-name">BOOK NAME</span><span class="bh-rate">RATE</span><span class="bh-amt">AMT</span></div><div class="book-list">'+(items.length===0?'<div class="no-items">No books selected yet</div>':rows)+pgIndic+'</div>';
+}
 function openPrintWindow(body,title){
   const w=window.open('','_blank');
-  const css=`
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#fff;font-family:'Nunito',sans-serif;color:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-@page{size:210mm 297mm;margin:0}
-.a4page{width:210mm;height:297mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;background:#fff}
-.top-row,.bottom-row{width:210mm;height:141mm;display:flex;flex-direction:row;flex-shrink:0;overflow:hidden}
-.cut-line{width:210mm;height:15mm;display:flex;align-items:center;padding:0 5mm;gap:2mm;flex-shrink:0;background:#fff}
-.scissors{font-size:10pt;color:#aaa;flex-shrink:0}
-.dashes{font-size:7pt;color:#ccc;letter-spacing:2px;flex:1;overflow:hidden;white-space:nowrap;border-top:1px dashed #ccc;margin-top:2px}
-.slot{width:105mm;height:141mm;padding:3mm 3.5mm;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
-.left-slot{border-right:1px dashed #ccc}
-.empty-slot{width:100%;height:100%;background:#fafafa;border:1px dashed #e0e0e0;border-radius:4px}
-.card{width:100%;height:100%;border:1.5px solid #1e3028;border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
-.card-hd{background:#1e3028;padding:4px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.card-hd-title{font-size:7.5pt;font-weight:800;letter-spacing:.5px;color:#dff0e8}
-.card-hd-sub{font-size:5.5pt;color:#7aaa90;margin-top:1px}
-.card-hd-total{background:rgba(255,255,255,.15);border-radius:3px;padding:2px 6px;text-align:right;flex-shrink:0}
-.card-hd-amt{font-size:15pt;font-weight:700;color:#7ecba1;font-family:'JetBrains Mono',monospace;line-height:1}
-.card-hd-lbl{font-size:5pt;color:#6aaa80;letter-spacing:.5px;text-transform:uppercase}
-.card-info{padding:3px 7px;background:#f5f5f2;border-bottom:1px solid #d5d5cc;flex-shrink:0}
-.info-row{display:flex;align-items:baseline;gap:4px;margin-bottom:2px}
-.info-row:last-child{margin-bottom:0}
-.il{font-size:5.5pt;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.2px;min-width:27px;flex-shrink:0}
-.ml2{margin-left:8px}
-.iv{font-size:8pt;font-weight:700;color:#1e3028;font-family:'JetBrains Mono',monospace}
-.iv-name{font-size:8.5pt;font-weight:800;color:#1e3028;font-family:'Nunito',sans-serif}
-.book-hdr{display:flex;align-items:center;padding:2px 7px;background:#e4ede6;border-bottom:1px solid #c0d0c2;flex-shrink:0}
-.bh-sl{font-size:5.5pt;font-weight:700;color:#3a6a4a;min-width:12px}
-.bh-name{font-size:5.5pt;font-weight:700;color:#3a6a4a;flex:1;padding-left:3px;text-transform:uppercase;letter-spacing:.2px}
-.bh-rate{font-size:5.5pt;font-weight:700;color:#3a6a4a;width:24px;text-align:right}
-.bh-amt{font-size:5.5pt;font-weight:700;color:#3a6a4a;width:34px;text-align:right}
-.book-list{flex:1;overflow:hidden;padding:1px 7px;display:flex;flex-direction:column}
-.brow{display:flex;align-items:flex-start;gap:3px;padding:2px 0;border-bottom:1px dotted #ebebeb}
-.brow:last-child{border-bottom:none}
-.br-sl{font-size:6pt;color:#c0c0c0;font-family:'JetBrains Mono',monospace;min-width:12px;flex-shrink:0;padding-top:1px}
-.br-name{font-size:7.5pt;font-weight:600;color:#111;flex:1;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.brow.nb .br-name{color:#7a3800}
-.nb-rate{display:block;font-size:6pt;color:#a05000;font-family:'JetBrains Mono',monospace;font-weight:400;line-height:1.4}
-.br-rate{font-size:6.5pt;color:#999;font-family:'JetBrains Mono',monospace;width:24px;text-align:right;flex-shrink:0;padding-top:1px}
-.br-amt{font-size:8.5pt;font-weight:700;color:#1e4030;font-family:'JetBrains Mono',monospace;width:34px;text-align:right;flex-shrink:0}
-.brow.nb .br-amt{color:#7a3800;font-size:9pt}
-.no-items{font-size:7pt;color:#bbb;text-align:center;padding:8px;font-style:italic}
-.card-ft{background:#1e3028;padding:3px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.ft-lbl{font-size:6pt;font-weight:700;color:#7aaa90;text-transform:uppercase;letter-spacing:.5px}
-.ft-amt{font-size:15pt;font-weight:700;color:#fff;font-family:'JetBrains Mono',monospace}
-.rcp-single{max-width:170mm;margin:15mm auto;font-family:'JetBrains Mono',monospace;border:2px solid #111;padding:14px;border-radius:4px}
-.rcp-hd{text-align:center;border-bottom:2px dashed #111;padding-bottom:10px;margin-bottom:10px}
-.rcp-title{font-size:13pt;font-weight:700;letter-spacing:2px}
-.rcp-sub{font-size:8pt;color:#666;margin-top:2px}
-.rcp-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:9pt;margin-bottom:10px}
-.rcp-bk{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;gap:8px}
-.rcp-bk-name{font-size:11pt;font-weight:600;flex:1;font-family:'Nunito',sans-serif}
-.rcp-bk-amt{font-size:14pt;font-weight:700;color:#1e4030}
-.rcp-nb{padding:6px 0;border-bottom:1px solid #eee}
-.rcp-nb-name{font-size:10pt;font-weight:600;color:#444;font-family:'Nunito',sans-serif;margin-bottom:2px}
-.rcp-nb-small{font-size:9pt;color:#888}
-.rcp-nb-big{font-size:18pt;font-weight:700;color:#7a4f10;display:block;margin-top:2px}
-.rcp-grand{display:flex;justify-content:space-between;align-items:center;border-top:2px solid #111;padding-top:10px;margin-top:8px}
-.rcp-grand-lbl{font-size:11pt;font-weight:700}
-.rcp-grand-amt{font-size:22pt;font-weight:700;color:#1e4030}
-.rcp-foot{text-align:center;font-size:8pt;color:#aaa;margin-top:10px;border-top:1px dashed #ddd;padding-top:7px}`;
-  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+title+'</title>'
-    +'<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">'
-    +'<style>'+css+'</style></head><body>'+body+'</body></html>');
-  w.document.close();
-  w.focus();
-  setTimeout(function(){w.print();},1200);
+  const css=`*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:'Nunito',sans-serif;color:#111;-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:210mm 297mm;margin:0}.a4page{width:210mm;height:297mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;background:#fff}.top-row,.bottom-row{width:210mm;height:141mm;display:flex;flex-direction:row;flex-shrink:0;overflow:hidden}.cut-line{width:210mm;height:15mm;display:flex;align-items:center;padding:0 5mm;gap:2mm;flex-shrink:0;background:#fff}.scissors{font-size:10pt;color:#aaa;flex-shrink:0}.dashes{font-size:7pt;color:#ccc;letter-spacing:2px;flex:1;overflow:hidden;white-space:nowrap;border-top:1px dashed #ccc;margin-top:2px}.slot{width:105mm;height:141mm;padding:2mm 3mm;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}.left-slot{border-right:1px dashed #ccc}.empty-slot{width:100%;height:100%;background:#fafafa;border:1px dashed #e0e0e0;border-radius:4px}.card{width:100%;height:100%;border:1.5px solid #1e3028;border-radius:4px;display:flex;flex-direction:column;overflow:hidden}
+.card-hd{background:#1e3028;padding:3px 6px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.card-hd-title{font-size:8.5pt;font-weight:800;letter-spacing:.4px;color:#dff0e8}.card-hd-sub{font-size:6pt;color:#7aaa90;margin-top:1px}.card-hd-total{background:rgba(255,255,255,.15);border-radius:3px;padding:1px 5px;text-align:right;flex-shrink:0}.card-hd-amt{font-size:15pt;font-weight:700;color:#7ecba1;font-family:'JetBrains Mono',monospace;line-height:1}.card-hd-lbl{font-size:4.5pt;color:#6aaa80;letter-spacing:.5px;text-transform:uppercase}
+.card-info{padding:2px 6px;background:#f5f5f2;border-bottom:1px solid #d5d5cc;flex-shrink:0}.info-row{display:flex;align-items:baseline;gap:3px;margin-bottom:1px}.info-row:last-child{margin-bottom:0}.il{font-size:6pt;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.2px;min-width:24px;flex-shrink:0}.ml2{margin-left:6px}.iv{font-size:8pt;font-weight:700;color:#1e3028;font-family:'JetBrains Mono',monospace}.iv-name{font-size:9pt;font-weight:800;color:#1e3028;font-family:'Nunito',sans-serif}
+.book-hdr{display:flex;align-items:center;padding:2px 6px;background:#e4ede6;border-bottom:1px solid #c0d0c2;flex-shrink:0}.bh-sl{font-size:6.5pt;font-weight:700;color:#3a6a4a;min-width:14px}.bh-name{font-size:6.5pt;font-weight:700;color:#3a6a4a;flex:1;padding-left:2px;text-transform:uppercase;letter-spacing:.2px}.bh-rate{font-size:6.5pt;font-weight:700;color:#3a6a4a;width:28px;text-align:right}.bh-amt{font-size:6.5pt;font-weight:700;color:#3a6a4a;width:34px;text-align:right}
+.book-list{flex:1;overflow:hidden;padding:0 6px;display:flex;flex-direction:column;justify-content:flex-start}
+.brow{display:flex;align-items:center;gap:3px;padding:2px 0;border-bottom:1px dotted #efefef}.brow:last-child{border-bottom:none}.br-sl{font-size:7pt;color:#c0c0c0;font-family:'JetBrains Mono',monospace;min-width:14px;flex-shrink:0}.br-name{font-size:10pt;font-weight:600;color:#111;flex:1;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.brow.nb .br-name{color:#7a3800}.nb-rate{display:inline;font-size:6.5pt;color:#a05000;font-family:'JetBrains Mono',monospace;font-weight:400;margin-left:3px}.br-rate{font-size:7pt;color:#999;font-family:'JetBrains Mono',monospace;width:28px;text-align:right;flex-shrink:0}.br-amt{font-size:10pt;font-weight:700;color:#1e4030;font-family:'JetBrains Mono',monospace;width:34px;text-align:right;flex-shrink:0}.brow.nb .br-amt{color:#7a3800;font-size:9pt}
+.card.back-side .br-name{font-size:8pt;line-height:1.05}
+.card.back-side .brow{padding:1px 0}
+.card.back-side .br-amt{font-size:8pt}
+.no-items{font-size:7pt;color:#bbb;text-align:center;padding:8px;font-style:italic}.card-back-badge{background:#1a3828;padding:2px 6px;font-size:5.5pt;font-weight:700;color:#7ecba1;letter-spacing:.3px;border-bottom:1px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:4px;flex-shrink:0}.card-pg-cont{font-size:5pt;color:#aaa;text-align:center;padding:2px;font-style:italic;border-top:1px dashed #eee;margin-top:2px}
+.rcp-single{max-width:170mm;margin:15mm auto;font-family:'JetBrains Mono',monospace;border:2px solid #111;padding:14px;border-radius:4px}.rcp-hd{text-align:center;border-bottom:2px dashed #111;padding-bottom:10px;margin-bottom:10px}.rcp-title{font-size:13pt;font-weight:700;letter-spacing:2px}.rcp-sub{font-size:8pt;color:#666;margin-top:2px}.rcp-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:9pt;margin-bottom:10px}.rcp-bk{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;gap:8px}.rcp-bk-name{font-size:11pt;font-weight:600;flex:1;font-family:'Nunito',sans-serif}.rcp-bk-amt{font-size:14pt;font-weight:700;color:#1e4030}.rcp-nb{padding:6px 0;border-bottom:1px solid #eee}.rcp-nb-name{font-size:10pt;font-weight:600;color:#444;font-family:'Nunito',sans-serif;margin-bottom:2px}.rcp-nb-small{font-size:9pt;color:#888}.rcp-nb-big{font-size:18pt;font-weight:700;color:#7a4f10;display:block;margin-top:2px}.rcp-grand{display:flex;justify-content:space-between;align-items:center;border-top:2px solid #111;padding-top:10px;margin-top:8px}.rcp-grand-lbl{font-size:11pt;font-weight:700}.rcp-grand-amt{font-size:22pt;font-weight:700;color:#1e4030}.rcp-foot{text-align:center;font-size:8pt;color:#aaa;margin-top:10px;border-top:1px dashed #ddd;padding-top:7px}`;
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+title+'</title><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"><style>'+css+'</style></head><body>'+body+'</body></html>');
+  w.document.close();w.focus();setTimeout(function(){w.print();},1200);
 }
 
+// ══════════════════════════════════════════════════════
 // UTILS
+// ══════════════════════════════════════════════════════
+function dlFile(content,filename,mime){
+  const a=document.createElement('a');
+  a.href='data:'+mime+';charset=utf-8,'+encodeURIComponent(content);
+  a.download=filename;a.click();
+}
 function exportCSV(){
   const rows=[['Class','ADM No','Name','Book','Type','Qty','Price','Total']];
   CLASSES.forEach(cid=>{S[cid].students.forEach(st=>{const t=S[cid].ticks[st.id]||{},nb=S[cid].nb[st.id]||{};BOOKS[cid].forEach((b,i)=>{if(b.nb){const q=nb[i]||0;if(q>0)rows.push([CN[cid],st.admNo,st.name,b.n,'Notebook',q,b.p,b.p*q]);}else if(t[i])rows.push([CN[cid],st.admNo,st.name,b.n,'Book',1,b.p,b.p]);});});});
   const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
-  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);a.download='billing_2026_27.csv';a.click();toast('Exported ✓');
+  dlFile('\uFEFF'+csv,'billing_2026_27.csv','text/csv');
+  toast('Exported ✓');
 }
 function closeModals(){document.querySelectorAll('.ovl').forEach(o=>o.classList.remove('open'));}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2600);}
